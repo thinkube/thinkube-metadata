@@ -13,16 +13,6 @@
       "ssh_url": "git@github.com:thinkube/thinkube.git"
     },
     {
-      "name": "thinkube-control",
-      "org": "thinkube",
-      "full_name": "thinkube/thinkube-control",
-      "description": "Central management interface - FastAPI backend with Keycloak integration",
-      "type": "application_template",
-      "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/thinkube-control",
-      "ssh_url": "git@github.com:thinkube/thinkube-control.git"
-    },
-    {
       "name": "tkt-webapp-vue-fastapi",
       "org": "thinkube",
       "full_name": "thinkube/tkt-webapp-vue-fastapi",
@@ -33,14 +23,24 @@
       "ssh_url": "git@github.com:thinkube/tkt-webapp-vue-fastapi.git"
     },
     {
-      "name": "devpi-deployment",
+      "name": "tkt-vllm-gradio",
       "org": "thinkube",
-      "full_name": "thinkube/devpi-deployment",
-      "description": "DevPI Python package index deployment",
+      "full_name": "thinkube/tkt-vllm-gradio",
+      "description": "vLLM + Gradio template for LLM inference",
       "type": "application_template",
       "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/devpi-deployment",
-      "ssh_url": "git@github.com:thinkube/devpi-deployment.git"
+      "github_url": "https://github.com/thinkube/tkt-vllm-gradio",
+      "ssh_url": "git@github.com:thinkube/tkt-vllm-gradio.git"
+    },
+    {
+      "name": "tkt-stable-diffusion",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-stable-diffusion",
+      "description": "Stable Diffusion template for image generation",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-stable-diffusion",
+      "ssh_url": "git@github.com:thinkube/tkt-stable-diffusion.git"
     },
     {
       "name": "tk-package-version",
@@ -53,24 +53,34 @@
       "ssh_url": "git@github.com:thinkube/tk-package-version.git"
     },
     {
+      "name": "thinkube-control",
+      "org": "cmxela",
+      "full_name": "cmxela/thinkube-control",
+      "description": "Central management interface - FastAPI backend with Keycloak integration",
+      "type": "application",
+      "clone_for_development": true,
+      "github_url": "https://github.com/cmxela/thinkube-control",
+      "ssh_url": "git@github.com:cmxela/thinkube-control.git"
+    },
+    {
       "name": "thinkube-cicd-monitor",
-      "org": "thinkube",
-      "full_name": "thinkube/thinkube-cicd-monitor",
+      "org": "cmxela",
+      "full_name": "cmxela/thinkube-cicd-monitor",
       "description": "VS Code extension for CI/CD monitoring",
       "type": "vscode_extension",
       "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/thinkube-cicd-monitor",
-      "ssh_url": "git@github.com:thinkube/thinkube-cicd-monitor.git"
+      "github_url": "https://github.com/cmxela/thinkube-cicd-monitor",
+      "ssh_url": "git@github.com:cmxela/thinkube-cicd-monitor.git"
     },
     {
       "name": "thinkube-ai-integration",
-      "org": "thinkube",
-      "full_name": "thinkube/thinkube-ai-integration",
+      "org": "cmxela",
+      "full_name": "cmxela/thinkube-ai-integration",
       "description": "VS Code extension for AI integration with Claude Code hooks",
       "type": "vscode_extension",
       "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/thinkube-ai-integration",
-      "ssh_url": "git@github.com:thinkube/thinkube-ai-integration.git"
+      "github_url": "https://github.com/cmxela/thinkube-ai-integration",
+      "ssh_url": "git@github.com:cmxela/thinkube-ai-integration.git"
     }
   ]
 }
