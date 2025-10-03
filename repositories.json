@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "description": "Thinkube ecosystem repository metadata",
+  "repositories": [
+    {
+      "name": "thinkube",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube",
+      "description": "Main infrastructure repository with Ansible playbooks and deployment scripts",
+      "type": "infrastructure",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube",
+      "ssh_url": "git@github.com:thinkube/thinkube.git"
+    },
+    {
+      "name": "thinkube-control",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-control",
+      "description": "Central management interface - FastAPI backend with Keycloak integration",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-control",
+      "ssh_url": "git@github.com:thinkube/thinkube-control.git"
+    },
+    {
+      "name": "tkt-webapp-vue-fastapi",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-webapp-vue-fastapi",
+      "description": "Vue.js + FastAPI web application template",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-webapp-vue-fastapi",
+      "ssh_url": "git@github.com:thinkube/tkt-webapp-vue-fastapi.git"
+    },
+    {
+      "name": "devpi-deployment",
+      "org": "thinkube",
+      "full_name": "thinkube/devpi-deployment",
+      "description": "DevPI Python package index deployment",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/devpi-deployment",
+      "ssh_url": "git@github.com:thinkube/devpi-deployment.git"
+    },
+    {
+      "name": "tk-package-version",
+      "org": "thinkube",
+      "full_name": "thinkube/tk-package-version",
+      "description": "MCP server for checking package versions across multiple registries",
+      "type": "mcp_server",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tk-package-version",
+      "ssh_url": "git@github.com:thinkube/tk-package-version.git"
+    },
+    {
+      "name": "thinkube-cicd-monitor",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-cicd-monitor",
+      "description": "VS Code extension for CI/CD monitoring",
+      "type": "vscode_extension",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-cicd-monitor",
+      "ssh_url": "git@github.com:thinkube/thinkube-cicd-monitor.git"
+    },
+    {
+      "name": "thinkube-ai-integration",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-ai-integration",
+      "description": "VS Code extension for AI integration with Claude Code hooks",
+      "type": "vscode_extension",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-ai-integration",
+      "ssh_url": "git@github.com:thinkube/thinkube-ai-integration.git"
+    }
+  ]
+}
