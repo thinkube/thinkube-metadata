@@ -53,6 +53,17 @@
       "ssh_url": "git@github.com:thinkube/tk-package-version.git"
     },
     {
+      "name": "thinkube-theme",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-theme",
+      "description": "Official Thinkube themes (light & dark) with teal brand colors",
+      "type": "vscode_extension",
+      "clone_for_development": false,
+      "install_in_code_server": true,
+      "github_url": "https://github.com/thinkube/thinkube-theme",
+      "ssh_url": "git@github.com:thinkube/thinkube-theme.git"
+    },
+    {
       "name": "thinkube-control",
       "org": "cmxela",
       "full_name": "cmxela/thinkube-control",
