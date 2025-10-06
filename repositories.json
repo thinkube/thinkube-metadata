@@ -53,12 +53,22 @@
       "ssh_url": "git@github.com:thinkube/tk-package-version.git"
     },
     {
+      "name": "thinkube-metadata",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-metadata",
+      "description": "Repository metadata and ecosystem documentation",
+      "type": "metadata",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-metadata",
+      "ssh_url": "git@github.com:thinkube/thinkube-metadata.git"
+    },
+    {
       "name": "thinkube-theme",
       "org": "thinkube",
       "full_name": "thinkube/thinkube-theme",
       "description": "Official Thinkube themes (light & dark) with teal brand colors",
       "type": "vscode_extension",
-      "clone_for_development": false,
+      "clone_for_development": true,
       "install_in_code_server": true,
       "github_url": "https://github.com/thinkube/thinkube-theme",
       "ssh_url": "git@github.com:thinkube/thinkube-theme.git"
