@@ -27,8 +27,8 @@
       "name": "tkt-vllm-gradio",
       "org": "thinkube",
       "full_name": "thinkube/tkt-vllm-gradio",
-      "description": "vLLM + Gradio template for LLM inference",
-      "type": "application_template",
+      "description": "vLLM + Gradio template for LLM inference - ON HOLD waiting for vLLM sm_121a support",
+      "type": "application_template_disabled",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-vllm-gradio",
       "ssh_url": "git@github.com:thinkube/tkt-vllm-gradio.git"
