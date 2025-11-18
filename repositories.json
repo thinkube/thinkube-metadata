@@ -74,6 +74,16 @@
       "ssh_url": "git@github.com:thinkube/thinkube-metadata.git"
     },
     {
+      "name": "thinkube-documentation",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-documentation",
+      "description": "Internal documentation, specifications, and developer guides for Thinkube platform",
+      "type": "documentation",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-documentation",
+      "ssh_url": "git@github.com:thinkube/thinkube-documentation.git"
+    },
+    {
       "name": "thinkube-theme",
       "org": "thinkube",
       "full_name": "thinkube/thinkube-theme",
@@ -123,6 +133,106 @@
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/thinkube-ai-examples",
       "ssh_url": "git@github.com:thinkube/thinkube-ai-examples.git"
+    },
+    {
+      "name": "thinkube-installer",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-installer",
+      "description": "GUI installer application for Thinkube platform",
+      "type": "application",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-installer",
+      "ssh_url": "git@github.com:thinkube/thinkube-installer.git"
+    },
+    {
+      "name": "tk-node-setup",
+      "org": "thinkube",
+      "full_name": "thinkube/tk-node-setup",
+      "description": "Node setup and configuration utilities",
+      "type": "infrastructure",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tk-node-setup",
+      "ssh_url": "git@github.com:thinkube/tk-node-setup.git"
+    },
+    {
+      "name": "tk-vllm-wheels",
+      "org": "thinkube",
+      "full_name": "thinkube/tk-vllm-wheels",
+      "description": "Pre-built vLLM wheels for faster installation",
+      "type": "library",
+      "clone_for_development": false,
+      "github_url": "https://github.com/thinkube/tk-vllm-wheels",
+      "ssh_url": "git@github.com:thinkube/tk-vllm-wheels.git"
+    },
+    {
+      "name": "thinkube-style",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-style",
+      "description": "Style and theme resources for Thinkube platform",
+      "type": "library",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-style",
+      "ssh_url": "git@github.com:thinkube/thinkube-style.git"
+    },
+    {
+      "name": "thinkube-devpi",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-devpi",
+      "description": "DevPI Python package repository integration",
+      "type": "infrastructure",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-devpi",
+      "ssh_url": "git@github.com:thinkube/thinkube-devpi.git"
+    },
+    {
+      "name": "thinkube-harbor-arm64",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-harbor-arm64",
+      "description": "ARM64 build for Harbor container registry",
+      "type": "infrastructure",
+      "clone_for_development": false,
+      "github_url": "https://github.com/thinkube/thinkube-harbor-arm64",
+      "ssh_url": "git@github.com:thinkube/thinkube-harbor-arm64.git"
+    },
+    {
+      "name": "thinkube.org",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube.org",
+      "description": "Official Thinkube website and documentation",
+      "type": "website",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube.org",
+      "ssh_url": "git@github.com:thinkube/thinkube.org.git"
+    },
+    {
+      "name": "thinkube-monitor",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-monitor",
+      "description": "Monitoring tools and dashboards for Thinkube platform",
+      "type": "application",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-monitor",
+      "ssh_url": "git@github.com:thinkube/thinkube-monitor.git"
+    },
+    {
+      "name": "tk-ai-extension",
+      "org": "thinkube",
+      "full_name": "thinkube/tk-ai-extension",
+      "description": "AI extension for IDE integration",
+      "type": "vscode_extension",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tk-ai-extension",
+      "ssh_url": "git@github.com:thinkube/tk-ai-extension.git"
+    },
+    {
+      "name": "thinkube-ai-lab-theme",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-ai-lab-theme",
+      "description": "AI Lab theme for Thinkube platform",
+      "type": "vscode_extension",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-ai-lab-theme",
+      "ssh_url": "git@github.com:thinkube/thinkube-ai-lab-theme.git"
     }
   ]
 }
