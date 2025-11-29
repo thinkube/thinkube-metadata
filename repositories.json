@@ -54,6 +54,16 @@
       "ssh_url": "git@github.com:thinkube/tkt-stable-diffusion.git"
     },
     {
+      "name": "tkt-text-embeddings",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-text-embeddings",
+      "description": "High-performance text embeddings using TEI (Rust) with MLflow model registry",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-text-embeddings",
+      "ssh_url": "git@github.com:thinkube/tkt-text-embeddings.git"
+    },
+    {
       "name": "tk-package-version",
       "org": "thinkube",
       "full_name": "thinkube/tk-package-version",
