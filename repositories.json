@@ -34,14 +34,14 @@
       "ssh_url": "git@github.com:thinkube/tkt-vllm-gradio.git"
     },
     {
-      "name": "tkt-tensorrt-llm",
+      "name": "tkt-tensorrt-llm-harmony",
       "org": "thinkube",
-      "full_name": "thinkube/tkt-tensorrt-llm",
-      "description": "TensorRT-LLM + Gradio template with NVFP4 support for Blackwell GPUs",
+      "full_name": "thinkube/tkt-tensorrt-llm-harmony",
+      "description": "TensorRT-LLM + Gradio template with Harmony format for GPT-OSS models",
       "type": "application_template",
       "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/tkt-tensorrt-llm",
-      "ssh_url": "git@github.com:thinkube/tkt-tensorrt-llm.git"
+      "github_url": "https://github.com/thinkube/tkt-tensorrt-llm-harmony",
+      "ssh_url": "git@github.com:thinkube/tkt-tensorrt-llm-harmony.git"
     },
     {
       "name": "tkt-stable-diffusion",
