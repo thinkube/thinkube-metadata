@@ -64,6 +64,16 @@
       "ssh_url": "git@github.com:thinkube/tkt-text-embeddings.git"
     },
     {
+      "name": "tkt-texplitter",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-texplitter",
+      "description": "Rule-driven markup tokenizer for AI pipelines — tokenize, segment, extract, XLIFF round-trip",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-texplitter",
+      "ssh_url": "git@github.com:thinkube/tkt-texplitter.git"
+    },
+    {
       "name": "tk-package-version",
       "org": "thinkube",
       "full_name": "thinkube/tk-package-version",
