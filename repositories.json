@@ -74,6 +74,16 @@
       "ssh_url": "git@github.com:thinkube/tkt-aligner.git"
     },
     {
+      "name": "tkt-aligner-playground",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-aligner-playground",
+      "description": "Interactive playground for bilingual document alignment — sample texts, visualization, calls tkt-aligner API",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-aligner-playground",
+      "ssh_url": "git@github.com:thinkube/tkt-aligner-playground.git"
+    },
+    {
       "name": "tkt-texplitter",
       "org": "thinkube",
       "full_name": "thinkube/tkt-texplitter",
