@@ -246,11 +246,20 @@
       "task": "feature-extraction"
     },
     {
-      "id": "jinaai/jina-embeddings-v3",
-      "name": "Jina Embeddings v3",
-      "size": "~2.3GB",
-      "quantization": "FP16",
-      "description": "Jina's latest multilingual model. 1024 dimensions, 8192 token context. Excellent for code and 89 languages. Apache 2.0 license.",
+      "id": "Qwen/Qwen3-Embedding-0.6B",
+      "name": "Qwen3 Embedding 0.6B",
+      "size": "~1.2GB",
+      "quantization": "BF16",
+      "description": "Alibaba Qwen3 embedding model (0.6B). 1024 dimensions, 8192 token context. 100+ languages. TEI-native (Qwen3 architecture). Apache 2.0 license.",
+      "server_type": ["text-embeddings"],
+      "task": "feature-extraction"
+    },
+    {
+      "id": "Qwen/Qwen3-Embedding-4B",
+      "name": "Qwen3 Embedding 4B",
+      "size": "~8GB",
+      "quantization": "BF16",
+      "description": "Alibaba Qwen3 embedding model (4B). 2560 dimensions, 8192 token context. 100+ languages. TEI-native (Qwen3 architecture). Top MTEB scores. Apache 2.0 license.",
       "server_type": ["text-embeddings"],
       "task": "feature-extraction"
     },
