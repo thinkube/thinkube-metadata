@@ -57,7 +57,7 @@
       "name": "tkt-text-embeddings",
       "org": "thinkube",
       "full_name": "thinkube/tkt-text-embeddings",
-      "description": "High-performance text embeddings using TEI (Rust) with MLflow model registry",
+      "description": "High-performance text embeddings using Infinity (torch + FlashAttention) with MLflow model registry",
       "type": "application_template",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-text-embeddings",
