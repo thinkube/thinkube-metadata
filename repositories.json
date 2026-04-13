@@ -64,6 +64,16 @@
       "ssh_url": "git@github.com:thinkube/tkt-text-embeddings.git"
     },
     {
+      "name": "tkt-aligner",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-aligner",
+      "description": "Bilingual document aligner using DP over multilingual embeddings with texplitter segmentation",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-aligner",
+      "ssh_url": "git@github.com:thinkube/tkt-aligner.git"
+    },
+    {
       "name": "tkt-texplitter",
       "org": "thinkube",
       "full_name": "thinkube/tkt-texplitter",
