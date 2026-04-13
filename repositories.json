@@ -74,6 +74,16 @@
       "ssh_url": "git@github.com:thinkube/tkt-texplitter.git"
     },
     {
+      "name": "tkt-seaweedfs",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-seaweedfs",
+      "description": "SeaweedFS file gateway — REST API and upload UI for object storage",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-seaweedfs",
+      "ssh_url": "git@github.com:thinkube/tkt-seaweedfs.git"
+    },
+    {
       "name": "tk-package-version",
       "org": "thinkube",
       "full_name": "thinkube/tk-package-version",
