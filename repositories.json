@@ -205,8 +205,9 @@
       "name": "thinkube-style",
       "org": "thinkube",
       "full_name": "thinkube/thinkube-style",
-      "description": "Style and theme resources for Thinkube platform",
-      "type": "library",
+      "description": "Interactive component showcase for the thinkube-style design system",
+      "type": "application_template",
+      "deployment_type": "app",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/thinkube-style",
       "ssh_url": "git@github.com:thinkube/thinkube-style.git"
