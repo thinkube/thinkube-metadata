@@ -19,6 +19,7 @@
       "full_name": "thinkube/tkt-webapp-vue-fastapi",
       "description": "Vue.js + FastAPI web application template",
       "type": "application_template",
+      "deployment_type": "app",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-webapp-vue-fastapi",
       "ssh_url": "git@github.com:thinkube/tkt-webapp-vue-fastapi.git"
@@ -29,6 +30,7 @@
       "full_name": "thinkube/tkt-vllm-gradio",
       "description": "vLLM + Gradio template for LLM inference - ON HOLD waiting for vLLM sm_121a support",
       "type": "application_template_disabled",
+      "deployment_type": "app",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-vllm-gradio",
       "ssh_url": "git@github.com:thinkube/tkt-vllm-gradio.git"
@@ -39,6 +41,7 @@
       "full_name": "thinkube/tkt-tensorrt-llm-harmony",
       "description": "TensorRT-LLM + Gradio template with Harmony format for GPT-OSS models",
       "type": "application_template",
+      "deployment_type": "app",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-tensorrt-llm-harmony",
       "ssh_url": "git@github.com:thinkube/tkt-tensorrt-llm-harmony.git"
@@ -49,6 +52,7 @@
       "full_name": "thinkube/tkt-stable-diffusion",
       "description": "Stable Diffusion template for image generation",
       "type": "application_template",
+      "deployment_type": "app",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-stable-diffusion",
       "ssh_url": "git@github.com:thinkube/tkt-stable-diffusion.git"
@@ -59,6 +63,7 @@
       "full_name": "thinkube/tkt-text-embeddings",
       "description": "High-performance text embeddings using TEI (Text Embeddings Inference) with MLflow model registry",
       "type": "application_template",
+      "deployment_type": "app",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-text-embeddings",
       "ssh_url": "git@github.com:thinkube/tkt-text-embeddings.git"
@@ -69,6 +74,7 @@
       "full_name": "thinkube/tkt-aligner",
       "description": "Bilingual document aligner using DP over multilingual embeddings with texplitter segmentation",
       "type": "application_template",
+      "deployment_type": "knative",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-aligner",
       "ssh_url": "git@github.com:thinkube/tkt-aligner.git"
@@ -79,6 +85,7 @@
       "full_name": "thinkube/tkt-aligner-playground",
       "description": "Interactive playground for bilingual document alignment — sample texts, visualization, calls tkt-aligner API",
       "type": "application_template",
+      "deployment_type": "app",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-aligner-playground",
       "ssh_url": "git@github.com:thinkube/tkt-aligner-playground.git"
@@ -89,6 +96,7 @@
       "full_name": "thinkube/tkt-texplitter",
       "description": "Rule-driven markup tokenizer for AI pipelines — tokenize, segment, extract, XLIFF round-trip",
       "type": "application_template",
+      "deployment_type": "knative",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-texplitter",
       "ssh_url": "git@github.com:thinkube/tkt-texplitter.git"
@@ -99,6 +107,7 @@
       "full_name": "thinkube/tkt-seaweedfs",
       "description": "SeaweedFS file gateway — REST API and upload UI for object storage",
       "type": "application_template",
+      "deployment_type": "app",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-seaweedfs",
       "ssh_url": "git@github.com:thinkube/tkt-seaweedfs.git"
@@ -109,6 +118,7 @@
       "full_name": "thinkube/tkt-knative-demo",
       "description": "Knative scale-to-zero demo — minimal test service for verifying Knative deployments",
       "type": "application_template",
+      "deployment_type": "knative",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/tkt-knative-demo",
       "ssh_url": "git@github.com:thinkube/tkt-knative-demo.git"
