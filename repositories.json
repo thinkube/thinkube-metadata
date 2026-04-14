@@ -104,6 +104,16 @@
       "ssh_url": "git@github.com:thinkube/tkt-seaweedfs.git"
     },
     {
+      "name": "tkt-knative-demo",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-knative-demo",
+      "description": "Knative scale-to-zero demo — minimal test service for verifying Knative deployments",
+      "type": "application_template",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-knative-demo",
+      "ssh_url": "git@github.com:thinkube/tkt-knative-demo.git"
+    },
+    {
       "name": "tk-package-version",
       "org": "thinkube",
       "full_name": "thinkube/tk-package-version",
