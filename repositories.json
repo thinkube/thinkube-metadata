@@ -69,39 +69,6 @@
       "ssh_url": "git@github.com:thinkube/tkt-text-embeddings.git"
     },
     {
-      "name": "tkt-aligner",
-      "org": "thinkube",
-      "full_name": "thinkube/tkt-aligner",
-      "description": "Bilingual document aligner using DP over multilingual embeddings with texplitter segmentation",
-      "type": "application_template",
-      "deployment_type": "knative",
-      "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/tkt-aligner",
-      "ssh_url": "git@github.com:thinkube/tkt-aligner.git"
-    },
-    {
-      "name": "tkt-aligner-playground",
-      "org": "thinkube",
-      "full_name": "thinkube/tkt-aligner-playground",
-      "description": "Interactive playground for bilingual document alignment — sample texts, visualization, calls tkt-aligner API",
-      "type": "application_template",
-      "deployment_type": "app",
-      "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/tkt-aligner-playground",
-      "ssh_url": "git@github.com:thinkube/tkt-aligner-playground.git"
-    },
-    {
-      "name": "tkt-texplitter",
-      "org": "thinkube",
-      "full_name": "thinkube/tkt-texplitter",
-      "description": "Rule-driven markup tokenizer for AI pipelines — tokenize, segment, extract, XLIFF round-trip",
-      "type": "application_template",
-      "deployment_type": "knative",
-      "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/tkt-texplitter",
-      "ssh_url": "git@github.com:thinkube/tkt-texplitter.git"
-    },
-    {
       "name": "tkt-seaweedfs",
       "org": "thinkube",
       "full_name": "thinkube/tkt-seaweedfs",
