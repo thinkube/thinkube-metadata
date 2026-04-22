@@ -112,7 +112,8 @@
     {
       "source": "docker.io/openpolicyagent/opa:0.63.0",
       "destination_name": "opa:0.63.0",
-      "description": "Open Policy Agent 0.63.0 - authorization engine for CVAT (Apache 2.0)"
+      "architectures": ["amd64"],
+      "description": "Open Policy Agent 0.63.0 - authorization engine for CVAT (Apache 2.0, amd64-only at this version)"
     },
     {
       "source": "gcr.io/kaniko-project/executor:v1.24.0",
