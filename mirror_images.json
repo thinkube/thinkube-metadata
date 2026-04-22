@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "description": "Container images to mirror from public registries to Harbor. Destination names are relative to harbor_registry/library/.",
+  "version": "1.1.0",
+  "description": "Container images to mirror from public registries to Harbor. Destination names are relative to harbor_registry/library/. The 'architectures' field specifies which platforms to mirror; omit for default (amd64+arm64).",
   "images": [
     {
       "source": "mirror.gcr.io/library/alpine:latest",
@@ -100,12 +100,14 @@
     {
       "source": "docker.io/cvat/server:latest",
       "destination_name": "cvat-server:latest",
-      "description": "CVAT Server - computer vision annotation tool backend (MIT)"
+      "architectures": ["amd64"],
+      "description": "CVAT Server - computer vision annotation tool backend (MIT, amd64-only)"
     },
     {
       "source": "docker.io/cvat/ui:latest",
       "destination_name": "cvat-ui:latest",
-      "description": "CVAT UI - computer vision annotation tool frontend (MIT)"
+      "architectures": ["amd64"],
+      "description": "CVAT UI - computer vision annotation tool frontend (MIT, amd64-only)"
     },
     {
       "source": "docker.io/openpolicyagent/opa:0.63.0",
@@ -250,11 +252,13 @@
     {
       "source": "nvcr.io/nvidia/tensorrt-llm/release:spark-single-gpu-dev",
       "destination_name": "tensorrt-llm-spark:latest",
+      "architectures": ["arm64"],
       "description": "NVIDIA TensorRT-LLM for DGX Spark (arm64) - GPT-OSS/Qwen MXFP4, trtllm-serve, FA2"
     },
     {
       "source": "nvcr.io/nvidia/tensorrt-llm/release:latest",
       "destination_name": "tensorrt-llm:latest",
+      "architectures": ["amd64"],
       "description": "NVIDIA TensorRT-LLM standard release (amd64) - trtllm-serve, FA2"
     },
     {
@@ -275,11 +279,13 @@
     {
       "source": "nvcr.io/nvidia/pytorch:25.11-py3",
       "destination_name": "pytorch:25.11-py3",
+      "architectures": ["arm64"],
       "description": "NVIDIA PyTorch 25.11 - latest release with DGX Spark/GB10 support (ARM64)"
     },
     {
       "source": "ghcr.io/huggingface/text-embeddings-inference:121-latest",
       "destination_name": "text-embeddings-inference:121-latest",
+      "architectures": ["arm64"],
       "description": "HuggingFace TEI with flash attention for DGX Spark (sm_121, ARM64 Blackwell GB10)"
     }
   ]
