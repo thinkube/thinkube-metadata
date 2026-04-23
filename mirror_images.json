@@ -28,19 +28,19 @@
       "description": "Debian Bookworm slim from GCR mirror - for Kaniko build"
     },
     {
-      "source": "mirror.gcr.io/library/python:3.12-slim",
+      "source": "mirror.gcr.io/library/python:3.12.13-slim-bookworm",
       "destination_name": "python:3.12-slim",
-      "description": "Python 3.12 slim from GCR mirror - Ubuntu 24.04 compatible"
+      "description": "Python 3.12.13 slim Bookworm - pinned to Debian 12 to avoid Trixie GPG issues"
     },
     {
-      "source": "mirror.gcr.io/library/python:3.12-alpine",
+      "source": "mirror.gcr.io/library/python:3.12.13-alpine",
       "destination_name": "python:3.12-alpine",
-      "description": "Python 3.12 Alpine from GCR mirror - latest stable Python"
+      "description": "Python 3.12.13 Alpine - latest security-fix release March 2026"
     },
     {
-      "source": "mirror.gcr.io/library/python:3.12",
+      "source": "mirror.gcr.io/library/python:3.12.13-bookworm",
       "destination_name": "python:3.12",
-      "description": "Python 3.12 full from GCR mirror - base for code-server-dev with build tools"
+      "description": "Python 3.12.13 full Bookworm - pinned to Debian 12, base for code-server-dev"
     },
     {
       "source": "mirror.gcr.io/library/golang:1.25.3",
