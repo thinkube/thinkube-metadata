@@ -72,8 +72,9 @@
       "org": "thinkube",
       "full_name": "thinkube/thinkube.org",
       "description": "Official Thinkube website and documentation",
-      "type": "website",
+      "type": "application_template",
       "category": "docs",
+      "deployment_type": "app",
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/thinkube.org",
       "ssh_url": "git@github.com:thinkube/thinkube.org.git"
