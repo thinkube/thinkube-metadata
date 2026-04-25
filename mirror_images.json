@@ -48,6 +48,11 @@
       "description": "Golang 1.25.3 from GCR mirror - latest patch release October 2025"
     },
     {
+      "source": "mirror.gcr.io/library/golang:1.25-alpine",
+      "destination_name": "golang:1.25-alpine",
+      "description": "Golang 1.25 Alpine from GCR mirror - for LLM proxy builds"
+    },
+    {
       "source": "mirror.gcr.io/library/node:22-alpine",
       "destination_name": "node:22-alpine",
       "description": "Node.js 22 LTS from GCR mirror - fallback version"
