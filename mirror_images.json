@@ -280,8 +280,7 @@
     {
       "source": "nvcr.io/nvidia/pytorch:25.11-py3",
       "destination_name": "pytorch:25.11-py3",
-      "architectures": ["arm64"],
-      "description": "NVIDIA PyTorch 25.11 - latest release with DGX Spark/GB10 support (ARM64)"
+      "description": "NVIDIA PyTorch 25.11 - NGC optimized framework for GPU compute"
     },
     {
       "source": "ghcr.io/huggingface/text-embeddings-inference:121-latest",
