@@ -387,6 +387,186 @@
       "gated": false
     },
     {
+      "id": "Qwen/Qwen3-8B",
+      "name": "Qwen 3 8B",
+      "params_b": 8.2,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "Qwen 3 8B dense model. 128K context, thinking mode, tool use. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "Qwen/Qwen3-14B",
+      "name": "Qwen 3 14B",
+      "params_b": 14.8,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "Qwen 3 14B dense model. 128K context, thinking mode, tool use. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "Qwen/Qwen3-30B-A3B",
+      "name": "Qwen 3 30B MoE (3B active)",
+      "params_b": 30.5,
+      "active_params_b": 3.3,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "Qwen 3 30B MoE (3.3B active). Best efficiency/quality for DGX Spark. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "Qwen/Qwen3-32B",
+      "name": "Qwen 3 32B",
+      "params_b": 32.5,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "Qwen 3 32B dense model. 128K context, thinking mode, tool use. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "Qwen/Qwen3.5-4B",
+      "name": "Qwen 3.5 4B",
+      "params_b": 4.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.5 4B dense model. 262K context, thinking mode. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "Qwen/Qwen3.5-9B",
+      "name": "Qwen 3.5 9B",
+      "params_b": 9.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.5 9B dense model. 262K context, thinking mode. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "Qwen/Qwen3.5-27B",
+      "name": "Qwen 3.5 27B",
+      "params_b": 27.0,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.5 27B dense model. 262K context, thinking mode. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "google/gemma-4-31B-it",
+      "name": "Gemma 4 31B Instruct",
+      "params_b": 30.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Google Gemma 4 31B instruction-tuned. Extended thinking, 262K context. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "gemma4",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "name": "DeepSeek R1 Distill Qwen 7B",
+      "params_b": 7.6,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "DeepSeek R1 reasoning distilled into Qwen2.5-7B. MIT license.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "deepseek_r1",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
+    },
+    {
+      "id": "microsoft/Phi-4-reasoning-plus",
+      "name": "Phi-4 Reasoning Plus",
+      "params_b": 14.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 65536,
+      "description": "Microsoft Phi-4 reasoning-focused model. 64K context. MIT license.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
+    },
+    {
       "id": "unsloth/Qwen3.5-0.8B-GGUF",
       "name": "Qwen 3.5 0.8B (GGUF/Ollama)",
       "params_b": 0.8,
