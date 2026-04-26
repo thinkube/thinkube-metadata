@@ -5,293 +5,892 @@
     {
       "id": "openai/gpt-oss-20b",
       "name": "GPT-OSS 20B",
-      "size": "~20GB",
+      "params_b": 20.9,
+      "active_params_b": 3.6,
       "quantization": "FP8",
-      "description": "OpenAI GPT-OSS 20B model optimized for TensorRT-LLM",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "context_length": 131072,
+      "description": "OpenAI GPT-OSS 20B (21B MoE, 3.6B active). Harmony format with analysis channel.",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "gptoss",
+      "tool_use": true,
+      "stop_tokens": [
+        "<|return|>",
+        "<|call|>"
+      ],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "openai/gpt-oss-120b",
       "name": "GPT-OSS 120B",
-      "size": "~70GB",
+      "params_b": 116.8,
+      "active_params_b": 5.1,
       "quantization": "FP4",
-      "description": "OpenAI GPT-OSS 120B model optimized for TensorRT-LLM",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
-    },
-    {
-      "id": "nvidia/Llama-3.1-8B-Instruct-FP8",
-      "name": "Llama 3.1 8B Instruct",
-      "size": "~8GB",
-      "quantization": "FP8",
-      "description": "Meta Llama 3.1 8B instruction-tuned model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
-    },
-    {
-      "id": "nvidia/Llama-3.1-8B-Instruct-FP4",
-      "name": "Llama 3.1 8B Instruct",
-      "size": "~4GB",
-      "quantization": "FP4",
-      "description": "Meta Llama 3.1 8B instruction-tuned model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
-    },
-    {
-      "id": "nvidia/Llama-3.3-70B-Instruct-FP4",
-      "name": "Llama 3.3 70B Instruct",
-      "size": "~35GB",
-      "quantization": "FP4",
-      "description": "Meta Llama 3.3 70B instruction-tuned model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "context_length": 131072,
+      "description": "OpenAI GPT-OSS 120B. Harmony format with analysis channel.",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "gptoss",
+      "tool_use": true,
+      "stop_tokens": [
+        "<|return|>",
+        "<|call|>"
+      ],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5-FP8",
       "name": "Llama 3.3 Nemotron Super 49B",
-      "size": "~49GB",
+      "params_b": 50.0,
+      "active_params_b": null,
       "quantization": "FP8",
+      "context_length": 131072,
       "description": "NVIDIA Nemotron variant of Llama 3.3",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "nvidia-open",
+      "gated": false
+    },
+    {
+      "id": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5-NVFP4",
+      "name": "Llama 3.3 Nemotron Super 49B",
+      "params_b": 50.0,
+      "active_params_b": null,
+      "quantization": "NVFP4",
+      "context_length": 131072,
+      "description": "NVIDIA Nemotron variant of Llama 3.3, NVFP4 quantized",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "nvidia-open",
+      "gated": false
+    },
+    {
+      "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4",
+      "name": "Nemotron 3 Nano 30B-A3B",
+      "params_b": 30.0,
+      "active_params_b": 3.5,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "NVIDIA Nemotron 3 Nano MoE (30B total, 3B active params)",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "nvidia-open",
+      "gated": false
+    },
+    {
+      "id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2-NVFP4",
+      "name": "Nemotron Nano 9B v2",
+      "params_b": 9.0,
+      "active_params_b": null,
+      "quantization": "NVFP4",
+      "context_length": 131072,
+      "description": "NVIDIA Nemotron Nano 9B v2, code and math focused",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "nvidia-open",
+      "gated": false
     },
     {
       "id": "nvidia/Llama-4-Scout-17B-16E-Instruct-FP4",
       "name": "Llama 4 Scout 17B-16E Instruct",
-      "size": "~9GB",
+      "params_b": 109.0,
+      "active_params_b": 17.0,
       "quantization": "FP4",
-      "description": "Meta Llama 4 Scout model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "context_length": 10485760,
+      "description": "Meta Llama 4 Scout MoE model",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "llama-4",
+      "gated": true
     },
     {
       "id": "nvidia/Qwen3-8B-FP8",
       "name": "Qwen3 8B",
-      "size": "~8GB",
+      "params_b": 8.2,
+      "active_params_b": null,
       "quantization": "FP8",
+      "context_length": 131072,
       "description": "Alibaba Qwen3 8B model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Qwen3-8B-FP4",
       "name": "Qwen3 8B",
-      "size": "~4GB",
+      "params_b": 8.2,
+      "active_params_b": null,
       "quantization": "FP4",
+      "context_length": 131072,
       "description": "Alibaba Qwen3 8B model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Qwen3-14B-FP8",
       "name": "Qwen3 14B",
-      "size": "~14GB",
+      "params_b": 14.8,
+      "active_params_b": null,
       "quantization": "FP8",
+      "context_length": 131072,
       "description": "Alibaba Qwen3 14B model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Qwen3-14B-FP4",
       "name": "Qwen3 14B",
-      "size": "~7GB",
+      "params_b": 14.8,
+      "active_params_b": null,
       "quantization": "FP4",
+      "context_length": 131072,
       "description": "Alibaba Qwen3 14B model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Qwen3-32B-FP4",
       "name": "Qwen3 32B",
-      "size": "~16GB",
+      "params_b": 32.5,
+      "active_params_b": null,
       "quantization": "FP4",
+      "context_length": 131072,
       "description": "Alibaba Qwen3 32B model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Qwen3-30B-A3B-FP4",
       "name": "Qwen3 30B-A3B",
-      "size": "~15GB",
+      "params_b": 30.5,
+      "active_params_b": 3.3,
       "quantization": "FP4",
-      "description": "Alibaba Qwen3 30B-A3B model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "context_length": 131072,
+      "description": "Alibaba Qwen3 30B-A3B MoE model",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Qwen3-235B-A22B-FP4",
       "name": "Qwen3 235B-A22B",
-      "size": "~120GB",
+      "params_b": 235.0,
+      "active_params_b": 22.0,
       "quantization": "FP4",
-      "description": "Alibaba Qwen3 235B-A22B large model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "context_length": 131072,
+      "description": "Alibaba Qwen3 235B-A22B large MoE model",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "nvidia/Gemma-4-31B-IT-NVFP4",
+      "name": "Gemma 4 31B IT",
+      "params_b": 30.7,
+      "active_params_b": null,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "Google Gemma 4 31B instruction-tuned with extended thinking",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "gemma4",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Qwen2.5-VL-7B-Instruct-FP8",
       "name": "Qwen2.5 VL 7B Instruct",
-      "size": "~7GB",
+      "params_b": 7.0,
+      "active_params_b": null,
       "quantization": "FP8",
+      "context_length": 32768,
       "description": "Alibaba Qwen2.5 Vision-Language model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Qwen2.5-VL-7B-Instruct-FP4",
       "name": "Qwen2.5 VL 7B Instruct",
-      "size": "~4GB",
+      "params_b": 7.0,
+      "active_params_b": null,
       "quantization": "FP4",
+      "context_length": 32768,
       "description": "Alibaba Qwen2.5 Vision-Language model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "nvidia/Phi-4-multimodal-instruct-FP8",
       "name": "Phi-4 Multimodal Instruct",
-      "size": "~6GB",
+      "params_b": 5.6,
+      "active_params_b": null,
       "quantization": "FP8",
+      "context_length": 131072,
       "description": "Microsoft Phi-4 multimodal instruction-tuned model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
     },
     {
       "id": "nvidia/Phi-4-multimodal-instruct-FP4",
       "name": "Phi-4 Multimodal Instruct",
-      "size": "~3GB",
+      "params_b": 5.6,
+      "active_params_b": null,
       "quantization": "FP4",
+      "context_length": 131072,
       "description": "Microsoft Phi-4 multimodal instruction-tuned model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
     },
     {
       "id": "nvidia/Phi-4-reasoning-plus-FP8",
       "name": "Phi-4 Reasoning Plus",
-      "size": "~6GB",
+      "params_b": 14.7,
+      "active_params_b": null,
       "quantization": "FP8",
+      "context_length": 65536,
       "description": "Microsoft Phi-4 reasoning-focused model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
     },
     {
       "id": "nvidia/Phi-4-reasoning-plus-FP4",
       "name": "Phi-4 Reasoning Plus",
-      "size": "~3GB",
+      "params_b": 14.7,
+      "active_params_b": null,
       "quantization": "FP4",
+      "context_length": 65536,
       "description": "Microsoft Phi-4 reasoning-focused model",
-      "server_type": ["tensorrt-llm"],
-      "task": "text-generation"
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
     },
     {
-      "id": "unsloth/Qwen3-30B-A3B",
-      "name": "Qwen3 30B-A3B (Unsloth)",
-      "size": "~60GB",
-      "quantization": "BF16",
-      "description": "Qwen3 30B MoE model (3B active params) for QLoRA fine-tuning. Supports GGUF export to Ollama.",
-      "server_type": ["unsloth"],
-      "task": "text-generation"
+      "id": "unsloth/Qwen3.5-0.8B-GGUF",
+      "name": "Qwen 3.5 0.8B (GGUF/Ollama)",
+      "params_b": 0.8,
+      "active_params_b": null,
+      "quantization": "Q4_K_M",
+      "context_length": 262144,
+      "description": "Qwen 3.5 0.8B ultra-light model. 262K context, 201 languages. Apache 2.0.",
+      "server_type": [
+        "ollama"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "reasoning_format": "qwen3",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
-      "id": "unsloth/Llama-3.3-70B-Instruct",
-      "name": "Llama 3.3 70B Instruct (Unsloth)",
-      "size": "~140GB",
-      "quantization": "BF16",
-      "description": "Meta Llama 3.3 70B for QLoRA fine-tuning. Supports GGUF export to Ollama.",
-      "server_type": ["unsloth"],
-      "task": "text-generation"
-    },
-    {
-      "id": "nomic-ai/nomic-embed-text-v1.5",
-      "name": "Nomic Embed Text v1.5",
-      "size": "~550MB",
-      "quantization": "FP16",
-      "description": "Nomic's embedding model with 8192 token context and Matryoshka embedding support (256, 512, 768 dimensions). Apache 2.0 license.",
-      "server_type": ["text-embeddings"],
-      "task": "feature-extraction"
-    },
-    {
-      "id": "BAAI/bge-base-en-v1.5",
-      "name": "BGE Base English v1.5",
-      "size": "~440MB",
-      "quantization": "FP16",
-      "description": "BAAI's BGE base model. 768 dimensions, 512 token context. Top performer on MTEB benchmark. MIT license.",
-      "server_type": ["text-embeddings"],
-      "task": "feature-extraction"
-    },
-    {
-      "id": "BAAI/bge-large-en-v1.5",
-      "name": "BGE Large English v1.5",
-      "size": "~1.3GB",
-      "quantization": "FP16",
-      "description": "BAAI's BGE large model. 1024 dimensions, 512 token context. Higher quality than base. MIT license.",
-      "server_type": ["text-embeddings"],
-      "task": "feature-extraction"
-    },
-    {
-      "id": "Alibaba-NLP/gte-large-en-v1.5",
-      "name": "GTE Large English v1.5",
-      "size": "~1.6GB",
-      "quantization": "FP16",
-      "description": "Alibaba's GTE large model. 1024 dimensions, 8192 token context. State-of-the-art on MTEB. Apache 2.0 license.",
-      "server_type": ["text-embeddings"],
-      "task": "feature-extraction"
-    },
-    {
-      "id": "jinaai/jina-embeddings-v2-base-code",
-      "name": "Jina Code Embeddings v2",
-      "size": "~560MB",
-      "quantization": "FP16",
-      "description": "Jina's code embedding model. 768 dimensions, 8192 token context. Trained on code and documentation. Apache 2.0 license.",
-      "server_type": ["text-embeddings"],
-      "task": "feature-extraction"
-    },
-    {
-      "id": "Qwen/Qwen3-Embedding-0.6B",
-      "name": "Qwen3 Embedding 0.6B",
-      "size": "~1.2GB",
-      "quantization": "BF16",
-      "description": "Alibaba Qwen3 embedding model (0.6B). 1024 dimensions, 8192 token context. 100+ languages. TEI-native (Qwen3 architecture). Apache 2.0 license.",
-      "server_type": ["text-embeddings"],
-      "task": "feature-extraction"
-    },
-    {
-      "id": "Qwen/Qwen3-Embedding-4B",
-      "name": "Qwen3 Embedding 4B",
-      "size": "~8GB",
-      "quantization": "BF16",
-      "description": "Alibaba Qwen3 embedding model (4B). 2560 dimensions, 8192 token context. 100+ languages. TEI-native (Qwen3 architecture). Top MTEB scores. Apache 2.0 license.",
-      "server_type": ["text-embeddings"],
-      "task": "feature-extraction"
+      "id": "unsloth/Qwen3.5-2B-GGUF",
+      "name": "Qwen 3.5 2B (GGUF/Ollama)",
+      "params_b": 2.0,
+      "active_params_b": null,
+      "quantization": "Q4_K_M",
+      "context_length": 262144,
+      "description": "Qwen 3.5 2B light model. 262K context, 201 languages. Apache 2.0.",
+      "server_type": [
+        "ollama"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "unsloth/Qwen3.5-4B-GGUF",
       "name": "Qwen 3.5 4B (GGUF/Ollama)",
-      "size": "2.74GB",
+      "params_b": 4.7,
+      "active_params_b": null,
       "quantization": "Q4_K_M",
+      "context_length": 262144,
       "description": "Qwen 3.5 4B for structured extraction (NER/POS). 262K context, 201 languages. Apache 2.0.",
-      "server_type": ["ollama"],
+      "server_type": [
+        "ollama"
+      ],
       "task": "text-generation",
-      "allow_patterns": ["*Q4_K_M.gguf", "README.md"]
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "unsloth/Qwen3.5-9B-GGUF",
+      "name": "Qwen 3.5 9B (GGUF/Ollama)",
+      "params_b": 9.7,
+      "active_params_b": null,
+      "quantization": "Q4_K_M",
+      "context_length": 262144,
+      "description": "Qwen 3.5 9B general-purpose model. 262K context, 201 languages. Apache 2.0.",
+      "server_type": [
+        "ollama"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "unsloth/Qwen3.5-27B-GGUF",
       "name": "Qwen 3.5 27B (GGUF/Ollama)",
-      "size": "16.7GB",
+      "params_b": 27.0,
+      "active_params_b": null,
       "quantization": "Q4_K_M",
+      "context_length": 262144,
       "description": "Qwen 3.5 27B dense model for translation. 262K context, 201 languages. Apache 2.0.",
-      "server_type": ["ollama"],
+      "server_type": [
+        "ollama"
+      ],
       "task": "text-generation",
-      "allow_patterns": ["*Q4_K_M.gguf", "README.md"]
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     },
     {
       "id": "unsloth/gemma-4-26B-A4B-it-GGUF",
       "name": "Gemma 4 26B-A4B Instruct (GGUF/Ollama)",
-      "size": "16.9GB",
+      "params_b": 26.5,
+      "active_params_b": 4.0,
       "quantization": "Q4_K_M",
+      "context_length": 262144,
       "description": "Google Gemma 4 26B MoE (4B active). 256K context. 140+ languages. Gemma license.",
-      "server_type": ["ollama"],
+      "server_type": [
+        "ollama"
+      ],
       "task": "text-generation",
-      "allow_patterns": ["*Q4_K_M.gguf", "README.md"]
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "reasoning_format": "gemma4",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF",
+      "name": "DeepSeek R1 Distill Qwen 7B (GGUF/Ollama)",
+      "params_b": 7.6,
+      "active_params_b": null,
+      "quantization": "Q4_K_M",
+      "context_length": 131072,
+      "description": "DeepSeek R1 reasoning distilled into Qwen 7B. Strong math and coding. MIT license.",
+      "server_type": [
+        "ollama"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "reasoning_format": "deepseek_r1",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
+    },
+    {
+      "id": "unsloth/gpt-oss-20b-GGUF",
+      "name": "GPT-OSS 20B (GGUF/Ollama)",
+      "params_b": 20.9,
+      "active_params_b": 3.6,
+      "quantization": "Q4_K_M",
+      "context_length": 131072,
+      "description": "OpenAI GPT-OSS 20B (21B MoE, 3.6B active). Harmony format. MIT license.",
+      "server_type": [
+        "ollama"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "reasoning_format": "gptoss",
+      "tool_use": true,
+      "stop_tokens": [
+        "<|return|>",
+        "<|call|>"
+      ],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "nomic-ai/nomic-embed-text-v1.5",
+      "name": "Nomic Embed Text v1.5",
+      "params_b": 0.1,
+      "active_params_b": null,
+      "quantization": "FP16",
+      "context_length": 8192,
+      "description": "Nomic's embedding model with 8192 token context and Matryoshka embedding support (256, 512, 768 dimensions). Apache 2.0 license.",
+      "server_type": [
+        "text-embeddings"
+      ],
+      "task": "feature-extraction",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "BAAI/bge-base-en-v1.5",
+      "name": "BGE Base English v1.5",
+      "params_b": 0.1,
+      "active_params_b": null,
+      "quantization": "FP16",
+      "context_length": 512,
+      "description": "BAAI's BGE base model. 768 dimensions, 512 token context. Top performer on MTEB benchmark. MIT license.",
+      "server_type": [
+        "text-embeddings"
+      ],
+      "task": "feature-extraction",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
+    },
+    {
+      "id": "BAAI/bge-large-en-v1.5",
+      "name": "BGE Large English v1.5",
+      "params_b": 0.3,
+      "active_params_b": null,
+      "quantization": "FP16",
+      "context_length": 512,
+      "description": "BAAI's BGE large model. 1024 dimensions, 512 token context. Higher quality than base. MIT license.",
+      "server_type": [
+        "text-embeddings"
+      ],
+      "task": "feature-extraction",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
+    },
+    {
+      "id": "Alibaba-NLP/gte-large-en-v1.5",
+      "name": "GTE Large English v1.5",
+      "params_b": 0.4,
+      "active_params_b": null,
+      "quantization": "FP16",
+      "context_length": 8192,
+      "description": "Alibaba's GTE large model. 1024 dimensions, 8192 token context. State-of-the-art on MTEB. Apache 2.0 license.",
+      "server_type": [
+        "text-embeddings"
+      ],
+      "task": "feature-extraction",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "jinaai/jina-embeddings-v2-base-code",
+      "name": "Jina Code Embeddings v2",
+      "params_b": 0.2,
+      "active_params_b": null,
+      "quantization": "FP16",
+      "context_length": 8192,
+      "description": "Jina's code embedding model. 768 dimensions, 8192 token context. Trained on code and documentation. Apache 2.0 license.",
+      "server_type": [
+        "text-embeddings"
+      ],
+      "task": "feature-extraction",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "Qwen/Qwen3-Embedding-0.6B",
+      "name": "Qwen3 Embedding 0.6B",
+      "params_b": 0.6,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 8192,
+      "description": "Alibaba Qwen3 embedding model (0.6B). 1024 dimensions, 8192 token context. 100+ languages. TEI-native (Qwen3 architecture). Apache 2.0 license.",
+      "server_type": [
+        "text-embeddings"
+      ],
+      "task": "feature-extraction",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "Qwen/Qwen3-Embedding-4B",
+      "name": "Qwen3 Embedding 4B",
+      "params_b": 4.0,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 8192,
+      "description": "Alibaba Qwen3 embedding model (4B). 2560 dimensions, 8192 token context. 100+ languages. TEI-native (Qwen3 architecture). Top MTEB scores. Apache 2.0 license.",
+      "server_type": [
+        "text-embeddings"
+      ],
+      "task": "feature-extraction",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "unsloth/Qwen3-30B-A3B",
+      "name": "Qwen3 30B-A3B (Unsloth)",
+      "params_b": 30.5,
+      "active_params_b": 3.3,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "Qwen3 30B MoE model (3B active params) for QLoRA fine-tuning. Supports GGUF export to Ollama.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "unsloth/Qwen3.5-4B",
+      "name": "Qwen 3.5 4B (Unsloth)",
+      "params_b": 4.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.5 4B for QLoRA fine-tuning. 262K context. Supports GGUF export. Apache 2.0.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "unsloth/Qwen3.5-9B",
+      "name": "Qwen 3.5 9B (Unsloth)",
+      "params_b": 9.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.5 9B for QLoRA fine-tuning. 262K context. Supports GGUF export. Apache 2.0.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "unsloth/gemma-4-26B-A4B",
+      "name": "Gemma 4 26B-A4B (Unsloth)",
+      "params_b": 26.5,
+      "active_params_b": 4.0,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Google Gemma 4 26B MoE (4B active) for QLoRA fine-tuning. Supports GGUF export. Gemma license.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "gemma4",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "unsloth/DeepSeek-R1-Distill-Qwen-7B",
+      "name": "DeepSeek R1 Distill Qwen 7B (Unsloth)",
+      "params_b": 7.6,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "DeepSeek R1 distilled into Qwen 7B for QLoRA fine-tuning. Reasoning focused. MIT license.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "deepseek_r1",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
+    },
+    {
+      "id": "unsloth/gpt-oss-20b",
+      "name": "GPT-OSS 20B (Unsloth)",
+      "params_b": 20.9,
+      "active_params_b": 3.6,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "OpenAI GPT-OSS 20B (21B MoE) for QLoRA fine-tuning. Harmony format. Supports GGUF export. MIT license.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "gptoss",
+      "tool_use": true,
+      "stop_tokens": [
+        "<|return|>",
+        "<|call|>"
+      ],
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
+      "id": "microsoft/bitnet-b1.58-2B-4T",
+      "name": "BitNet b1.58 2B",
+      "params_b": 2.0,
+      "active_params_b": null,
+      "quantization": "1.58-bit",
+      "context_length": 4096,
+      "description": "Microsoft BitNet 2B natively trained at 1.58-bit ({-1, 0, +1} weights). Requires bitnet.cpp runtime. MIT license.",
+      "server_type": [
+        "bitnet"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false
+    },
+    {
+      "id": "tiiuae/Falcon-E-1B-Instruct",
+      "name": "Falcon-Edge 1B Instruct",
+      "params_b": 1.8,
+      "active_params_b": null,
+      "quantization": "1.58-bit",
+      "context_length": 32768,
+      "description": "TII Falcon-Edge 1B natively trained at 1.58-bit. Instruction-tuned. Apache 2.0.",
+      "server_type": [
+        "bitnet"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "falcon",
+      "gated": false
+    },
+    {
+      "id": "tiiuae/Falcon-E-3B-Instruct",
+      "name": "Falcon-Edge 3B Instruct",
+      "params_b": 3.0,
+      "active_params_b": null,
+      "quantization": "1.58-bit",
+      "context_length": 32768,
+      "description": "TII Falcon-Edge 3B natively trained at 1.58-bit. Instruction-tuned. Apache 2.0.",
+      "server_type": [
+        "bitnet"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "falcon",
+      "gated": false
+    },
+    {
+      "id": "tiiuae/Falcon3-10B-Instruct-1.58bit",
+      "name": "Falcon3 10B Instruct 1.58-bit",
+      "params_b": 10.0,
+      "active_params_b": null,
+      "quantization": "1.58-bit",
+      "context_length": 32768,
+      "description": "TII Falcon3 10B natively trained at 1.58-bit. Instruction-tuned.",
+      "server_type": [
+        "bitnet"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "falcon",
+      "gated": false
+    },
+    {
+      "id": "prism-ml/Bonsai-8B-gguf",
+      "name": "Bonsai 8B",
+      "params_b": 8.2,
+      "active_params_b": null,
+      "quantization": "1-bit",
+      "context_length": 65536,
+      "description": "Prism ML Bonsai 8B (Qwen3-based) natively trained at 1-bit. GGUF format for llama.cpp.",
+      "server_type": [
+        "bitnet"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false
     }
   ]
 }
