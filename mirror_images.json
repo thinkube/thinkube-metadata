@@ -256,16 +256,16 @@
       "description": "Kubernetes CSI external resizer sidecar"
     },
     {
-      "source": "nvcr.io/nvidia/tensorrt-llm/release:spark-single-gpu-dev",
-      "destination_name": "tensorrt-llm-spark:latest",
+      "source": "nvcr.io/nvidia/tensorrt-llm/release:1.3.0rc13",
+      "destination_name": "tensorrt-llm-spark:1.3.0rc13",
       "architectures": ["arm64"],
-      "description": "NVIDIA TensorRT-LLM for DGX Spark (arm64) - GPT-OSS/Qwen MXFP4, trtllm-serve, FA2"
+      "description": "NVIDIA TensorRT-LLM 1.3.0rc13 for DGX Spark (arm64) - Nemotron-H NVFP4, trtllm-serve, FA2"
     },
     {
-      "source": "nvcr.io/nvidia/tensorrt-llm/release:latest",
-      "destination_name": "tensorrt-llm:latest",
+      "source": "nvcr.io/nvidia/tensorrt-llm/release:1.3.0rc13",
+      "destination_name": "tensorrt-llm:1.3.0rc13",
       "architectures": ["amd64"],
-      "description": "NVIDIA TensorRT-LLM standard release (amd64) - trtllm-serve, FA2"
+      "description": "NVIDIA TensorRT-LLM 1.3.0rc13 standard release (amd64) - trtllm-serve, FA2"
     },
     {
       "source": "docker.io/nvidia/cuda:13.0.0-base-ubuntu24.04",
