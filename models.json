@@ -96,7 +96,7 @@
         "tensorrt-llm"
       ],
       "task": "text-generation",
-      "reasoning_format": null,
+      "reasoning_format": "nano-v3",
       "tool_use": true,
       "stop_tokens": [],
       "license": "nvidia-open",
@@ -115,7 +115,7 @@
         "tensorrt-llm"
       ],
       "task": "text-generation",
-      "reasoning_format": null,
+      "reasoning_format": "nano-v3",
       "tool_use": true,
       "stop_tokens": [],
       "license": "nvidia-open",
