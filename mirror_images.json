@@ -122,7 +122,7 @@
     },
     {
       "source": "gcr.io/kaniko-project/executor:v1.24.0",
-      "destination_name": "kaniko-executor:v1.24.0",
+      "destination_name": "kaniko-executor:latest",
       "description": "Kaniko executor v1.24.0 from Google - pinned version for reproducible builds"
     },
     {
