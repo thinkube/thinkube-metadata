@@ -9,7 +9,8 @@
     "extensions": "VS Code extensions",
     "jupyter-extensions": "JupyterLab extensions",
     "mcp": "MCP servers",
-    "misc": "Miscellaneous tools and utilities"
+    "misc": "Miscellaneous tools and utilities",
+    "packages": "Python packages distributed via DevPI"
   },
   "repositories": [
     {
@@ -309,6 +310,17 @@
       "clone_for_development": false,
       "github_url": "https://github.com/thinkube/thinkube-harbor-arm64",
       "ssh_url": "git@github.com:thinkube/thinkube-harbor-arm64.git"
+    },
+    {
+      "name": "tk-llm",
+      "org": "thinkube",
+      "full_name": "thinkube/tk-llm",
+      "description": "Python SDK for the thinkube LLM gateway",
+      "type": "library",
+      "category": "packages",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tk-llm",
+      "ssh_url": "git@github.com:thinkube/tk-llm.git"
     }
   ]
 }
