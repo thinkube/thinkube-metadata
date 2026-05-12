@@ -78,9 +78,9 @@
       "description": "PgAdmin 4 9.14.0 - PostgreSQL management tool from Docker Hub"
     },
     {
-      "source": "docker.io/qdrant/qdrant:v1.15.4",
-      "destination_name": "qdrant:v1.15.4",
-      "description": "Qdrant v1.15.4 - vector database"
+      "source": "docker.io/qdrant/qdrant:v1.18.0",
+      "destination_name": "qdrant:v1.18.0",
+      "description": "Qdrant v1.18.0 - vector database"
     },
     {
       "source": "docker.io/semitechnologies/weaviate:1.36.8",
