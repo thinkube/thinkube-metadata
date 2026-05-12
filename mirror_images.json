@@ -288,6 +288,12 @@
       "description": "NVIDIA PyTorch 25.11 - NGC optimized framework for GPU compute"
     },
     {
+      "source": "ghcr.io/huggingface/text-embeddings-inference:86-latest",
+      "destination_name": "text-embeddings-inference:86-latest",
+      "architectures": ["amd64"],
+      "description": "HuggingFace TEI with flash attention for Ampere GPUs (sm_86, amd64)"
+    },
+    {
       "source": "ghcr.io/huggingface/text-embeddings-inference:121-latest",
       "destination_name": "text-embeddings-inference:121-latest",
       "architectures": ["arm64"],
