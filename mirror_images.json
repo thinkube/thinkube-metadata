@@ -201,14 +201,14 @@
       "description": "OpenSearch Dashboards 2.x visualization UI (Apache-2.0)"
     },
     {
-      "source": "docker.io/langfuse/langfuse:3.113.0",
-      "destination_name": "langfuse:3.113.0",
-      "description": "Langfuse LLM observability platform 3.113.0 from Docker Hub"
+      "source": "docker.io/langfuse/langfuse:3.173.0",
+      "destination_name": "langfuse:3.173.0",
+      "description": "Langfuse LLM observability platform 3.173.0 from Docker Hub"
     },
     {
-      "source": "docker.io/langfuse/langfuse-worker:3.113.0",
-      "destination_name": "langfuse-worker:3.113.0",
-      "description": "Langfuse worker 3.113.0 - processes events from Redis queue to ClickHouse"
+      "source": "docker.io/langfuse/langfuse-worker:3.173.0",
+      "destination_name": "langfuse-worker:3.173.0",
+      "description": "Langfuse worker 3.173.0 - processes events from Redis queue to ClickHouse"
     },
     {
       "source": "docker.io/ollama/ollama:0.21.1",
