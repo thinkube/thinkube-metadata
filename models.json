@@ -598,6 +598,25 @@
       "serving_name": "QuantTrio/Qwen3.6-27B-AWQ"
     },
     {
+      "id": "unsloth/Qwen3.6-27B-NVFP4",
+      "name": "Qwen 3.6 27B NVFP4 (Blackwell)",
+      "params_b": 27.0,
+      "active_params_b": null,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "Qwen 3.6 27B NVFP4 multimodal. Native Blackwell quantization, ~32 tok/s on DGX Spark. Vision + text + tool calling.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "unsloth/Qwen3.6-27B-NVFP4"
+    },
+    {
       "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
       "name": "DeepSeek R1 Distill Qwen 7B",
       "params_b": 7.6,
