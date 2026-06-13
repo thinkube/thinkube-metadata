@@ -614,6 +614,7 @@
       "stop_tokens": [],
       "license": "apache-2.0",
       "gated": false,
+      "speculative_config": "{\"method\": \"mtp\", \"num_speculative_tokens\": 1}",
       "serving_name": "unsloth/Qwen3.6-27B-NVFP4"
     },
     {
