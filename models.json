@@ -619,6 +619,18 @@
       "serving_name": "unsloth/Qwen3.6-27B-NVFP4"
     },
     {
+      "id": "z-lab/Qwen3.6-27B-DFlash",
+      "name": "Qwen3.6-27B DFlash drafter",
+      "role": "drafter",
+      "params_b": 2.0,
+      "quantization": "BF16",
+      "description": "DFlash block-diffusion speculative drafter for Qwen3.6-27B. Auxiliary model: runs inside the target's vLLM via --speculative-config, never served standalone.",
+      "server_type": [],
+      "task": "text-generation",
+      "license": "apache-2.0",
+      "gated": false
+    },
+    {
       "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
       "name": "DeepSeek R1 Distill Qwen 7B",
       "params_b": 7.6,
