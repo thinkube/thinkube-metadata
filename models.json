@@ -628,7 +628,7 @@
       "server_type": [],
       "task": "text-generation",
       "license": "apache-2.0",
-      "gated": false
+      "gated": true
     },
     {
       "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
