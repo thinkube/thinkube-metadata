@@ -452,7 +452,7 @@
       "active_params_b": 3.3,
       "quantization": "BF16",
       "context_length": 131072,
-      "description": "Qwen 3 30B MoE (3.3B active). Best efficiency/quality for DGX Spark. Apache 2.0.",
+      "description": "Qwen 3 30B MoE (3.3B active). 128K context, thinking mode, tool use. Apache 2.0.",
       "server_type": [
         "vllm"
       ],
@@ -604,7 +604,7 @@
       "active_params_b": null,
       "quantization": "NVFP4",
       "context_length": 262144,
-      "description": "Qwen 3.6 27B NVFP4 multimodal. Native Blackwell quantization, ~32 tok/s on DGX Spark. Vision + text + tool calling.",
+      "description": "Qwen 3.6 27B NVFP4 multimodal. Native Blackwell quantization for DGX Spark. Vision + text + tool calling.",
       "server_type": [
         "vllm"
       ],
@@ -941,7 +941,7 @@
       "active_params_b": null,
       "quantization": "FP16",
       "context_length": 512,
-      "description": "BAAI's BGE base model. 768 dimensions, 512 token context. Top performer on MTEB benchmark. MIT license.",
+      "description": "BAAI's BGE base model. 768 dimensions, 512 token context. MIT license.",
       "server_type": [
         "text-embeddings"
       ],
@@ -960,7 +960,7 @@
       "active_params_b": null,
       "quantization": "FP16",
       "context_length": 512,
-      "description": "BAAI's BGE large model. 1024 dimensions, 512 token context. Higher quality than base. MIT license.",
+      "description": "BAAI's BGE large model. 1024 dimensions, 512 token context. MIT license.",
       "server_type": [
         "text-embeddings"
       ],
@@ -979,7 +979,7 @@
       "active_params_b": null,
       "quantization": "FP16",
       "context_length": 8192,
-      "description": "Alibaba's GTE large model. 1024 dimensions, 8192 token context. State-of-the-art on MTEB. Apache 2.0 license.",
+      "description": "Alibaba's GTE large model. 1024 dimensions, 8192 token context. Apache 2.0 license.",
       "server_type": [
         "text-embeddings"
       ],
@@ -1036,7 +1036,7 @@
       "active_params_b": null,
       "quantization": "BF16",
       "context_length": 8192,
-      "description": "Alibaba Qwen3 embedding model (4B). 2560 dimensions, 8192 token context. 100+ languages. TEI-native (Qwen3 architecture). Top MTEB scores. Apache 2.0 license.",
+      "description": "Alibaba Qwen3 embedding model (4B). 2560 dimensions, 8192 token context. 100+ languages. TEI-native (Qwen3 architecture). Apache 2.0 license.",
       "server_type": [
         "text-embeddings"
       ],
