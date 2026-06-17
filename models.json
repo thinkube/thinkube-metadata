@@ -614,7 +614,7 @@
       "stop_tokens": [],
       "license": "apache-2.0",
       "gated": false,
-      "speculative_config": "{\"method\": \"dflash\", \"model\": \"z-lab/Qwen3.6-27B-DFlash\", \"num_speculative_tokens\": 15}",
+      "speculative_config": "{\"method\": \"dflash\", \"model\": \"z-lab/Qwen3.6-27B-DFlash\", \"num_speculative_tokens\": 8}",
       "enforce_eager": false,
       "serving_name": "unsloth/Qwen3.6-27B-NVFP4"
     },
