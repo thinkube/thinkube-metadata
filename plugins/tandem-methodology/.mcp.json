@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "thinkube-kanban": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp/kanban.js"]
+    }
+  }
+}
