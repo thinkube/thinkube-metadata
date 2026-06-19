@@ -1,0 +1,14 @@
+{
+  "name": "thinkube",
+  "owner": { "name": "Thinkube" },
+  "metadata": {
+    "description": "Official Thinkube Claude Code marketplace — thinkube-branded plugins (methodology, and more to come)."
+  },
+  "plugins": [
+    {
+      "name": "tandem-methodology",
+      "source": "./plugins/tandem-methodology",
+      "description": "Tandem pair-programming methodology: TEP→Spec→Slice skills, the explorer/reviewer/verifier subagents, and the ownership-guard hook."
+    }
+  ]
+}
