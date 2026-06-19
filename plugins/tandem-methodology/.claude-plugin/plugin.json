@@ -1,6 +1,6 @@
 {
   "name": "tandem-methodology",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Tandem methodology for Claude Code — the TEP→Spec→Slice skills (spec-prepare, slice, tep, board, retro, methodology-context, repo-conventions), the explorer/reviewer/verifier subagents, the ownership-guard hook, and the thinkube-kanban board MCP server.",
   "author": { "name": "Thinkube" },
   "homepage": "https://github.com/thinkube/thinkube-metadata",

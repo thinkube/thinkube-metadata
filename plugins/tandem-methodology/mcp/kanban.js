@@ -25220,7 +25220,7 @@ var BOARD_PARAM = {
 var TOOL_DEFS = [
   {
     name: "list_boards",
-    description: "Discover every Tandem board across the configured roots: repos whose board dir exists \u2014 either the central sidecar namespace `<board-root>/<container>/<rel>` (ADR-0008) or a legacy co-located `.thinkube/`. Returns each board's canonical id (home-relative path \u2014 the value to pass as `board` to the other tools), name, and absolute path, plus which board is this session's default. Linked git worktrees are omitted (they share their canonical repo's board \u2014 address them by that repo's id). The semantic location is part of the id (`apps/\u2026` = deployed app, `user-templates/\u2026` = template, `thinkube-platform/\u2026` = platform code).",
+    description: "Discover every Tandem board across the configured roots: repos whose board dir exists in the central sidecar namespace `<board-root>/<container>/<rel>` (ADR-0008). Returns each board's canonical id (home-relative path \u2014 the value to pass as `board` to the other tools), name, and absolute path, plus which board is this session's default. Linked git worktrees are omitted (they share their canonical repo's board \u2014 address them by that repo's id). The semantic location is part of the id (`apps/\u2026` = deployed app, `user-templates/\u2026` = template, `thinkube-platform/\u2026` = platform code).",
     inputSchema: {
       type: "object",
       properties: {},
@@ -25298,7 +25298,7 @@ var TOOL_DEFS = [
   },
   {
     name: "list_board",
-    description: "Current Tandem board, projected from the committed `.thinkube/specs/SP-{n}/SL-{m}.md` slice files. Returns the Ready / Doing / Done columns; each card carries its slice handle (`id`, e.g. `SP-3_SL-42`), title (`description`), and `specStale` / `specChange` (whether the parent Spec's requirements changed since the slice was last verified).",
+    description: "Current Tandem board, projected from the committed `specs/SP-{n}/SL-{m}.md` slice files (in the board's sidecar namespace). Returns the Ready / Doing / Done columns; each card carries its slice handle (`id`, e.g. `SP-3_SL-42`), title (`description`), and `specStale` / `specChange` (whether the parent Spec's requirements changed since the slice was last verified).",
     inputSchema: {
       type: "object",
       properties: { ...BOARD_PARAM },
@@ -26297,8 +26297,8 @@ var RESOURCE_DEFS = [
   },
   {
     uri: "thinkube://thinkube_file/{path}",
-    name: "A .thinkube file",
-    description: "Read a specific board markdown file from this session's own repo. Substitute `{path}` with the path relative to the board directory.",
+    name: "A board file",
+    description: "Read a specific board markdown file from this session's own repo. Substitute `{path}` with the path relative to the board directory (the sidecar namespace).",
     mimeType: "application/json"
   }
 ];
