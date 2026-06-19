@@ -25458,7 +25458,7 @@ var TOOL_DEFS = [
   },
   {
     name: "write_spec",
-    description: "Write a Spec's document at `specs/SP-{id}/spec.md` in the board (the sidecar namespace), creating it if absent. Replaces the markdown body; existing frontmatter (e.g. `implements:`, `accepted:`) is preserved. This is the board-aware write path for `/spec-prepare` \u2014 use it instead of a raw file write, which would land outside the board.",
+    description: "Write a Spec's document at `specs/SP-{id}/spec.md` in the board (the sidecar namespace), creating it if absent. Replaces the markdown body; existing frontmatter (e.g. `accepted:`) is preserved, and `implements:` can be set via its parameter. This is the board-aware write path for `/spec-prepare` \u2014 use it instead of a raw file write, which would land outside the board.",
     inputSchema: {
       type: "object",
       properties: {
@@ -25468,7 +25468,11 @@ var TOOL_DEFS = [
         },
         body: {
           type: "string",
-          description: "The full Spec markdown body (the `# title` heading + the four canonical sections). Frontmatter is managed separately and preserved."
+          description: "The full Spec markdown body (the `# title` heading + the four canonical sections)."
+        },
+        implements: {
+          type: "string",
+          description: "The TEP this Spec implements \u2014 a bare `TEP-<id>` (repo-local) or a qualified `<namespace>:TEP-<id>` (cross-board / umbrella project). Sets the `implements:` frontmatter (the TEP\u2194spec link + umbrella membership, which `promote_tep` rewrites). Omit to leave it unchanged; empty string clears it."
         },
         ...BOARD_PARAM
       },
@@ -25619,7 +25623,8 @@ async function dispatchTool(name, args, ctx, writeGate) {
       return writeSpec(
         store,
         typeof args.spec === "number" ? String(args.spec) : asString(args, "spec"),
-        asString(args, "body")
+        asString(args, "body"),
+        optString(args, "implements")
       );
     case "update_slice":
       writeGate(name);
@@ -26179,19 +26184,25 @@ async function uniqueSlug(store, spec, title) {
   while (taken.has(slug)) slug = `${base}-${i++}`;
   return slug;
 }
-async function writeSpec(store, spec, body) {
+async function writeSpec(store, spec, body, implementsRef) {
   const trimmed = body.trim();
   if (!trimmed) throw new Error("Spec body must not be empty.");
   const rel = store.pathForSpecDoc(spec);
   const existing = await store.getFile(rel);
-  const fm = existing?.frontmatter ?? {};
+  const fm = { ...existing?.frontmatter ?? {} };
+  if (implementsRef !== void 0) {
+    const v = implementsRef.trim();
+    if (v) fm.implements = v;
+    else delete fm.implements;
+  }
   await store.writeFile(rel, fm, `${trimmed}
 `);
   return {
     ok: true,
     spec,
     relativePath: rel,
-    created: existing === void 0
+    created: existing === void 0,
+    implements: fm.implements
   };
 }
 async function updateSlice(store, handle, body, tags) {
