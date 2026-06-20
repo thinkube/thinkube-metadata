@@ -25425,12 +25425,13 @@ var TOOL_DEFS = [
               execution: {
                 type: "string",
                 enum: ["serial", "mechanize", "fan-out"]
-              }
+              },
+              note: { type: "string" }
             },
             required: ["footprint", "execution"],
             additionalProperties: false
           },
-          description: "Execution-aware work units (SP-tgs8gb): each { footprint (files/objects it touches), depends_on?, execution: serial|mechanize|fan-out }. Uniform data-parallel work collapses to one `mechanize` unit; heterogeneous \u2192 `fan-out`; coupled \u2192 `serial`. The slice stays the validation envelope; work units are never independently gated."
+          description: "Execution-aware work units (SP-tgs8gb): each { footprint (files/objects it touches), depends_on?, execution: serial|mechanize|fan-out, note? (the unit's task text \u2014 self-describing, required in practice for fan-out) }. Uniform data-parallel work collapses to one `mechanize` unit; heterogeneous \u2192 `fan-out` (one per object, each with its `note`); coupled \u2192 `serial`. The slice stays the validation envelope; work units are never independently gated."
         },
         docs: {
           type: "string",
