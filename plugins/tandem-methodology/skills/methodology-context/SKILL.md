@@ -99,11 +99,11 @@ A Spec still being authored (no AC yet) is pre-board; its slices don't exist unt
 
 ## Quality gates (three; file checks + server-enforced)
 
-| Transition             | Gate                                                                                                                                                                                                                                               |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Slice → Ready          | The slice's parent Spec has a non-empty `## Acceptance Criteria`.                                                                                                                                                                                  |
-| Slice → Done           | Verifier green for the slice's change, and the AC it satisfies is checked on the Spec. **Reviewer + verifier both run inside this single gate** — no Review/Verify handoff columns.                                                                |
-| Spec acceptance → Done | The acceptance card reaches Done only when **every slice is Done, every AC box is checked, and a human-accept is recorded** (`accept_spec`). The MCP server **refuses** otherwise, naming the blocker — like `move_slice` refuses an unchecked AC. |
+| Transition             | Gate                                                                                                                                                                                                                                                                               |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Slice → Ready          | The slice's parent Spec has a non-empty `## Acceptance Criteria` **and every AC carries a certified `ac_verifications` entry** — `createSlice`'s `readyGate` refuses a Spec with any undeclared AC, naming the ordinal (the auditor in `/spec-prepare` emits the map; TEP-tgzx3p). |
+| Slice → Done           | Verifier green for the slice's change, and the AC it satisfies is checked on the Spec. **Reviewer + verifier both run inside this single gate** — no Review/Verify handoff columns.                                                                                                |
+| Spec acceptance → Done | The acceptance card reaches Done only when **every slice is Done, every AC box is checked, and a human-accept is recorded** (`accept_spec`). The MCP server **refuses** otherwise, naming the blocker — like `move_slice` refuses an unchecked AC.                                 |
 
 The slice **is** the per-slice verification boundary — "one green," automated. The **Spec** has one more, human gate on top: acceptance (below). (The old "≥1 comment" gate is gone: there is no second human to hand off to.)
 

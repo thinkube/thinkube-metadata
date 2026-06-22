@@ -1,4 +1,4 @@
-<!-- thinkube-methodology:start v0.0.3 -->
+<!-- thinkube-methodology:start v0.0.4 -->
 
 ## Tandem methodology
 
@@ -29,7 +29,8 @@ Subagents (this bundle):
 Quality gates (file checks, enforced by the kanban panel):
 
 - ACs are **AI-verified and verifiable before the gate they arm** — no human-executed ("the human checks in a fresh session") or deploy/merge-circular ACs; the human's only gate is acceptance. (TEP-tgnvkw)
-- → Ready: the slice's parent Spec has a non-empty `## Acceptance Criteria`.
+- **Every AC carries a certified `ac_verifications` entry before → Ready** — an AC-verifiability auditor (in `/spec-prepare`, re-run by `/slice` when ACs change) interrogates each criterion (actor / environment / availability-before-the-gate), certifies it `verifiable`, and emits its `{ run, env }`; a Spec reaches Ready **only if** every AC `1..N` is certified with a runnable entry — any `needs-reframe` or undeclared AC blocks the gate, naming the offending ordinal. (TEP-tgzx3p / SP-th1jtj)
+- → Ready: the slice's parent Spec has a non-empty `## Acceptance Criteria` **and** every AC carries a certified `ac_verifications` entry (above).
 - → Done: verifier green for the slice, and the AC it satisfies is checked on the Spec. (Reviewer + verifier both run in this one gate — no Review/Verify handoff.)
 - → Done (docs, TEP-tgh6iy): a slice carries a `docs:` obligation — `required` (the default for **user-facing** work: a feature, CLI, API, config surface, install/upgrade step, or template behavior a reader can observe) or `n/a` + a one-line `docs_reason`. A `docs: required` slice must have its docs updated before Done; `/pair-next` attests this with `move_slice … docs_done: true`. `/slice` stamps `docs:` per slice and the server rejects an `n/a` with no reason, so skipping docs is always visible and deliberate. The gate rolls out via `thinkube.kanban.docsGateMode`: **`advisory`** (default) lets the move through with a warning; **`blocking`** refuses an unsatisfied obligation. Docs live **with the code** (docs-with-code): the `.adoc` module ships in the same repo and commit as the change, aggregated into the site by the docs playbook.
 

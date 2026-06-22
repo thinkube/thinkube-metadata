@@ -176,9 +176,9 @@ var require_vscodeStub = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/nodes/identity.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/identity.js
 var require_identity = __commonJS({
-  "node_modules/yaml/dist/nodes/identity.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/identity.js"(exports2) {
     "use strict";
     var ALIAS = /* @__PURE__ */ Symbol.for("yaml.alias");
     var DOC = /* @__PURE__ */ Symbol.for("yaml.document");
@@ -233,9 +233,9 @@ var require_identity = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/visit.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/visit.js
 var require_visit = __commonJS({
-  "node_modules/yaml/dist/visit.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/visit.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var BREAK = /* @__PURE__ */ Symbol("break visit");
@@ -391,9 +391,9 @@ var require_visit = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/doc/directives.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/doc/directives.js
 var require_directives = __commonJS({
-  "node_modules/yaml/dist/doc/directives.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/doc/directives.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var visit = require_visit();
@@ -562,9 +562,9 @@ var require_directives = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/doc/anchors.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/doc/anchors.js
 var require_anchors = __commonJS({
-  "node_modules/yaml/dist/doc/anchors.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/doc/anchors.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var visit = require_visit();
@@ -632,9 +632,9 @@ var require_anchors = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/doc/applyReviver.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/doc/applyReviver.js
 var require_applyReviver = __commonJS({
-  "node_modules/yaml/dist/doc/applyReviver.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/doc/applyReviver.js"(exports2) {
     "use strict";
     function applyReviver(reviver, obj, key, val) {
       if (val && typeof val === "object") {
@@ -682,9 +682,9 @@ var require_applyReviver = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/nodes/toJS.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/toJS.js
 var require_toJS = __commonJS({
-  "node_modules/yaml/dist/nodes/toJS.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/toJS.js"(exports2) {
     "use strict";
     var identity = require_identity();
     function toJS(value, arg, ctx) {
@@ -712,9 +712,9 @@ var require_toJS = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/nodes/Node.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Node.js
 var require_Node = __commonJS({
-  "node_modules/yaml/dist/nodes/Node.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Node.js"(exports2) {
     "use strict";
     var applyReviver = require_applyReviver();
     var identity = require_identity();
@@ -753,9 +753,9 @@ var require_Node = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/nodes/Alias.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Alias.js
 var require_Alias = __commonJS({
-  "node_modules/yaml/dist/nodes/Alias.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Alias.js"(exports2) {
     "use strict";
     var anchors = require_anchors();
     var visit = require_visit();
@@ -869,9 +869,9 @@ var require_Alias = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/nodes/Scalar.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Scalar.js
 var require_Scalar = __commonJS({
-  "node_modules/yaml/dist/nodes/Scalar.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Scalar.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var Node = require_Node();
@@ -899,9 +899,9 @@ var require_Scalar = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/doc/createNode.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/doc/createNode.js
 var require_createNode = __commonJS({
-  "node_modules/yaml/dist/doc/createNode.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/doc/createNode.js"(exports2) {
     "use strict";
     var Alias = require_Alias();
     var identity = require_identity();
@@ -974,9 +974,9 @@ var require_createNode = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/nodes/Collection.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Collection.js
 var require_Collection = __commonJS({
-  "node_modules/yaml/dist/nodes/Collection.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Collection.js"(exports2) {
     "use strict";
     var createNode = require_createNode();
     var identity = require_identity();
@@ -1117,9 +1117,9 @@ var require_Collection = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/stringify/stringifyComment.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyComment.js
 var require_stringifyComment = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyComment.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyComment.js"(exports2) {
     "use strict";
     var stringifyComment = (str2) => str2.replace(/^(?!$)(?: $)?/gm, "#");
     function indentComment(comment, indent) {
@@ -1134,9 +1134,9 @@ var require_stringifyComment = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/stringify/foldFlowLines.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/stringify/foldFlowLines.js
 var require_foldFlowLines = __commonJS({
-  "node_modules/yaml/dist/stringify/foldFlowLines.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/stringify/foldFlowLines.js"(exports2) {
     "use strict";
     var FOLD_FLOW = "flow";
     var FOLD_BLOCK = "block";
@@ -1270,9 +1270,9 @@ ${indent}${text.slice(fold + 1, end2)}`;
   }
 });
 
-// node_modules/yaml/dist/stringify/stringifyString.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyString.js
 var require_stringifyString = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyString.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyString.js"(exports2) {
     "use strict";
     var Scalar = require_Scalar();
     var foldFlowLines = require_foldFlowLines();
@@ -1553,9 +1553,9 @@ ${indent}`);
   }
 });
 
-// node_modules/yaml/dist/stringify/stringify.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringify.js
 var require_stringify = __commonJS({
-  "node_modules/yaml/dist/stringify/stringify.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringify.js"(exports2) {
     "use strict";
     var anchors = require_anchors();
     var identity = require_identity();
@@ -1677,9 +1677,9 @@ ${ctx.indent}${str2}`;
   }
 });
 
-// node_modules/yaml/dist/stringify/stringifyPair.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyPair.js
 var require_stringifyPair = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyPair.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyPair.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var Scalar = require_Scalar();
@@ -1810,9 +1810,9 @@ ${ctx.indent}`;
   }
 });
 
-// node_modules/yaml/dist/log.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/log.js
 var require_log = __commonJS({
-  "node_modules/yaml/dist/log.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/log.js"(exports2) {
     "use strict";
     var node_process = require("process");
     function debug(logLevel, ...messages) {
@@ -1832,9 +1832,9 @@ var require_log = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/merge.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/merge.js
 var require_merge = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/merge.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/merge.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var Scalar = require_Scalar();
@@ -1892,9 +1892,9 @@ var require_merge = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/nodes/addPairToJSMap.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/addPairToJSMap.js
 var require_addPairToJSMap = __commonJS({
-  "node_modules/yaml/dist/nodes/addPairToJSMap.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/addPairToJSMap.js"(exports2) {
     "use strict";
     var log2 = require_log();
     var merge2 = require_merge();
@@ -1956,9 +1956,9 @@ var require_addPairToJSMap = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/nodes/Pair.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Pair.js
 var require_Pair = __commonJS({
-  "node_modules/yaml/dist/nodes/Pair.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/Pair.js"(exports2) {
     "use strict";
     var createNode = require_createNode();
     var stringifyPair = require_stringifyPair();
@@ -1996,9 +1996,9 @@ var require_Pair = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/stringify/stringifyCollection.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyCollection.js
 var require_stringifyCollection = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyCollection.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyCollection.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var stringify = require_stringify();
@@ -2147,9 +2147,9 @@ ${indent}${end}`;
   }
 });
 
-// node_modules/yaml/dist/nodes/YAMLMap.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/YAMLMap.js
 var require_YAMLMap = __commonJS({
-  "node_modules/yaml/dist/nodes/YAMLMap.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/YAMLMap.js"(exports2) {
     "use strict";
     var stringifyCollection = require_stringifyCollection();
     var addPairToJSMap = require_addPairToJSMap();
@@ -2291,9 +2291,9 @@ var require_YAMLMap = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/common/map.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/common/map.js
 var require_map = __commonJS({
-  "node_modules/yaml/dist/schema/common/map.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/common/map.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var YAMLMap = require_YAMLMap();
@@ -2313,9 +2313,9 @@ var require_map = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/nodes/YAMLSeq.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/nodes/YAMLSeq.js
 var require_YAMLSeq = __commonJS({
-  "node_modules/yaml/dist/nodes/YAMLSeq.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/nodes/YAMLSeq.js"(exports2) {
     "use strict";
     var createNode = require_createNode();
     var stringifyCollection = require_stringifyCollection();
@@ -2429,9 +2429,9 @@ var require_YAMLSeq = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/common/seq.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/common/seq.js
 var require_seq = __commonJS({
-  "node_modules/yaml/dist/schema/common/seq.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/common/seq.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var YAMLSeq = require_YAMLSeq();
@@ -2451,9 +2451,9 @@ var require_seq = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/common/string.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/common/string.js
 var require_string = __commonJS({
-  "node_modules/yaml/dist/schema/common/string.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/common/string.js"(exports2) {
     "use strict";
     var stringifyString = require_stringifyString();
     var string3 = {
@@ -2470,9 +2470,9 @@ var require_string = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/common/null.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/common/null.js
 var require_null = __commonJS({
-  "node_modules/yaml/dist/schema/common/null.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/common/null.js"(exports2) {
     "use strict";
     var Scalar = require_Scalar();
     var nullTag = {
@@ -2488,9 +2488,9 @@ var require_null = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/core/bool.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/core/bool.js
 var require_bool = __commonJS({
-  "node_modules/yaml/dist/schema/core/bool.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/core/bool.js"(exports2) {
     "use strict";
     var Scalar = require_Scalar();
     var boolTag = {
@@ -2512,9 +2512,9 @@ var require_bool = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/stringify/stringifyNumber.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyNumber.js
 var require_stringifyNumber = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyNumber.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyNumber.js"(exports2) {
     "use strict";
     function stringifyNumber({ format, minFractionDigits, tag, value }) {
       if (typeof value === "bigint")
@@ -2539,9 +2539,9 @@ var require_stringifyNumber = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/core/float.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/core/float.js
 var require_float = __commonJS({
-  "node_modules/yaml/dist/schema/core/float.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/core/float.js"(exports2) {
     "use strict";
     var Scalar = require_Scalar();
     var stringifyNumber = require_stringifyNumber();
@@ -2585,9 +2585,9 @@ var require_float = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/core/int.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/core/int.js
 var require_int = __commonJS({
-  "node_modules/yaml/dist/schema/core/int.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/core/int.js"(exports2) {
     "use strict";
     var stringifyNumber = require_stringifyNumber();
     var intIdentify = (value) => typeof value === "bigint" || Number.isInteger(value);
@@ -2630,9 +2630,9 @@ var require_int = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/core/schema.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/core/schema.js
 var require_schema = __commonJS({
-  "node_modules/yaml/dist/schema/core/schema.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/core/schema.js"(exports2) {
     "use strict";
     var map = require_map();
     var _null4 = require_null();
@@ -2658,9 +2658,9 @@ var require_schema = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/json/schema.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/json/schema.js
 var require_schema2 = __commonJS({
-  "node_modules/yaml/dist/schema/json/schema.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/json/schema.js"(exports2) {
     "use strict";
     var Scalar = require_Scalar();
     var map = require_map();
@@ -2725,9 +2725,9 @@ var require_schema2 = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/binary.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/binary.js
 var require_binary = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/binary.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/binary.js"(exports2) {
     "use strict";
     var node_buffer = require("buffer");
     var Scalar = require_Scalar();
@@ -2791,9 +2791,9 @@ var require_binary = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/pairs.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/pairs.js
 var require_pairs = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/pairs.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/pairs.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var Pair = require_Pair();
@@ -2869,9 +2869,9 @@ ${cn.comment}` : item.comment;
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/omap.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/omap.js
 var require_omap = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/omap.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/omap.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var toJS = require_toJS();
@@ -2947,9 +2947,9 @@ var require_omap = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/bool.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/bool.js
 var require_bool2 = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/bool.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/bool.js"(exports2) {
     "use strict";
     var Scalar = require_Scalar();
     function boolStringify({ value, source }, ctx) {
@@ -2979,9 +2979,9 @@ var require_bool2 = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/float.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/float.js
 var require_float2 = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/float.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/float.js"(exports2) {
     "use strict";
     var Scalar = require_Scalar();
     var stringifyNumber = require_stringifyNumber();
@@ -3028,9 +3028,9 @@ var require_float2 = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/int.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/int.js
 var require_int2 = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/int.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/int.js"(exports2) {
     "use strict";
     var stringifyNumber = require_stringifyNumber();
     var intIdentify = (value) => typeof value === "bigint" || Number.isInteger(value);
@@ -3107,9 +3107,9 @@ var require_int2 = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/set.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/set.js
 var require_set = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/set.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/set.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var Pair = require_Pair();
@@ -3196,9 +3196,9 @@ var require_set = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/timestamp.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/timestamp.js
 var require_timestamp = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/timestamp.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/timestamp.js"(exports2) {
     "use strict";
     var stringifyNumber = require_stringifyNumber();
     function parseSexagesimal(str2, asBigInt) {
@@ -3284,9 +3284,9 @@ var require_timestamp = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/yaml-1.1/schema.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/schema.js
 var require_schema3 = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/schema.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/yaml-1.1/schema.js"(exports2) {
     "use strict";
     var map = require_map();
     var _null4 = require_null();
@@ -3328,9 +3328,9 @@ var require_schema3 = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/tags.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/tags.js
 var require_tags = __commonJS({
-  "node_modules/yaml/dist/schema/tags.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/tags.js"(exports2) {
     "use strict";
     var map = require_map();
     var _null4 = require_null();
@@ -3422,9 +3422,9 @@ var require_tags = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/schema/Schema.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/schema/Schema.js
 var require_Schema = __commonJS({
-  "node_modules/yaml/dist/schema/Schema.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/schema/Schema.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var map = require_map();
@@ -3454,9 +3454,9 @@ var require_Schema = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/stringify/stringifyDocument.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyDocument.js
 var require_stringifyDocument = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyDocument.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/stringify/stringifyDocument.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var stringify = require_stringify();
@@ -3534,9 +3534,9 @@ var require_stringifyDocument = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/doc/Document.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/doc/Document.js
 var require_Document = __commonJS({
-  "node_modules/yaml/dist/doc/Document.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/doc/Document.js"(exports2) {
     "use strict";
     var Alias = require_Alias();
     var Collection = require_Collection();
@@ -3843,9 +3843,9 @@ var require_Document = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/errors.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/errors.js
 var require_errors = __commonJS({
-  "node_modules/yaml/dist/errors.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/errors.js"(exports2) {
     "use strict";
     var YAMLError = class extends Error {
       constructor(name, pos, code, message) {
@@ -3908,9 +3908,9 @@ ${pointer}
   }
 });
 
-// node_modules/yaml/dist/compose/resolve-props.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-props.js
 var require_resolve_props = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-props.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-props.js"(exports2) {
     "use strict";
     function resolveProps(tokens, { flow, indicator, next, offset, onError, parentIndent, startOnNewline }) {
       let spaceBefore = false;
@@ -4042,9 +4042,9 @@ var require_resolve_props = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/util-contains-newline.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/util-contains-newline.js
 var require_util_contains_newline = __commonJS({
-  "node_modules/yaml/dist/compose/util-contains-newline.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/util-contains-newline.js"(exports2) {
     "use strict";
     function containsNewline(key) {
       if (!key)
@@ -4084,9 +4084,9 @@ var require_util_contains_newline = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/util-flow-indent-check.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/util-flow-indent-check.js
 var require_util_flow_indent_check = __commonJS({
-  "node_modules/yaml/dist/compose/util-flow-indent-check.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/util-flow-indent-check.js"(exports2) {
     "use strict";
     var utilContainsNewline = require_util_contains_newline();
     function flowIndentCheck(indent, fc, onError) {
@@ -4102,9 +4102,9 @@ var require_util_flow_indent_check = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/util-map-includes.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/util-map-includes.js
 var require_util_map_includes = __commonJS({
-  "node_modules/yaml/dist/compose/util-map-includes.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/util-map-includes.js"(exports2) {
     "use strict";
     var identity = require_identity();
     function mapIncludes(ctx, items, search) {
@@ -4118,9 +4118,9 @@ var require_util_map_includes = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/resolve-block-map.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-block-map.js
 var require_resolve_block_map = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-block-map.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-block-map.js"(exports2) {
     "use strict";
     var Pair = require_Pair();
     var YAMLMap = require_YAMLMap();
@@ -4226,9 +4226,9 @@ var require_resolve_block_map = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/resolve-block-seq.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-block-seq.js
 var require_resolve_block_seq = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-block-seq.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-block-seq.js"(exports2) {
     "use strict";
     var YAMLSeq = require_YAMLSeq();
     var resolveProps = require_resolve_props();
@@ -4277,9 +4277,9 @@ var require_resolve_block_seq = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/resolve-end.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-end.js
 var require_resolve_end = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-end.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-end.js"(exports2) {
     "use strict";
     function resolveEnd(end, offset, reqSpace, onError) {
       let comment = "";
@@ -4320,9 +4320,9 @@ var require_resolve_end = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/resolve-flow-collection.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-flow-collection.js
 var require_resolve_flow_collection = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-flow-collection.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-flow-collection.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var Pair = require_Pair();
@@ -4514,9 +4514,9 @@ var require_resolve_flow_collection = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/compose-collection.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/compose-collection.js
 var require_compose_collection = __commonJS({
-  "node_modules/yaml/dist/compose/compose-collection.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/compose-collection.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var Scalar = require_Scalar();
@@ -4579,9 +4579,9 @@ var require_compose_collection = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/resolve-block-scalar.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-block-scalar.js
 var require_resolve_block_scalar = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-block-scalar.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-block-scalar.js"(exports2) {
     "use strict";
     var Scalar = require_Scalar();
     function resolveBlockScalar(ctx, scalar, onError) {
@@ -4762,9 +4762,9 @@ var require_resolve_block_scalar = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/resolve-flow-scalar.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-flow-scalar.js
 var require_resolve_flow_scalar = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-flow-scalar.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/resolve-flow-scalar.js"(exports2) {
     "use strict";
     var Scalar = require_Scalar();
     var resolveEnd = require_resolve_end();
@@ -4982,9 +4982,9 @@ var require_resolve_flow_scalar = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/compose-scalar.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/compose-scalar.js
 var require_compose_scalar = __commonJS({
-  "node_modules/yaml/dist/compose/compose-scalar.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/compose-scalar.js"(exports2) {
     "use strict";
     var identity = require_identity();
     var Scalar = require_Scalar();
@@ -5063,9 +5063,9 @@ var require_compose_scalar = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/util-empty-scalar-position.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/util-empty-scalar-position.js
 var require_util_empty_scalar_position = __commonJS({
-  "node_modules/yaml/dist/compose/util-empty-scalar-position.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/util-empty-scalar-position.js"(exports2) {
     "use strict";
     function emptyScalarPosition(offset, before, pos) {
       if (before) {
@@ -5093,9 +5093,9 @@ var require_util_empty_scalar_position = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/compose-node.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/compose-node.js
 var require_compose_node = __commonJS({
-  "node_modules/yaml/dist/compose/compose-node.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/compose-node.js"(exports2) {
     "use strict";
     var Alias = require_Alias();
     var identity = require_identity();
@@ -5199,9 +5199,9 @@ var require_compose_node = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/compose-doc.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/compose-doc.js
 var require_compose_doc = __commonJS({
-  "node_modules/yaml/dist/compose/compose-doc.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/compose-doc.js"(exports2) {
     "use strict";
     var Document = require_Document();
     var composeNode = require_compose_node();
@@ -5242,9 +5242,9 @@ var require_compose_doc = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/compose/composer.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/compose/composer.js
 var require_composer = __commonJS({
-  "node_modules/yaml/dist/compose/composer.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/compose/composer.js"(exports2) {
     "use strict";
     var node_process = require("process");
     var directives = require_directives();
@@ -5450,9 +5450,9 @@ ${end.comment}` : end.comment;
   }
 });
 
-// node_modules/yaml/dist/parse/cst-scalar.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/parse/cst-scalar.js
 var require_cst_scalar = __commonJS({
-  "node_modules/yaml/dist/parse/cst-scalar.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/parse/cst-scalar.js"(exports2) {
     "use strict";
     var resolveBlockScalar = require_resolve_block_scalar();
     var resolveFlowScalar = require_resolve_flow_scalar();
@@ -5635,9 +5635,9 @@ var require_cst_scalar = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/parse/cst-stringify.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/parse/cst-stringify.js
 var require_cst_stringify = __commonJS({
-  "node_modules/yaml/dist/parse/cst-stringify.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/parse/cst-stringify.js"(exports2) {
     "use strict";
     var stringify = (cst) => "type" in cst ? stringifyToken(cst) : stringifyItem(cst);
     function stringifyToken(token) {
@@ -5696,9 +5696,9 @@ var require_cst_stringify = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/parse/cst-visit.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/parse/cst-visit.js
 var require_cst_visit = __commonJS({
-  "node_modules/yaml/dist/parse/cst-visit.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/parse/cst-visit.js"(exports2) {
     "use strict";
     var BREAK = /* @__PURE__ */ Symbol("break visit");
     var SKIP3 = /* @__PURE__ */ Symbol("skip children");
@@ -5758,9 +5758,9 @@ var require_cst_visit = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/parse/cst.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/parse/cst.js
 var require_cst = __commonJS({
-  "node_modules/yaml/dist/parse/cst.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/parse/cst.js"(exports2) {
     "use strict";
     var cstScalar = require_cst_scalar();
     var cstStringify = require_cst_stringify();
@@ -5860,9 +5860,9 @@ var require_cst = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/parse/lexer.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/parse/lexer.js
 var require_lexer = __commonJS({
-  "node_modules/yaml/dist/parse/lexer.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/parse/lexer.js"(exports2) {
     "use strict";
     var cst = require_cst();
     function isEmpty(ch) {
@@ -6449,9 +6449,9 @@ var require_lexer = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/parse/line-counter.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/parse/line-counter.js
 var require_line_counter = __commonJS({
-  "node_modules/yaml/dist/parse/line-counter.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/parse/line-counter.js"(exports2) {
     "use strict";
     var LineCounter = class {
       constructor() {
@@ -6480,9 +6480,9 @@ var require_line_counter = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/parse/parser.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/parse/parser.js
 var require_parser = __commonJS({
-  "node_modules/yaml/dist/parse/parser.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/parse/parser.js"(exports2) {
     "use strict";
     var node_process = require("process");
     var cst = require_cst();
@@ -7354,9 +7354,9 @@ var require_parser = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/public-api.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/public-api.js
 var require_public_api = __commonJS({
-  "node_modules/yaml/dist/public-api.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/public-api.js"(exports2) {
     "use strict";
     var composer = require_composer();
     var Document = require_Document();
@@ -7451,9 +7451,9 @@ var require_public_api = __commonJS({
   }
 });
 
-// node_modules/yaml/dist/index.js
+// ../../thinkube-ai-integration/node_modules/yaml/dist/index.js
 var require_dist = __commonJS({
-  "node_modules/yaml/dist/index.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/yaml/dist/index.js"(exports2) {
     "use strict";
     var composer = require_composer();
     var Document = require_Document();
@@ -7503,7 +7503,7 @@ var require_dist = __commonJS({
   }
 });
 
-// node_modules/zod/v4/core/core.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/core.js
 // @__NO_SIDE_EFFECTS__
 function $constructor(name, initializer3, params) {
   function init(inst, def) {
@@ -7563,7 +7563,7 @@ function config(newConfig) {
 }
 var _a, $ZodAsyncError, $ZodEncodeError, globalConfig;
 var init_core = __esm({
-  "node_modules/zod/v4/core/core.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/core.js"() {
     $ZodAsyncError = class extends Error {
       constructor() {
         super(`Encountered Promise during synchronous parse. Use .parseAsync() instead.`);
@@ -7580,7 +7580,7 @@ var init_core = __esm({
   }
 });
 
-// node_modules/zod/v4/core/util.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/util.js
 var util_exports = {};
 __export(util_exports, {
   BIGINT_FORMAT_RANGES: () => BIGINT_FORMAT_RANGES,
@@ -8191,7 +8191,7 @@ function uint8ArrayToHex(bytes) {
 }
 var EVALUATING, captureStackTrace, allowsEval, getParsedType, propertyKeyTypes, primitiveTypes, NUMBER_FORMAT_RANGES, BIGINT_FORMAT_RANGES, Class;
 var init_util = __esm({
-  "node_modules/zod/v4/core/util.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/util.js"() {
     init_core();
     EVALUATING = /* @__PURE__ */ Symbol("evaluating");
     captureStackTrace = "captureStackTrace" in Error ? Error.captureStackTrace : (..._args) => {
@@ -8282,7 +8282,7 @@ var init_util = __esm({
   }
 });
 
-// node_modules/zod/v4/core/errors.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/errors.js
 function flattenError(error2, mapper = (issue2) => issue2.message) {
   const fieldErrors = {};
   const formErrors = [];
@@ -8334,7 +8334,7 @@ function formatError(error2, mapper = (issue2) => issue2.message) {
 }
 var initializer, $ZodError, $ZodRealError;
 var init_errors = __esm({
-  "node_modules/zod/v4/core/errors.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/errors.js"() {
     init_core();
     init_util();
     initializer = (inst, def) => {
@@ -8358,10 +8358,10 @@ var init_errors = __esm({
   }
 });
 
-// node_modules/zod/v4/core/parse.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/parse.js
 var _parse, _parseAsync, _safeParse, safeParse, _safeParseAsync, safeParseAsync, _encode, _decode, _encodeAsync, _decodeAsync, _safeEncode, _safeDecode, _safeEncodeAsync, _safeDecodeAsync;
 var init_parse = __esm({
-  "node_modules/zod/v4/core/parse.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/parse.js"() {
     init_core();
     init_errors();
     init_util();
@@ -8444,7 +8444,7 @@ var init_parse = __esm({
   }
 });
 
-// node_modules/zod/v4/core/regexes.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/regexes.js
 function emoji() {
   return new RegExp(_emoji, "u");
 }
@@ -8468,7 +8468,7 @@ function datetime(args) {
 }
 var cuid, cuid2, ulid, xid, ksuid, nanoid, duration, guid, uuid, email, _emoji, ipv4, ipv6, cidrv4, cidrv6, base64, base64url, httpProtocol, e164, dateSource, date, string, integer, number, boolean, _null, lowercase, uppercase;
 var init_regexes = __esm({
-  "node_modules/zod/v4/core/regexes.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/regexes.js"() {
     cuid = /^[cC][0-9a-z]{6,}$/;
     cuid2 = /^[0-9a-z]+$/;
     ulid = /^[0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{26}$/;
@@ -8507,10 +8507,10 @@ var init_regexes = __esm({
   }
 });
 
-// node_modules/zod/v4/core/checks.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/checks.js
 var $ZodCheck, numericOriginMap, $ZodCheckLessThan, $ZodCheckGreaterThan, $ZodCheckMultipleOf, $ZodCheckNumberFormat, $ZodCheckMaxLength, $ZodCheckMinLength, $ZodCheckLengthEquals, $ZodCheckStringFormat, $ZodCheckRegex, $ZodCheckLowerCase, $ZodCheckUpperCase, $ZodCheckIncludes, $ZodCheckStartsWith, $ZodCheckEndsWith, $ZodCheckOverwrite;
 var init_checks = __esm({
-  "node_modules/zod/v4/core/checks.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/checks.js"() {
     init_core();
     init_regexes();
     init_util();
@@ -8905,10 +8905,10 @@ var init_checks = __esm({
   }
 });
 
-// node_modules/zod/v4/core/doc.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/doc.js
 var Doc;
 var init_doc = __esm({
-  "node_modules/zod/v4/core/doc.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/doc.js"() {
     Doc = class {
       constructor(args = []) {
         this.content = [];
@@ -8946,10 +8946,10 @@ var init_doc = __esm({
   }
 });
 
-// node_modules/zod/v4/core/versions.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/versions.js
 var version;
 var init_versions = __esm({
-  "node_modules/zod/v4/core/versions.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/versions.js"() {
     version = {
       major: 4,
       minor: 4,
@@ -8958,7 +8958,7 @@ var init_versions = __esm({
   }
 });
 
-// node_modules/zod/v4/core/schemas.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/schemas.js
 function isValidBase64(data) {
   if (data === "")
     return true;
@@ -9242,7 +9242,7 @@ function handleRefineResult(result, payload, input, inst) {
 }
 var $ZodType, $ZodString, $ZodStringFormat, $ZodGUID, $ZodUUID, $ZodEmail, $ZodURL, $ZodEmoji, $ZodNanoID, $ZodCUID, $ZodCUID2, $ZodULID, $ZodXID, $ZodKSUID, $ZodISODateTime, $ZodISODate, $ZodISOTime, $ZodISODuration, $ZodIPv4, $ZodIPv6, $ZodCIDRv4, $ZodCIDRv6, $ZodBase64, $ZodBase64URL, $ZodE164, $ZodJWT, $ZodNumber, $ZodNumberFormat, $ZodBoolean, $ZodNull, $ZodUnknown, $ZodNever, $ZodArray, $ZodObject, $ZodObjectJIT, $ZodUnion, $ZodDiscriminatedUnion, $ZodIntersection, $ZodRecord, $ZodEnum, $ZodLiteral, $ZodTransform, $ZodOptional, $ZodExactOptional, $ZodNullable, $ZodDefault, $ZodPrefault, $ZodNonOptional, $ZodCatch, $ZodPipe, $ZodPreprocess, $ZodReadonly, $ZodCustom;
 var init_schemas = __esm({
-  "node_modules/zod/v4/core/schemas.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/schemas.js"() {
     init_checks();
     init_core();
     init_doc();
@@ -10451,7 +10451,7 @@ var init_schemas = __esm({
   }
 });
 
-// node_modules/zod/v4/locales/en.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/locales/en.js
 function en_default() {
   return {
     localeError: error()
@@ -10459,7 +10459,7 @@ function en_default() {
 }
 var error;
 var init_en = __esm({
-  "node_modules/zod/v4/locales/en.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/locales/en.js"() {
     init_util();
     error = () => {
       const Sizable = {
@@ -10570,19 +10570,19 @@ var init_en = __esm({
   }
 });
 
-// node_modules/zod/v4/locales/index.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/locales/index.js
 var init_locales = __esm({
-  "node_modules/zod/v4/locales/index.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/locales/index.js"() {
   }
 });
 
-// node_modules/zod/v4/core/registries.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/registries.js
 function registry() {
   return new $ZodRegistry();
 }
 var _a2, $ZodRegistry, globalRegistry;
 var init_registries = __esm({
-  "node_modules/zod/v4/core/registries.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/registries.js"() {
     $ZodRegistry = class {
       constructor() {
         this._map = /* @__PURE__ */ new WeakMap();
@@ -10628,7 +10628,7 @@ var init_registries = __esm({
   }
 });
 
-// node_modules/zod/v4/core/api.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/api.js
 // @__NO_SIDE_EFFECTS__
 function _string(Class2, params) {
   return new Class2({
@@ -11156,13 +11156,13 @@ function _check(fn, params) {
   return ch;
 }
 var init_api = __esm({
-  "node_modules/zod/v4/core/api.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/api.js"() {
     init_checks();
     init_util();
   }
 });
 
-// node_modules/zod/v4/core/to-json-schema.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/to-json-schema.js
 function initializeContext(params) {
   let target = params?.target ?? "draft-2020-12";
   if (target === "draft-4")
@@ -11509,7 +11509,7 @@ function isTransforming(_schema, _ctx) {
 }
 var createToJSONSchemaMethod, createStandardJSONSchemaMethod;
 var init_to_json_schema = __esm({
-  "node_modules/zod/v4/core/to-json-schema.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/to-json-schema.js"() {
     init_registries();
     createToJSONSchemaMethod = (schema, processors = {}) => (params) => {
       const ctx = initializeContext({ ...params, processors });
@@ -11527,10 +11527,10 @@ var init_to_json_schema = __esm({
   }
 });
 
-// node_modules/zod/v4/core/json-schema-processors.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/json-schema-processors.js
 var formatMap, stringProcessor, numberProcessor, booleanProcessor, nullProcessor, neverProcessor, unknownProcessor, enumProcessor, literalProcessor, customProcessor, transformProcessor, arrayProcessor, objectProcessor, unionProcessor, intersectionProcessor, recordProcessor, nullableProcessor, nonoptionalProcessor, defaultProcessor, prefaultProcessor, catchProcessor, pipeProcessor, readonlyProcessor, optionalProcessor;
 var init_json_schema_processors = __esm({
-  "node_modules/zod/v4/core/json-schema-processors.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/json-schema-processors.js"() {
     init_to_json_schema();
     init_util();
     formatMap = {
@@ -11867,15 +11867,15 @@ var init_json_schema_processors = __esm({
   }
 });
 
-// node_modules/zod/v4/core/json-schema.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/json-schema.js
 var init_json_schema = __esm({
-  "node_modules/zod/v4/core/json-schema.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/json-schema.js"() {
   }
 });
 
-// node_modules/zod/v4/core/index.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/core/index.js
 var init_core2 = __esm({
-  "node_modules/zod/v4/core/index.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/core/index.js"() {
     init_core();
     init_parse();
     init_errors();
@@ -11893,40 +11893,40 @@ var init_core2 = __esm({
   }
 });
 
-// node_modules/zod/v4/mini/parse.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/mini/parse.js
 var init_parse2 = __esm({
-  "node_modules/zod/v4/mini/parse.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/mini/parse.js"() {
     init_core2();
   }
 });
 
-// node_modules/zod/v4/mini/schemas.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/mini/schemas.js
 var init_schemas2 = __esm({
-  "node_modules/zod/v4/mini/schemas.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/mini/schemas.js"() {
   }
 });
 
-// node_modules/zod/v4/mini/checks.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/mini/checks.js
 var init_checks2 = __esm({
-  "node_modules/zod/v4/mini/checks.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/mini/checks.js"() {
   }
 });
 
-// node_modules/zod/v4/mini/iso.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/mini/iso.js
 var init_iso = __esm({
-  "node_modules/zod/v4/mini/iso.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/mini/iso.js"() {
   }
 });
 
-// node_modules/zod/v4/mini/coerce.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/mini/coerce.js
 var init_coerce = __esm({
-  "node_modules/zod/v4/mini/coerce.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/mini/coerce.js"() {
   }
 });
 
-// node_modules/zod/v4/mini/external.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/mini/external.js
 var init_external = __esm({
-  "node_modules/zod/v4/mini/external.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/mini/external.js"() {
     init_core2();
     init_parse2();
     init_schemas2();
@@ -11937,14 +11937,14 @@ var init_external = __esm({
   }
 });
 
-// node_modules/zod/v4-mini/index.js
+// ../../thinkube-ai-integration/node_modules/zod/v4-mini/index.js
 var init_v4_mini = __esm({
-  "node_modules/zod/v4-mini/index.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4-mini/index.js"() {
     init_external();
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js
 function isZ4Schema(s) {
   const schema = s;
   return !!schema._zod;
@@ -12007,19 +12007,19 @@ function getLiteralValue(schema) {
   return void 0;
 }
 var init_zod_compat = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js"() {
     init_v4_mini();
   }
 });
 
-// node_modules/zod/v4/classic/checks.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/classic/checks.js
 var init_checks3 = __esm({
-  "node_modules/zod/v4/classic/checks.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/classic/checks.js"() {
     init_core2();
   }
 });
 
-// node_modules/zod/v4/classic/iso.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/classic/iso.js
 var iso_exports2 = {};
 __export(iso_exports2, {
   ZodISODate: () => ZodISODate,
@@ -12045,7 +12045,7 @@ function duration2(params) {
 }
 var ZodISODateTime, ZodISODate, ZodISOTime, ZodISODuration;
 var init_iso2 = __esm({
-  "node_modules/zod/v4/classic/iso.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/classic/iso.js"() {
     init_core2();
     init_schemas3();
     ZodISODateTime = /* @__PURE__ */ $constructor("ZodISODateTime", (inst, def) => {
@@ -12067,10 +12067,10 @@ var init_iso2 = __esm({
   }
 });
 
-// node_modules/zod/v4/classic/errors.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/classic/errors.js
 var initializer2, ZodRealError;
 var init_errors2 = __esm({
-  "node_modules/zod/v4/classic/errors.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/classic/errors.js"() {
     init_core2();
     init_core2();
     init_util();
@@ -12114,10 +12114,10 @@ var init_errors2 = __esm({
   }
 });
 
-// node_modules/zod/v4/classic/parse.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/classic/parse.js
 var parse2, parseAsync2, safeParse3, safeParseAsync2, encode2, decode2, encodeAsync2, decodeAsync2, safeEncode2, safeDecode2, safeEncodeAsync2, safeDecodeAsync2;
 var init_parse3 = __esm({
-  "node_modules/zod/v4/classic/parse.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/classic/parse.js"() {
     init_core2();
     init_errors2();
     parse2 = /* @__PURE__ */ _parse(ZodRealError);
@@ -12135,7 +12135,7 @@ var init_parse3 = __esm({
   }
 });
 
-// node_modules/zod/v4/classic/schemas.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/classic/schemas.js
 function _installLazyMethods(inst, group, methods) {
   const proto = Object.getPrototypeOf(inst);
   let installed = _installedGroups.get(proto);
@@ -12353,7 +12353,7 @@ function preprocess(fn, schema) {
 }
 var _installedGroups, ZodType, _ZodString, ZodString, ZodStringFormat, ZodEmail, ZodGUID, ZodUUID, ZodURL, ZodEmoji, ZodNanoID, ZodCUID, ZodCUID2, ZodULID, ZodXID, ZodKSUID, ZodIPv4, ZodIPv6, ZodCIDRv4, ZodCIDRv6, ZodBase64, ZodBase64URL, ZodE164, ZodJWT, ZodNumber, ZodNumberFormat, ZodBoolean, ZodNull, ZodUnknown, ZodNever, ZodArray, ZodObject, ZodUnion, ZodDiscriminatedUnion, ZodIntersection, ZodRecord, ZodEnum, ZodLiteral, ZodTransform, ZodOptional, ZodExactOptional, ZodNullable, ZodDefault, ZodPrefault, ZodNonOptional, ZodCatch, ZodPipe, ZodPreprocess, ZodReadonly, ZodCustom;
 var init_schemas3 = __esm({
-  "node_modules/zod/v4/classic/schemas.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/classic/schemas.js"() {
     init_core2();
     init_core2();
     init_json_schema_processors();
@@ -12989,24 +12989,24 @@ var init_schemas3 = __esm({
   }
 });
 
-// node_modules/zod/v4/classic/compat.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/classic/compat.js
 var ZodFirstPartyTypeKind;
 var init_compat = __esm({
-  "node_modules/zod/v4/classic/compat.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/classic/compat.js"() {
     /* @__PURE__ */ (function(ZodFirstPartyTypeKind2) {
     })(ZodFirstPartyTypeKind || (ZodFirstPartyTypeKind = {}));
   }
 });
 
-// node_modules/zod/v4/classic/coerce.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/classic/coerce.js
 var init_coerce2 = __esm({
-  "node_modules/zod/v4/classic/coerce.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/classic/coerce.js"() {
   }
 });
 
-// node_modules/zod/v4/classic/external.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/classic/external.js
 var init_external2 = __esm({
-  "node_modules/zod/v4/classic/external.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/classic/external.js"() {
     init_core2();
     init_schemas3();
     init_checks3();
@@ -13022,21 +13022,21 @@ var init_external2 = __esm({
   }
 });
 
-// node_modules/zod/v4/classic/index.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/classic/index.js
 var init_classic = __esm({
-  "node_modules/zod/v4/classic/index.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/classic/index.js"() {
     init_external2();
   }
 });
 
-// node_modules/zod/v4/index.js
+// ../../thinkube-ai-integration/node_modules/zod/v4/index.js
 var init_v4 = __esm({
-  "node_modules/zod/v4/index.js"() {
+  "../../thinkube-ai-integration/node_modules/zod/v4/index.js"() {
     init_classic();
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/types.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js
 var types_exports = {};
 __export(types_exports, {
   AnnotationsSchema: () => AnnotationsSchema,
@@ -13225,7 +13225,7 @@ function assertCompleteRequestResourceTemplate(request) {
 }
 var LATEST_PROTOCOL_VERSION, DEFAULT_NEGOTIATED_PROTOCOL_VERSION, SUPPORTED_PROTOCOL_VERSIONS, RELATED_TASK_META_KEY, JSONRPC_VERSION, AssertObjectSchema, ProgressTokenSchema, CursorSchema, TaskCreationParamsSchema, TaskMetadataSchema, RelatedTaskMetadataSchema, RequestMetaSchema, BaseRequestParamsSchema, TaskAugmentedRequestParamsSchema, isTaskAugmentedRequestParams, RequestSchema, NotificationsParamsSchema, NotificationSchema, ResultSchema, RequestIdSchema, JSONRPCRequestSchema, isJSONRPCRequest, JSONRPCNotificationSchema, isJSONRPCNotification, JSONRPCResultResponseSchema, isJSONRPCResultResponse, isJSONRPCResponse, ErrorCode, JSONRPCErrorResponseSchema, JSONRPCErrorSchema, isJSONRPCErrorResponse, isJSONRPCError, JSONRPCMessageSchema, JSONRPCResponseSchema, EmptyResultSchema, CancelledNotificationParamsSchema, CancelledNotificationSchema, IconSchema, IconsSchema, BaseMetadataSchema, ImplementationSchema, FormElicitationCapabilitySchema, ElicitationCapabilitySchema, ClientTasksCapabilitySchema, ServerTasksCapabilitySchema, ClientCapabilitiesSchema, InitializeRequestParamsSchema, InitializeRequestSchema, isInitializeRequest, ServerCapabilitiesSchema, InitializeResultSchema, InitializedNotificationSchema, isInitializedNotification, PingRequestSchema, ProgressSchema, ProgressNotificationParamsSchema, ProgressNotificationSchema, PaginatedRequestParamsSchema, PaginatedRequestSchema, PaginatedResultSchema, TaskStatusSchema, TaskSchema, CreateTaskResultSchema, TaskStatusNotificationParamsSchema, TaskStatusNotificationSchema, GetTaskRequestSchema, GetTaskResultSchema, GetTaskPayloadRequestSchema, GetTaskPayloadResultSchema, ListTasksRequestSchema, ListTasksResultSchema, CancelTaskRequestSchema, CancelTaskResultSchema, ResourceContentsSchema, TextResourceContentsSchema, Base64Schema, BlobResourceContentsSchema, RoleSchema, AnnotationsSchema, ResourceSchema, ResourceTemplateSchema, ListResourcesRequestSchema, ListResourcesResultSchema, ListResourceTemplatesRequestSchema, ListResourceTemplatesResultSchema, ResourceRequestParamsSchema, ReadResourceRequestParamsSchema, ReadResourceRequestSchema, ReadResourceResultSchema, ResourceListChangedNotificationSchema, SubscribeRequestParamsSchema, SubscribeRequestSchema, UnsubscribeRequestParamsSchema, UnsubscribeRequestSchema, ResourceUpdatedNotificationParamsSchema, ResourceUpdatedNotificationSchema, PromptArgumentSchema, PromptSchema, ListPromptsRequestSchema, ListPromptsResultSchema, GetPromptRequestParamsSchema, GetPromptRequestSchema, TextContentSchema, ImageContentSchema, AudioContentSchema, ToolUseContentSchema, EmbeddedResourceSchema, ResourceLinkSchema, ContentBlockSchema, PromptMessageSchema, GetPromptResultSchema, PromptListChangedNotificationSchema, ToolAnnotationsSchema, ToolExecutionSchema, ToolSchema, ListToolsRequestSchema, ListToolsResultSchema, CallToolResultSchema, CompatibilityCallToolResultSchema, CallToolRequestParamsSchema, CallToolRequestSchema, ToolListChangedNotificationSchema, ListChangedOptionsBaseSchema, LoggingLevelSchema, SetLevelRequestParamsSchema, SetLevelRequestSchema, LoggingMessageNotificationParamsSchema, LoggingMessageNotificationSchema, ModelHintSchema, ModelPreferencesSchema, ToolChoiceSchema, ToolResultContentSchema, SamplingContentSchema, SamplingMessageContentBlockSchema, SamplingMessageSchema, CreateMessageRequestParamsSchema, CreateMessageRequestSchema, CreateMessageResultSchema, CreateMessageResultWithToolsSchema, BooleanSchemaSchema, StringSchemaSchema, NumberSchemaSchema, UntitledSingleSelectEnumSchemaSchema, TitledSingleSelectEnumSchemaSchema, LegacyTitledEnumSchemaSchema, SingleSelectEnumSchemaSchema, UntitledMultiSelectEnumSchemaSchema, TitledMultiSelectEnumSchemaSchema, MultiSelectEnumSchemaSchema, EnumSchemaSchema, PrimitiveSchemaDefinitionSchema, ElicitRequestFormParamsSchema, ElicitRequestURLParamsSchema, ElicitRequestParamsSchema, ElicitRequestSchema, ElicitationCompleteNotificationParamsSchema, ElicitationCompleteNotificationSchema, ElicitResultSchema, ResourceTemplateReferenceSchema, ResourceReferenceSchema, PromptReferenceSchema, CompleteRequestParamsSchema, CompleteRequestSchema, CompleteResultSchema, RootSchema, ListRootsRequestSchema, ListRootsResultSchema, RootsListChangedNotificationSchema, ClientRequestSchema, ClientNotificationSchema, ClientResultSchema, ServerRequestSchema, ServerNotificationSchema, ServerResultSchema, McpError, UrlElicitationRequiredError;
 var init_types = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/types.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js"() {
     init_v4();
     LATEST_PROTOCOL_VERSION = "2025-11-25";
     DEFAULT_NEGOTIATED_PROTOCOL_VERSION = "2025-03-26";
@@ -14753,135 +14753,135 @@ var init_types = __esm({
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js
 function isTerminal(status) {
   return status === "completed" || status === "failed" || status === "cancelled";
 }
 var init_interfaces = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/Options.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/Options.js
 var init_Options = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/Options.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/Options.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/Refs.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/Refs.js
 var init_Refs = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/Refs.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/Refs.js"() {
     init_Options();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/errorMessages.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/errorMessages.js
 var init_errorMessages = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/errorMessages.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/errorMessages.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/getRelativePath.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js
 var init_getRelativePath = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/getRelativePath.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/any.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/any.js
 var init_any = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/any.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/any.js"() {
     init_getRelativePath();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/array.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/array.js
 var init_array = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/array.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/array.js"() {
     init_errorMessages();
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js
 var init_bigint = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js"() {
     init_errorMessages();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js
 var init_boolean = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/branded.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js
 var init_branded = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/branded.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/catch.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js
 var init_catch = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/catch.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/date.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/date.js
 var init_date = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/date.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/date.js"() {
     init_errorMessages();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/default.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/default.js
 var init_default = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/default.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/default.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/effects.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js
 var init_effects = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/effects.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js"() {
     init_parseDef();
     init_any();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/enum.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js
 var init_enum = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/enum.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js
 var init_intersection = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/literal.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js
 var init_literal = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/literal.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/string.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/string.js
 var ALPHA_NUMERIC;
 var init_string = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/string.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/string.js"() {
     init_errorMessages();
     ALPHA_NUMERIC = new Set("ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvxyz0123456789");
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/record.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/record.js
 var init_record = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/record.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/record.js"() {
     init_parseDef();
     init_string();
     init_branded();
@@ -14889,124 +14889,124 @@ var init_record = __esm({
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/map.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/map.js
 var init_map = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/map.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/map.js"() {
     init_parseDef();
     init_record();
     init_any();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js
 var init_nativeEnum = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/never.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/never.js
 var init_never = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/never.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/never.js"() {
     init_any();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/null.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/null.js
 var init_null = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/null.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/null.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/union.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/union.js
 var init_union = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/union.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/union.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js
 var init_nullable = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js"() {
     init_parseDef();
     init_union();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/number.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/number.js
 var init_number = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/number.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/number.js"() {
     init_errorMessages();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/object.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/object.js
 var init_object = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/object.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/object.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/optional.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js
 var init_optional = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/optional.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js"() {
     init_parseDef();
     init_any();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js
 var init_pipeline = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/promise.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js
 var init_promise = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/promise.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/set.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/set.js
 var init_set = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/set.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/set.js"() {
     init_errorMessages();
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js
 var init_tuple = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js
 var init_undefined = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js"() {
     init_any();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js
 var init_unknown = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js"() {
     init_any();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js
 var init_readonly = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js"() {
     init_parseDef();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/selectParser.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/selectParser.js
 var init_selectParser = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/selectParser.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/selectParser.js"() {
     init_any();
     init_array();
     init_bigint();
@@ -15040,9 +15040,9 @@ var init_selectParser = __esm({
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parseDef.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parseDef.js
 var init_parseDef = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parseDef.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parseDef.js"() {
     init_Options();
     init_selectParser();
     init_getRelativePath();
@@ -15050,24 +15050,24 @@ var init_parseDef = __esm({
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/parseTypes.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parseTypes.js
 var init_parseTypes = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/parseTypes.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/parseTypes.js"() {
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js
 var init_zodToJsonSchema = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js"() {
     init_parseDef();
     init_Refs();
     init_any();
   }
 });
 
-// node_modules/zod-to-json-schema/dist/esm/index.js
+// ../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/index.js
 var init_esm = __esm({
-  "node_modules/zod-to-json-schema/dist/esm/index.js"() {
+  "../../thinkube-ai-integration/node_modules/zod-to-json-schema/dist/esm/index.js"() {
     init_Options();
     init_Refs();
     init_errorMessages();
@@ -15110,7 +15110,7 @@ var init_esm = __esm({
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js
 function getMethodLiteral(schema) {
   const shape = getObjectShape(schema);
   const methodSchema = shape?.method;
@@ -15131,13 +15131,13 @@ function parseWithCompat(schema, data) {
   return result.data;
 }
 var init_zod_json_schema_compat = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js"() {
     init_zod_compat();
     init_esm();
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js
 function isPlainObject2(value) {
   return value !== null && typeof value === "object" && !Array.isArray(value);
 }
@@ -15159,7 +15159,7 @@ function mergeCapabilities(base, additional) {
 }
 var DEFAULT_REQUEST_TIMEOUT_MSEC, Protocol;
 var init_protocol = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js"() {
     init_zod_compat();
     init_types();
     init_interfaces();
@@ -16100,9 +16100,9 @@ var init_protocol = __esm({
   }
 });
 
-// node_modules/ajv/dist/compile/codegen/code.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/codegen/code.js
 var require_code = __commonJS({
-  "node_modules/ajv/dist/compile/codegen/code.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/codegen/code.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.regexpCode = exports2.getEsmExportName = exports2.getProperty = exports2.safeStringify = exports2.stringify = exports2.strConcat = exports2.addCodeArg = exports2.str = exports2._ = exports2.nil = exports2._Code = exports2.Name = exports2.IDENTIFIER = exports2._CodeOrName = void 0;
@@ -16254,9 +16254,9 @@ var require_code = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/codegen/scope.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/codegen/scope.js
 var require_scope = __commonJS({
-  "node_modules/ajv/dist/compile/codegen/scope.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/codegen/scope.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ValueScope = exports2.ValueScopeName = exports2.Scope = exports2.varKinds = exports2.UsedValueState = void 0;
@@ -16399,9 +16399,9 @@ var require_scope = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/codegen/index.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/codegen/index.js
 var require_codegen = __commonJS({
-  "node_modules/ajv/dist/compile/codegen/index.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/codegen/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.or = exports2.and = exports2.not = exports2.CodeGen = exports2.operators = exports2.varKinds = exports2.ValueScopeName = exports2.ValueScope = exports2.Scope = exports2.Name = exports2.regexpCode = exports2.stringify = exports2.getProperty = exports2.nil = exports2.strConcat = exports2.str = exports2._ = void 0;
@@ -17119,9 +17119,9 @@ var require_codegen = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/util.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/util.js
 var require_util = __commonJS({
-  "node_modules/ajv/dist/compile/util.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/util.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.checkStrictMode = exports2.getErrorPath = exports2.Type = exports2.useFunc = exports2.setEvaluated = exports2.evaluatedPropsToName = exports2.mergeEvaluated = exports2.eachItem = exports2.unescapeJsonPointer = exports2.escapeJsonPointer = exports2.escapeFragment = exports2.unescapeFragment = exports2.schemaRefOrVal = exports2.schemaHasRulesButRef = exports2.schemaHasRules = exports2.checkUnknownRules = exports2.alwaysValidSchema = exports2.toHash = void 0;
@@ -17286,9 +17286,9 @@ var require_util = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/names.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/names.js
 var require_names = __commonJS({
-  "node_modules/ajv/dist/compile/names.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/names.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -17325,9 +17325,9 @@ var require_names = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/errors.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/errors.js
 var require_errors2 = __commonJS({
-  "node_modules/ajv/dist/compile/errors.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/errors.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.extendErrors = exports2.resetErrorsCount = exports2.reportExtraError = exports2.reportError = exports2.keyword$DataError = exports2.keywordError = void 0;
@@ -17447,9 +17447,9 @@ var require_errors2 = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/validate/boolSchema.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/boolSchema.js
 var require_boolSchema = __commonJS({
-  "node_modules/ajv/dist/compile/validate/boolSchema.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/boolSchema.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.boolOrEmptySchema = exports2.topBoolOrEmptySchema = void 0;
@@ -17498,9 +17498,9 @@ var require_boolSchema = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/rules.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/rules.js
 var require_rules = __commonJS({
-  "node_modules/ajv/dist/compile/rules.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/rules.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getRules = exports2.isJSONType = void 0;
@@ -17529,9 +17529,9 @@ var require_rules = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/validate/applicability.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/applicability.js
 var require_applicability = __commonJS({
-  "node_modules/ajv/dist/compile/validate/applicability.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/applicability.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.shouldUseRule = exports2.shouldUseGroup = exports2.schemaHasRulesForType = void 0;
@@ -17552,9 +17552,9 @@ var require_applicability = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/validate/dataType.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/dataType.js
 var require_dataType = __commonJS({
-  "node_modules/ajv/dist/compile/validate/dataType.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/dataType.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.reportTypeError = exports2.checkDataTypes = exports2.checkDataType = exports2.coerceAndCheckDataType = exports2.getJSONTypes = exports2.getSchemaTypes = exports2.DataType = void 0;
@@ -17736,9 +17736,9 @@ var require_dataType = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/validate/defaults.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/defaults.js
 var require_defaults = __commonJS({
-  "node_modules/ajv/dist/compile/validate/defaults.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/defaults.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.assignDefaults = void 0;
@@ -17773,9 +17773,9 @@ var require_defaults = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/code.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/code.js
 var require_code2 = __commonJS({
-  "node_modules/ajv/dist/vocabularies/code.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/code.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateUnion = exports2.validateArray = exports2.usePattern = exports2.callValidateCode = exports2.schemaProperties = exports2.allSchemaProperties = exports2.noPropertyInData = exports2.propertyInData = exports2.isOwnProperty = exports2.hasPropFunc = exports2.reportMissingProp = exports2.checkMissingProp = exports2.checkReportMissingProp = void 0;
@@ -17906,9 +17906,9 @@ var require_code2 = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/validate/keyword.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/keyword.js
 var require_keyword = __commonJS({
-  "node_modules/ajv/dist/compile/validate/keyword.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/keyword.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateKeywordUsage = exports2.validSchemaType = exports2.funcKeywordCode = exports2.macroKeywordCode = void 0;
@@ -18024,9 +18024,9 @@ var require_keyword = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/validate/subschema.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/subschema.js
 var require_subschema = __commonJS({
-  "node_modules/ajv/dist/compile/validate/subschema.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/subschema.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.extendSubschemaMode = exports2.extendSubschemaData = exports2.getSubschema = void 0;
@@ -18107,9 +18107,9 @@ var require_subschema = __commonJS({
   }
 });
 
-// node_modules/fast-deep-equal/index.js
+// ../../thinkube-ai-integration/node_modules/fast-deep-equal/index.js
 var require_fast_deep_equal = __commonJS({
-  "node_modules/fast-deep-equal/index.js"(exports2, module2) {
+  "../../thinkube-ai-integration/node_modules/fast-deep-equal/index.js"(exports2, module2) {
     "use strict";
     module2.exports = function equal(a, b) {
       if (a === b) return true;
@@ -18142,9 +18142,9 @@ var require_fast_deep_equal = __commonJS({
   }
 });
 
-// node_modules/json-schema-traverse/index.js
+// ../../thinkube-ai-integration/node_modules/json-schema-traverse/index.js
 var require_json_schema_traverse = __commonJS({
-  "node_modules/json-schema-traverse/index.js"(exports2, module2) {
+  "../../thinkube-ai-integration/node_modules/json-schema-traverse/index.js"(exports2, module2) {
     "use strict";
     var traverse = module2.exports = function(schema, opts, cb) {
       if (typeof opts == "function") {
@@ -18230,9 +18230,9 @@ var require_json_schema_traverse = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/resolve.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/resolve.js
 var require_resolve = __commonJS({
-  "node_modules/ajv/dist/compile/resolve.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/resolve.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getSchemaRefs = exports2.resolveUrl = exports2.normalizeId = exports2._getFullPath = exports2.getFullPath = exports2.inlineRef = void 0;
@@ -18386,9 +18386,9 @@ var require_resolve = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/validate/index.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/index.js
 var require_validate = __commonJS({
-  "node_modules/ajv/dist/compile/validate/index.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/validate/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getData = exports2.KeywordCxt = exports2.validateFunctionCode = void 0;
@@ -18894,9 +18894,9 @@ var require_validate = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/runtime/validation_error.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/runtime/validation_error.js
 var require_validation_error = __commonJS({
-  "node_modules/ajv/dist/runtime/validation_error.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/runtime/validation_error.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var ValidationError = class extends Error {
@@ -18910,9 +18910,9 @@ var require_validation_error = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/ref_error.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/ref_error.js
 var require_ref_error = __commonJS({
-  "node_modules/ajv/dist/compile/ref_error.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/ref_error.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var resolve_1 = require_resolve();
@@ -18927,9 +18927,9 @@ var require_ref_error = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/compile/index.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/compile/index.js
 var require_compile = __commonJS({
-  "node_modules/ajv/dist/compile/index.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/compile/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.resolveSchema = exports2.getCompilingSchema = exports2.resolveRef = exports2.compileSchema = exports2.SchemaEnv = void 0;
@@ -19151,9 +19151,9 @@ var require_compile = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/refs/data.json
+// ../../thinkube-ai-integration/node_modules/ajv/dist/refs/data.json
 var require_data = __commonJS({
-  "node_modules/ajv/dist/refs/data.json"(exports2, module2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/refs/data.json"(exports2, module2) {
     module2.exports = {
       $id: "https://raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json#",
       description: "Meta-schema for $data reference (JSON AnySchema extension proposal)",
@@ -19170,9 +19170,9 @@ var require_data = __commonJS({
   }
 });
 
-// node_modules/fast-uri/lib/utils.js
+// ../../thinkube-ai-integration/node_modules/fast-uri/lib/utils.js
 var require_utils = __commonJS({
-  "node_modules/fast-uri/lib/utils.js"(exports2, module2) {
+  "../../thinkube-ai-integration/node_modules/fast-uri/lib/utils.js"(exports2, module2) {
     "use strict";
     var isUUID = RegExp.prototype.test.bind(/^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/iu);
     var isIPv4 = RegExp.prototype.test.bind(/^(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)$/u);
@@ -19483,9 +19483,9 @@ var require_utils = __commonJS({
   }
 });
 
-// node_modules/fast-uri/lib/schemes.js
+// ../../thinkube-ai-integration/node_modules/fast-uri/lib/schemes.js
 var require_schemes = __commonJS({
-  "node_modules/fast-uri/lib/schemes.js"(exports2, module2) {
+  "../../thinkube-ai-integration/node_modules/fast-uri/lib/schemes.js"(exports2, module2) {
     "use strict";
     var { isUUID } = require_utils();
     var URN_REG = /([\da-z][\d\-a-z]{0,31}):((?:[\w!$'()*+,\-.:;=@]|%[\da-f]{2})+)/iu;
@@ -19693,9 +19693,9 @@ var require_schemes = __commonJS({
   }
 });
 
-// node_modules/fast-uri/index.js
+// ../../thinkube-ai-integration/node_modules/fast-uri/index.js
 var require_fast_uri = __commonJS({
-  "node_modules/fast-uri/index.js"(exports2, module2) {
+  "../../thinkube-ai-integration/node_modules/fast-uri/index.js"(exports2, module2) {
     "use strict";
     var { normalizeIPv6, removeDotSegments, recomposeAuthority, normalizePercentEncoding, normalizePathEncoding, escapePreservingEscapes, reescapeHostDelimiters, isIPv4, nonSimpleDomain } = require_utils();
     var { SCHEMES, getSchemeHandler } = require_schemes();
@@ -19979,9 +19979,9 @@ var require_fast_uri = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/runtime/uri.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/runtime/uri.js
 var require_uri = __commonJS({
-  "node_modules/ajv/dist/runtime/uri.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/runtime/uri.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var uri = require_fast_uri();
@@ -19990,9 +19990,9 @@ var require_uri = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/core.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/core.js
 var require_core = __commonJS({
-  "node_modules/ajv/dist/core.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/core.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.CodeGen = exports2.Name = exports2.nil = exports2.stringify = exports2.str = exports2._ = exports2.KeywordCxt = void 0;
@@ -20601,9 +20601,9 @@ var require_core = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/core/id.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/core/id.js
 var require_id = __commonJS({
-  "node_modules/ajv/dist/vocabularies/core/id.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/core/id.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var def = {
@@ -20616,9 +20616,9 @@ var require_id = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/core/ref.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/core/ref.js
 var require_ref = __commonJS({
-  "node_modules/ajv/dist/vocabularies/core/ref.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/core/ref.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.callRef = exports2.getValidate = void 0;
@@ -20738,9 +20738,9 @@ var require_ref = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/core/index.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/core/index.js
 var require_core2 = __commonJS({
-  "node_modules/ajv/dist/vocabularies/core/index.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/core/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var id_1 = require_id();
@@ -20759,9 +20759,9 @@ var require_core2 = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/limitNumber.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/limitNumber.js
 var require_limitNumber = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/limitNumber.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/limitNumber.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -20791,9 +20791,9 @@ var require_limitNumber = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/multipleOf.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/multipleOf.js
 var require_multipleOf = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/multipleOf.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/multipleOf.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -20819,9 +20819,9 @@ var require_multipleOf = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/runtime/ucs2length.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/runtime/ucs2length.js
 var require_ucs2length = __commonJS({
-  "node_modules/ajv/dist/runtime/ucs2length.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/runtime/ucs2length.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     function ucs2length(str2) {
@@ -20845,9 +20845,9 @@ var require_ucs2length = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/limitLength.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/limitLength.js
 var require_limitLength = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/limitLength.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/limitLength.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -20877,9 +20877,9 @@ var require_limitLength = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/pattern.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/pattern.js
 var require_pattern = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/pattern.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/pattern.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -20914,9 +20914,9 @@ var require_pattern = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/limitProperties.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/limitProperties.js
 var require_limitProperties = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/limitProperties.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/limitProperties.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -20943,9 +20943,9 @@ var require_limitProperties = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/required.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/required.js
 var require_required = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/required.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/required.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -21025,9 +21025,9 @@ var require_required = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/limitItems.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/limitItems.js
 var require_limitItems = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/limitItems.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/limitItems.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -21054,9 +21054,9 @@ var require_limitItems = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/runtime/equal.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/runtime/equal.js
 var require_equal = __commonJS({
-  "node_modules/ajv/dist/runtime/equal.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/runtime/equal.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var equal = require_fast_deep_equal();
@@ -21065,9 +21065,9 @@ var require_equal = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/uniqueItems.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js
 var require_uniqueItems = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/uniqueItems.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var dataType_1 = require_dataType();
@@ -21132,9 +21132,9 @@ var require_uniqueItems = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/const.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/const.js
 var require_const = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/const.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/const.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -21161,9 +21161,9 @@ var require_const = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/enum.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/enum.js
 var require_enum = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/enum.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/enum.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -21210,9 +21210,9 @@ var require_enum = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/validation/index.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/index.js
 var require_validation = __commonJS({
-  "node_modules/ajv/dist/vocabularies/validation/index.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/validation/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var limitNumber_1 = require_limitNumber();
@@ -21248,9 +21248,9 @@ var require_validation = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/additionalItems.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js
 var require_additionalItems = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/additionalItems.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateAdditionalItems = void 0;
@@ -21301,9 +21301,9 @@ var require_additionalItems = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/items.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/items.js
 var require_items = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/items.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/items.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateTuple = void 0;
@@ -21358,9 +21358,9 @@ var require_items = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/prefixItems.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js
 var require_prefixItems = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/prefixItems.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var items_1 = require_items();
@@ -21375,9 +21375,9 @@ var require_prefixItems = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/items2020.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/items2020.js
 var require_items2020 = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/items2020.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/items2020.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -21410,9 +21410,9 @@ var require_items2020 = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/contains.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/contains.js
 var require_contains = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/contains.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/contains.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -21504,9 +21504,9 @@ var require_contains = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/dependencies.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/dependencies.js
 var require_dependencies = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/dependencies.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/dependencies.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.validateSchemaDeps = exports2.validatePropertyDeps = exports2.error = void 0;
@@ -21598,9 +21598,9 @@ var require_dependencies = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/propertyNames.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js
 var require_propertyNames = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/propertyNames.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -21641,9 +21641,9 @@ var require_propertyNames = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js
 var require_additionalProperties = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -21747,9 +21747,9 @@ var require_additionalProperties = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/properties.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/properties.js
 var require_properties = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/properties.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/properties.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var validate_1 = require_validate();
@@ -21805,9 +21805,9 @@ var require_properties = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/patternProperties.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js
 var require_patternProperties = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/patternProperties.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -21879,9 +21879,9 @@ var require_patternProperties = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/not.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/not.js
 var require_not = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/not.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/not.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var util_1 = require_util();
@@ -21910,9 +21910,9 @@ var require_not = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/anyOf.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/anyOf.js
 var require_anyOf = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/anyOf.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/anyOf.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -21927,9 +21927,9 @@ var require_anyOf = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/oneOf.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/oneOf.js
 var require_oneOf = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/oneOf.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/oneOf.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -21985,9 +21985,9 @@ var require_oneOf = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/allOf.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/allOf.js
 var require_allOf = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/allOf.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/allOf.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var util_1 = require_util();
@@ -22012,9 +22012,9 @@ var require_allOf = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/if.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/if.js
 var require_if = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/if.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/if.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -22081,9 +22081,9 @@ var require_if = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/thenElse.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/thenElse.js
 var require_thenElse = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/thenElse.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/thenElse.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var util_1 = require_util();
@@ -22099,9 +22099,9 @@ var require_thenElse = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/applicator/index.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/index.js
 var require_applicator = __commonJS({
-  "node_modules/ajv/dist/vocabularies/applicator/index.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/applicator/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var additionalItems_1 = require_additionalItems();
@@ -22147,9 +22147,9 @@ var require_applicator = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/format/format.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/format/format.js
 var require_format = __commonJS({
-  "node_modules/ajv/dist/vocabularies/format/format.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/format/format.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -22237,9 +22237,9 @@ var require_format = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/format/index.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/format/index.js
 var require_format2 = __commonJS({
-  "node_modules/ajv/dist/vocabularies/format/index.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/format/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var format_1 = require_format();
@@ -22248,9 +22248,9 @@ var require_format2 = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/metadata.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/metadata.js
 var require_metadata = __commonJS({
-  "node_modules/ajv/dist/vocabularies/metadata.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/metadata.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.contentVocabulary = exports2.metadataVocabulary = void 0;
@@ -22271,9 +22271,9 @@ var require_metadata = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/draft7.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/draft7.js
 var require_draft7 = __commonJS({
-  "node_modules/ajv/dist/vocabularies/draft7.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/draft7.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var core_1 = require_core2();
@@ -22293,9 +22293,9 @@ var require_draft7 = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/discriminator/types.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/discriminator/types.js
 var require_types = __commonJS({
-  "node_modules/ajv/dist/vocabularies/discriminator/types.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/discriminator/types.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.DiscrError = void 0;
@@ -22307,9 +22307,9 @@ var require_types = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/vocabularies/discriminator/index.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/discriminator/index.js
 var require_discriminator = __commonJS({
-  "node_modules/ajv/dist/vocabularies/discriminator/index.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/vocabularies/discriminator/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -22412,9 +22412,9 @@ var require_discriminator = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/refs/json-schema-draft-07.json
+// ../../thinkube-ai-integration/node_modules/ajv/dist/refs/json-schema-draft-07.json
 var require_json_schema_draft_07 = __commonJS({
-  "node_modules/ajv/dist/refs/json-schema-draft-07.json"(exports2, module2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/refs/json-schema-draft-07.json"(exports2, module2) {
     module2.exports = {
       $schema: "http://json-schema.org/draft-07/schema#",
       $id: "http://json-schema.org/draft-07/schema#",
@@ -22569,9 +22569,9 @@ var require_json_schema_draft_07 = __commonJS({
   }
 });
 
-// node_modules/ajv/dist/ajv.js
+// ../../thinkube-ai-integration/node_modules/ajv/dist/ajv.js
 var require_ajv = __commonJS({
-  "node_modules/ajv/dist/ajv.js"(exports2, module2) {
+  "../../thinkube-ai-integration/node_modules/ajv/dist/ajv.js"(exports2, module2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.MissingRefError = exports2.ValidationError = exports2.CodeGen = exports2.Name = exports2.nil = exports2.stringify = exports2.str = exports2._ = exports2.KeywordCxt = exports2.Ajv = void 0;
@@ -22639,9 +22639,9 @@ var require_ajv = __commonJS({
   }
 });
 
-// node_modules/ajv-formats/dist/formats.js
+// ../../thinkube-ai-integration/node_modules/ajv-formats/dist/formats.js
 var require_formats = __commonJS({
-  "node_modules/ajv-formats/dist/formats.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv-formats/dist/formats.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.formatNames = exports2.fastFormats = exports2.fullFormats = void 0;
@@ -22842,9 +22842,9 @@ var require_formats = __commonJS({
   }
 });
 
-// node_modules/ajv-formats/dist/limit.js
+// ../../thinkube-ai-integration/node_modules/ajv-formats/dist/limit.js
 var require_limit = __commonJS({
-  "node_modules/ajv-formats/dist/limit.js"(exports2) {
+  "../../thinkube-ai-integration/node_modules/ajv-formats/dist/limit.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.formatLimitDefinition = void 0;
@@ -22914,9 +22914,9 @@ var require_limit = __commonJS({
   }
 });
 
-// node_modules/ajv-formats/dist/index.js
+// ../../thinkube-ai-integration/node_modules/ajv-formats/dist/index.js
 var require_dist2 = __commonJS({
-  "node_modules/ajv-formats/dist/index.js"(exports2, module2) {
+  "../../thinkube-ai-integration/node_modules/ajv-formats/dist/index.js"(exports2, module2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var formats_1 = require_formats();
@@ -22956,7 +22956,7 @@ var require_dist2 = __commonJS({
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js
 function createDefaultAjvInstance() {
   const ajv = new import_ajv.default({
     strict: false,
@@ -22970,7 +22970,7 @@ function createDefaultAjvInstance() {
 }
 var import_ajv, import_ajv_formats, AjvJsonSchemaValidator;
 var init_ajv_provider = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js"() {
     import_ajv = __toESM(require_ajv(), 1);
     import_ajv_formats = __toESM(require_dist2(), 1);
     AjvJsonSchemaValidator = class {
@@ -23029,10 +23029,10 @@ var init_ajv_provider = __esm({
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js
 var ExperimentalServerTasks;
 var init_server = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js"() {
     init_types();
     ExperimentalServerTasks = class {
       constructor(_server) {
@@ -23248,7 +23248,7 @@ var init_server = __esm({
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js
 function assertToolsCallTaskCapability(requests, method, entityName) {
   if (!requests) {
     throw new Error(`${entityName} does not support task creation (required for ${method})`);
@@ -23283,18 +23283,18 @@ function assertClientRequestTaskCapability(requests, method, entityName) {
   }
 }
 var init_helpers = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js"() {
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js
 var server_exports = {};
 __export(server_exports, {
   Server: () => Server
 });
 var Server;
 var init_server2 = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js"() {
     init_protocol();
     init_types();
     init_ajv_provider();
@@ -23682,7 +23682,7 @@ var init_server2 = __esm({
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js
 function deserializeMessage(line) {
   return JSONRPCMessageSchema.parse(JSON.parse(line));
 }
@@ -23691,7 +23691,7 @@ function serializeMessage(message) {
 }
 var ReadBuffer;
 var init_stdio = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js"() {
     init_types();
     ReadBuffer = class {
       append(chunk) {
@@ -23716,14 +23716,14 @@ var init_stdio = __esm({
   }
 });
 
-// node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
+// ../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
 var stdio_exports = {};
 __export(stdio_exports, {
   StdioServerTransport: () => StdioServerTransport
 });
 var import_node_process, StdioServerTransport;
 var init_stdio2 = __esm({
-  "node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js"() {
+  "../../thinkube-ai-integration/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js"() {
     import_node_process = __toESM(require("node:process"), 1);
     init_stdio();
     StdioServerTransport = class {
@@ -23794,6 +23794,7 @@ __export(kanbanMcpServer_exports, {
   BoardRegistry: () => BoardRegistry,
   aggregateTagsAcrossBoards: () => aggregateTagsAcrossBoards,
   createSlice: () => createSlice,
+  dispatchTool: () => dispatchTool,
   getProject: () => getProject,
   listBoard: () => listBoard,
   listProducts: () => listProducts,
@@ -24798,6 +24799,23 @@ function linkedWorktreeInfo(dir) {
   }
 }
 
+// src/services/openingGate.ts
+function hasRunnableEntry(decl) {
+  if (!decl || typeof decl !== "object") return false;
+  const run = decl.run;
+  return typeof run === "string" && run.trim().length > 0;
+}
+function readyGate(acs, verifications) {
+  if (!acs.length) return { ok: false, ordinal: 1 };
+  const ordered = [...acs].sort((a, b) => a.ordinal - b.ordinal);
+  for (const ac of ordered) {
+    if (!hasRunnableEntry(verifications?.[String(ac.ordinal)])) {
+      return { ok: false, ordinal: ac.ordinal };
+    }
+  }
+  return { ok: true };
+}
+
 // src/store/boardNamespace.ts
 var path7 = __toESM(require("node:path"));
 function containerSegment(folderName) {
@@ -24832,6 +24850,57 @@ function namespaceForRepo(repoPath, folders) {
 }
 function boardDirForNamespace(boardRoot, namespace) {
   return path7.join(boardRoot, ...namespace.split("/"));
+}
+
+// src/services/orchestratorCore.ts
+function batchExecutionUnits(units) {
+  const out = [];
+  const serial = units.filter((u) => u.execution === "serial");
+  if (serial.length) out.push({ shape: "serial", units: serial });
+  for (const u of units.filter((u2) => u2.execution === "mechanize"))
+    out.push({ shape: "mechanize", units: [u] });
+  for (const u of units.filter((u2) => u2.execution === "fan-out"))
+    out.push({ shape: "fan-out", units: [u] });
+  return out;
+}
+function buildUnitDag(slices) {
+  const out = [];
+  for (const s of slices) {
+    const sliceDeps = s.dependsOn ?? [];
+    const units = s.workUnits ?? [];
+    if (units.length === 0) {
+      out.push({
+        id: s.handle,
+        slice: s.handle,
+        footprint: s.files ?? [],
+        dependsOn: [...sliceDeps],
+        shape: "serial"
+      });
+      continue;
+    }
+    batchExecutionUnits(units).forEach((eu, i) => {
+      const footprint = [
+        ...new Set(eu.units.flatMap((u) => u.footprint ?? []))
+      ];
+      const dependsOn = [
+        .../* @__PURE__ */ new Set([
+          ...sliceDeps,
+          ...eu.units.flatMap((u) => u.depends_on ?? [])
+        ])
+      ];
+      const note = eu.units.map((u) => u.note).filter(Boolean).join("; ") || void 0;
+      out.push({
+        id: `${s.handle}#eu-${i}`,
+        slice: s.handle,
+        footprint,
+        dependsOn,
+        shape: eu.shape,
+        note,
+        units: eu.units
+      });
+    });
+  }
+  return out;
 }
 
 // src/views/kanban/host/storage/sliceBoard.ts
@@ -24920,7 +24989,26 @@ function buildSliceBoard(slices, scope, specMeta) {
       commitUrl: s.commitUrl,
       pr: s.pr,
       dependsOn: s.dependsOn,
-      tags: s.tags
+      tags: s.tags,
+      // Expand the slice's work units into the scheduler's execution units (one per
+      // worker) so the control-center graph shows a node per worker even before
+      // dispatch. Ids (`${handle}#eu-${i}`) align with the live runningWorkers keys.
+      // A slice with no work_units yields one node (= the slice handle), preserving
+      // the legacy slice-grained graph.
+      workUnits: buildUnitDag([
+        {
+          handle: id,
+          status: s.status ?? "",
+          dependsOn: s.dependsOn ?? [],
+          files: s.files ?? [],
+          workUnits: s.workUnits ?? []
+        }
+      ]).map((u) => ({
+        id: u.id,
+        shape: u.shape,
+        note: u.note,
+        dependsOn: u.dependsOn
+      }))
     };
     tasks[id] = card;
     byColumn.get(columnId)?.push(id);
@@ -25134,7 +25222,13 @@ function walkForBoards(dir, depth, out, env) {
     const boardDir = boardDirOf(abs, env);
     if (isBoardDir(boardDir)) {
       const name = wt ? `${path8.basename(wt.canonicalRepo)} \xB7 ${wt.name} worktree` : path8.basename(abs);
-      out.set(abs, { id: boardId(abs), name, path: abs, boardDir, worktree: !!wt });
+      out.set(abs, {
+        id: boardId(abs),
+        name,
+        path: abs,
+        boardDir,
+        worktree: !!wt
+      });
     }
     return;
   }
@@ -25475,6 +25569,19 @@ var TOOL_DEFS = [
           type: "string",
           description: "The TEP this Spec implements \u2014 a bare `TEP-<id>` (repo-local) or a qualified `<namespace>:TEP-<id>` (cross-board / umbrella project). Sets the `implements:` frontmatter (the TEP\u2194spec link + umbrella membership, which `promote_tep` rewrites). Omit to leave it unchanged; empty string clears it."
         },
+        ac_verifications: {
+          type: "object",
+          description: "The closing AI-verification gate's per-AC declaration (SP-tgzyfy / TEP-tgzx3p): a map keyed by 1-based AC ordinal \u2192 `{ run, env? }`, where `run` is the shell/playbook command that verifies that AC (exit 0 = pass) and `env` is `cluster` (an infra lifecycle) or `local`. The orchestrator runs the union as a full plan at Spec quiescence and gates Done/commit on all-green (no skip; red or un-runnable \u2192 requires-attention). Sets the `ac_verifications:` frontmatter; omit to leave unchanged, pass `{}` to clear.",
+          additionalProperties: {
+            type: "object",
+            properties: {
+              run: { type: "string" },
+              env: { type: "string", enum: ["cluster", "local"] }
+            },
+            required: ["run"],
+            additionalProperties: false
+          }
+        },
         ...BOARD_PARAM
       },
       required: ["spec", "body"],
@@ -25614,6 +25721,11 @@ async function dispatchTool(name, args, ctx, writeGate) {
         parallel_group: optString(args, "parallel_group"),
         files: optStringArray(args, "files"),
         satisfies: optNumberArray(args, "satisfies"),
+        // The execution-aware work units (SP-tgs8gb). Forwarded verbatim — createSlice
+        // validates each unit's footprint and serializes the array to frontmatter. Without
+        // this line the schema accepts work_units but the handler silently drops it (the
+        // bug that left every created slice with no work_units).
+        work_units: Array.isArray(args.work_units) ? args.work_units : void 0,
         docs: optString(args, "docs"),
         docs_reason: optString(args, "docs_reason"),
         priority: optString(args, "priority"),
@@ -25625,7 +25737,11 @@ async function dispatchTool(name, args, ctx, writeGate) {
         store,
         typeof args.spec === "number" ? String(args.spec) : asString(args, "spec"),
         asString(args, "body"),
-        optString(args, "implements")
+        optString(args, "implements"),
+        // The closing gate's per-AC declaration (SP-tgzyfy). Forwarded verbatim — writeSpec
+        // normalizes + serializes it to the `ac_verifications:` frontmatter; undefined leaves
+        // any existing map intact, `{}` clears it.
+        args.ac_verifications !== void 0 && typeof args.ac_verifications === "object" && !Array.isArray(args.ac_verifications) ? args.ac_verifications : void 0
       );
     case "update_slice":
       writeGate(name);
@@ -25693,7 +25809,9 @@ function listBoards(ctx) {
 }
 async function collectTaggedItems(store, boardId2, out) {
   for (const t of await store.listTeps()) {
-    const tags = effectiveTags((await store.getFile(t.relativePath))?.frontmatter);
+    const tags = effectiveTags(
+      (await store.getFile(t.relativePath))?.frontmatter
+    );
     if (tags.length)
       out.push({ boardId: boardId2, handle: `TEP-${t.id}`, kind: "tep", tags });
   }
@@ -25844,7 +25962,11 @@ async function promoteTep(ctx, tepArg, product, projectId) {
         projectNamespace
       );
       if (next && parsed) {
-        await store.writeFile(rel, { ...fm ?? {}, implements: next }, parsed.body);
+        await store.writeFile(
+          rel,
+          { ...fm ?? {}, implements: next },
+          parsed.body
+        );
         rewritten.push(`SP-${spec}`);
       }
     }
@@ -26103,9 +26225,20 @@ async function createSlice(store, args) {
       `No spec at ${store.thinkubeDir}/specs/SP-${args.spec}/spec.md \u2014 run /spec-prepare ${args.spec} first.`
     );
   }
-  if (!hasNonEmptyAcceptanceCriteria(specDoc.body)) {
+  const acs = acceptanceCriteriaOrdinals(specDoc.body);
+  if (acs.length === 0) {
     throw new Error(
       `SP-${args.spec} has no acceptance criteria (its slices would fail the \u2192 Ready gate) \u2014 run /spec-prepare ${args.spec} first.`
+    );
+  }
+  const rawVerifs = specDoc.frontmatter?.ac_verifications;
+  const verifications = normalizeAcVerifications(
+    rawVerifs && typeof rawVerifs === "object" ? rawVerifs : {}
+  );
+  const readyVerdict = readyGate(acs, verifications);
+  if (!readyVerdict.ok) {
+    throw new Error(
+      `SP-${args.spec} AC ${readyVerdict.ordinal} has no runnable ac_verifications entry \u2014 every AC must be certified with a verification before \u2192 Ready. Run /spec-prepare ${args.spec} to certify each AC.`
     );
   }
   const group = args.parallel_group?.trim();
@@ -26167,11 +26300,12 @@ ${args.body.trim()}
     uid
   };
 }
-function hasNonEmptyAcceptanceCriteria(body) {
-  if (!body) return false;
+function acceptanceCriteriaOrdinals(body) {
+  if (!body) return [];
   const m = /##\s*Acceptance Criteria\s*\n([\s\S]*?)(?=\n##\s|$)/i.exec(body);
-  if (!m) return false;
-  return /[-*]\s*\[[ xX]\]/.test(m[1]);
+  if (!m) return [];
+  const count = m[1].split(/\r?\n/).filter((line) => /^\s*[-*]\s*\[[ xX]\]/.test(line)).length;
+  return Array.from({ length: count }, (_, i) => ({ ordinal: i + 1 }));
 }
 async function uniqueSlug(store, spec, title) {
   const base = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 48) || `sp${spec}-slice`;
@@ -26185,7 +26319,7 @@ async function uniqueSlug(store, spec, title) {
   while (taken.has(slug)) slug = `${base}-${i++}`;
   return slug;
 }
-async function writeSpec(store, spec, body, implementsRef) {
+async function writeSpec(store, spec, body, implementsRef, acVerifications) {
   const trimmed = body.trim();
   if (!trimmed) throw new Error("Spec body must not be empty.");
   const rel = store.pathForSpecDoc(spec);
@@ -26196,6 +26330,11 @@ async function writeSpec(store, spec, body, implementsRef) {
     if (v) fm.implements = v;
     else delete fm.implements;
   }
+  if (acVerifications !== void 0) {
+    const normalized = normalizeAcVerifications(acVerifications);
+    if (Object.keys(normalized).length) fm.ac_verifications = normalized;
+    else delete fm.ac_verifications;
+  }
   await store.writeFile(rel, fm, `${trimmed}
 `);
   return {
@@ -26203,8 +26342,31 @@ async function writeSpec(store, spec, body, implementsRef) {
     spec,
     relativePath: rel,
     created: existing === void 0,
-    implements: fm.implements
+    implements: fm.implements,
+    acVerifications: fm.ac_verifications
   };
+}
+function normalizeAcVerifications(raw) {
+  const entries = [];
+  for (const [key, val] of Object.entries(raw)) {
+    const ac = Number(key);
+    if (!Number.isInteger(ac) || ac <= 0) continue;
+    if (!val || typeof val !== "object") continue;
+    const run = val.run;
+    if (typeof run !== "string" || !run.trim()) continue;
+    const env = val.env;
+    entries.push([
+      ac,
+      {
+        run: run.trim(),
+        ...env === "cluster" || env === "local" ? { env } : {}
+      }
+    ]);
+  }
+  entries.sort((a, b) => a[0] - b[0]);
+  const out = {};
+  for (const [ac, decl] of entries) out[String(ac)] = decl;
+  return out;
 }
 async function updateSlice(store, handle, body, tags) {
   const { specNumber, sliceNumber } = parseSliceHandle(handle);
@@ -26366,6 +26528,7 @@ if (require.main === module) {
   BoardRegistry,
   aggregateTagsAcrossBoards,
   createSlice,
+  dispatchTool,
   getProject,
   listBoard,
   listProducts,

@@ -15,7 +15,7 @@ thinkube-bundle: 0.0.1
 
 # /spec-prepare
 
-Fill in a Spec's body to the standard Tandem shape. The Spec lives as a committed file at `specs/SP-{n}/spec.md` **in the board** (the central sidecar namespace, TEP-0008) — the single source of truth. Read it with `get_thinkube_file` and write it with `write_spec`; **both are board-aware**, so the file always lands in the sidecar regardless of where the session is rooted. Never write the Spec with a raw `Write`/`Edit` — a relative path resolves against the session's cwd (the code repo), not the board. After this skill runs, the → Ready gate passes (the Spec has a non-empty `## Acceptance Criteria`) and the Spec is ready for `/slice`.
+Fill in a Spec's body to the standard Tandem shape. The Spec lives as a committed file at `specs/SP-{n}/spec.md` **in the board** (the central sidecar namespace, TEP-0008) — the single source of truth. Read it with `get_thinkube_file` and write it with `write_spec`; **both are board-aware**, so the file always lands in the sidecar regardless of where the session is rooted. Never write the Spec with a raw `Write`/`Edit` — a relative path resolves against the session's cwd (the code repo), not the board. After this skill runs, the → Ready gate passes — every AC is certified `verifiable` by the auditor and carries an `ac_verifications` entry (not merely a non-empty `## Acceptance Criteria`) — and the Spec is ready for `/slice`.
 
 > **Decision-point protocol** (methodology `CLAUDE.md`): this is _human-paced_ authoring — converse → options → research → **read-back** → the human's explicit **"go."** Surface options as prose, never force convergence, and **approve ≠ execute**.
 
@@ -24,6 +24,7 @@ Fill in a Spec's body to the standard Tandem shape. The Spec lives as a committe
 Produce a fully-shaped `specs/SP-{n}/spec.md` containing the four canonical sections, with:
 
 - **Acceptance criteria** that the → Ready gate will accept (non-empty checklist) and that are **user-observable / verifiable**.
+- A **verification map** (`ac_verifications`) — exactly one runnable `{ run, env }` per AC, certified by the verifiability auditor — emitted before → Ready so the **closing** AI-verification gate (SP-tgzyfy / TEP-tgzx3p) has something to run.
 - **Constraints** that bound the design (perf, compat, security, deadlines).
 - **Design** at the depth needed to start slicing, not a full implementation guide.
 - **File plan** naming the files the spec will touch.
@@ -57,7 +58,7 @@ Gather the minimum, in the right order, and only after the governing document ex
    - **Design**: 1–3 paragraphs. Approach + key data structures + integration seams. Not pseudocode. This is also where **spikes / investigations** ("confirm X behaves like Y") land — they are not slices.
    - **File structure plan**: bullet list of files we expect to create / modify, one line of why each.
    - **Documentation impact** (TEP-tgh6iy): as the ACs land, note which are **user-facing** — anything a reader can observe (a feature, CLI, API, config surface, install/upgrade step, or template behavior). That impact seeds each slice's `docs:` obligation in `/slice` (user-facing → `docs: required`; internal-only → `docs: n/a` + reason), so the → Done docs gate has something concrete to check. Record it in the Design (e.g. "the X page documents this") rather than as its own section.
-5. **Explore the codebase — only now, scoped by the agreed AC.** With the acceptance criteria settled, ground the Design against reality: consult `CLAUDE.md` first, then delegate "what's currently in this codebase" questions to the `explorer` subagent (`Task` tool), or use Grep/Glob for a targeted check. Explore only what the docs don't already answer and only what the AC require — then fold what you learn into the Design / File Structure Plan in the file.
+5. **Explore the codebase — only now, scoped by the agreed AC.** With the acceptance criteria settled, ground the Design against reality: consult `CLAUDE.md` first, then delegate "what's currently in this codebase" questions to the `explorer` subagent (`Task` tool), or use Grep/Glob for a targeted check. Explore only what the docs don't already answer and only what the AC require — then fold what you learn into the Design / File Structure Plan in the file. **Note the repo's verification recipe** (test / lint / typecheck commands per `repo-conventions`) — step 7 needs it to write each AC's concrete `run` command.
 6. **Target shape.** The file must converge to exactly this structure (the skeleton from step 3 already has it; sections fill in as agreement lands):
 
 ```
@@ -86,13 +87,32 @@ Gather the minimum, in the right order, and only after the governing document ex
 - `other/file.tsx` — <reason>
 ```
 
-7. **Commit, then report.** Commit **and push** the spec file to the board and report the commit — don't ask first (board bookkeeping, per CLAUDE.md). Then print the path, AC count, and the suggested next step (`/slice {n}`).
+7. **Audit each AC's verifiability and emit the verification map.** Once the ACs and Design are settled, run an **AC-verifiability auditor** — the **opening** AI-verification gate (TEP-tgzx3p), the authoring-time mirror of the closing gate SP-tgzyfy shipped. A Spec reaches **Ready only when every AC is certified `verifiable` and carries a runnable `ac_verifications` entry.** **Reuse the methodology's adversarial-subagent pattern** — the same delegation shape as `reviewer` / `verifier`: hand the drafted `## Acceptance Criteria` (plus the Design and the step-5 verification recipe) to an adversarial pass via the `Task` tool, so each AC is interrogated with **independent context**, not waved through by the author who just wrote it. For **each** AC the auditor asks the three questions:
+   - **Actor** — who runs the check? It must be the **AI verifier**, never a human.
+   - **Environment** — where does it run: `local` (the repo / a shell) or `cluster` (an infra lifecycle)?
+   - **Availability before the gate it arms** — is that actor + environment available _before_ the step this AC guards (Done before merge; acceptance before merge)?
+
+   The auditor returns, per AC, a verdict — `verifiable` or `needs-reframe(why)`:
+   - **`needs-reframe`** — the AC is **human-executed** or **deploy/merge-circular** (the step-4 anti-patterns), so no AI actor + environment can check it before its gate. **Rework or drop it before emitting the map** — reframe per step 4 (probabilistic → controllable proxy + AI probe; deploy-circular → pre-merge/preview AC + a non-gating post-deploy smoke check), land the new wording with a `get_thinkube_file` → `write_spec` read-modify-write, then **re-audit**. A `needs-reframe` AC **never gets a verification entry** — so a partial map can't sneak it past the gate.
+   - **`verifiable`** — produce a concrete **`{ run, env }`**: `run` is the shell / playbook command that checks _this_ AC (exit 0 = pass), grounded in the repo's verification recipe (the codebase facts gathered in step 5); `env` is `local` (repo / shell) or `cluster` (an infra lifecycle).
+
+   When — and only when — **every** AC is `verifiable`, emit the map:
+
+   ```
+   write_spec { spec: {n}, ac_verifications: { "1": { run, env }, "2": { run, env }, … } }
+   ```
+
+   keyed by **1-based AC ordinal**, **exactly one entry per AC**, every ordinal `1..N` present (no orphan / missing keys). `write_spec` normalizes and serializes it to the Spec's `ac_verifications:` frontmatter; this is the per-AC declaration the **closing** gate (SP-tgzyfy / TEP-tgzx3p) runs as a single plan at Spec quiescence and gates Done / commit on all-green. **Emitting the full map is what arms → Ready.** A Spec with any un-audited, `needs-reframe`, or undeclared AC **cannot reach Ready** — the → Ready gate (`createSlice`'s `readyGate`) blocks and names the offending ordinal, so don't skip this step or emit a partial map. **Re-run this whole step whenever the ACs change** (and `/slice` re-checks it when it touches ACs).
+
+8. **Commit, then report.** Commit **and push** the spec file to the board and report the commit — don't ask first (board bookkeeping, per CLAUDE.md). Then print the path, AC count, the verification-map count (one entry per AC), and the suggested next step (`/slice {n}`).
 
 ## Constraints
 
 - The four section headers (`## Acceptance Criteria`, `## Constraints`, `## Design`, `## File Structure Plan`) are **load-bearing** — the quality gates and the staleness hash look for these exact strings. Don't rename them.
 - **Acceptance criteria are outcome-level, not implementation steps.** Each `- [ ]` line is something the user can observe or a verifier can check. Implementation work lives in slices, not here.
 - **Acceptance criteria must be AI-verifiable at the gate they arm.** No human-executed ACs ("the human checks in a fresh session") and no deploy/merge-circular ACs (verifiable only after the merge/deploy the AC gates) — both stall the loop. Reframe per step 4: probabilistic → controllable proxy + AI probe; deploy-circular → pre-merge/preview-verifiable AC + a non-gating post-deploy smoke check; otherwise → a Design/Constraints note. The human's only gate is acceptance.
+- **Every AC carries a certified `ac_verifications` entry before Ready** (TEP-tgzx3p / closes the SP-tgqf1v gap). The verifiability auditor (Procedure step 7) certifies each AC `verifiable` via an independent adversarial subagent pass and emits a runnable `{ run, env }` per ordinal through `write_spec`; a `needs-reframe` AC is reworked or dropped, **never declared**. The → Ready gate (`createSlice`'s `readyGate`) blocks any Spec with an un-audited or undeclared AC and names the ordinal — don't hand-craft the frontmatter and don't emit a partial map.
+- **One serialization, both ends.** Emit the map only through `write_spec` (which normalizes it to canonical `{ run, env }` frontmatter); the closing gate reads the same frontmatter. Don't invent a second declaration shape — the round-trip holds by construction.
 - Don't invent acceptance criteria the user didn't agree to. Each `- [ ]` line should trace to something the user explicitly said or confirmed.
 
 ## Output
@@ -101,6 +121,7 @@ Gather the minimum, in the right order, and only after the governing document ex
 ✅ SP-{n}: <title>
    spec:    specs/SP-{n}/spec.md
    ac:      <count> acceptance criteria
+   verify:  <count> ac_verifications (1 per AC, all certified verifiable)
    files:   <count> in file plan
    next:    /slice {n}
 ```
@@ -108,5 +129,6 @@ Gather the minimum, in the right order, and only after the governing document ex
 ## Safety / fallback
 
 - **No acceptance criteria the user will commit to.** Refuse to write — at least one user-observable criterion is required, or the → Ready gate will block the Spec's slices from advancing.
-- **Existing spec with user edits.** Re-fetch with `get_thinkube_file` first; preserve sections the user has filled out. `write_spec` rewrites the whole body, so only re-emit sections the user has agreed to update during this run — keep the rest verbatim.
+- **An AC the auditor can't certify.** If an AC stays `needs-reframe` after a rework attempt — no AI actor + environment can verify it before its gate — it is **not an AC**: move its intent to a Design/Constraints note or a non-gating follow-up obligation, then drop the `- [ ]` line. Never emit an `ac_verifications` entry for it, and never leave it undeclared "for now" — the → Ready gate will block the whole Spec on it.
+- **Existing spec with user edits.** Re-fetch with `get_thinkube_file` first; preserve sections the user has filled out. `write_spec` rewrites the whole body, so only re-emit sections the user has agreed to update during this run — keep the rest verbatim. Re-run the step-7 audit when the ACs changed.
 - **`write_spec` / `get_thinkube_file` absent in this session.** STOP and say so — do **not** fall back to a raw `Write`/`Edit`, which would write the Spec outside the board (into the code repo). Fix: start a fresh session in the repo so `.mcp.json` loads the kanban server.
