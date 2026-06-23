@@ -1,0 +1,78 @@
+# /slice — reference
+
+Rarely-needed depth for `/slice`. The always-loaded `SKILL.md` keeps the operational core (Mission, Procedure, Constraints, Output) and points here for the conceptual deep-dives and edge cases below. Load this on demand — when you need the full rationale behind a slice-vs-fragment call, the work-unit parallelism model, or the re-slicing change-review.
+
+## What a slice is (vertical, not a layer)
+
+A slice is the unit that flows the board and is the verification boundary — _one green_. The decisive test is **vertical, demonstrable capability**, not size or layer:
+
+- **Slice (vertical — write a file):**
+  - "Email/password login end-to-end — form → `POST /session` → validate → set cookie → redirect."
+  - "A logged-in session survives a server restart."
+  - "Logout end-to-end — button → `DELETE /session` → cookie cleared."
+- **Not a slice (horizontal fragment — fold into the slice it serves):**
+  - "Add the Redis session store." · "Write the session middleware." · "Wire the OAuth callback handler."
+  - Each is one _layer_ of a slice; on its own it leaves the system half-built, demos nothing, and only makes sense once a sibling lands.
+
+Slicing **by layer/file** ("the models slice", "the endpoints slice", "the Redis slice") is the anti-pattern — it recreates the tiny-task soup the Slice unit exists to prevent (a slice is **not** a renamed atomic task). When in doubt, ask: _if I commit only this, is the system demonstrably more capable?_ If no, it's a fragment — merge it into the vertical slice it belongs to.
+
+## The second axis: work units (how the slice's work parallelizes)
+
+Cutting the slice answers _what is one coherent "done."_ It does **not** decide how the work inside it runs. That is a **separate, orthogonal axis** — the slice's **work units**, the schedulable atoms the orchestrator runs across N parallel workers. Getting the slice right but the work units wrong is the **most common first-use mistake**, so hold the two apart:
+
+- **Slice = the validation envelope.** One coherent, demonstrable "done," verified once. It can be sizable and span many files.
+- **Work unit = an authoring atom inside the slice.** `{ footprint, execution, note? }`. The orchestrator schedules these — many run **concurrently**.
+
+**The one rule that decides parallelism: shared footprint.** Two work units must serialize **only if they edit the same file** (a shared footprint). Disjoint files → they run in **parallel**. Nothing else serializes them:
+
+- **A runtime / deploy / import / logical order does NOT serialize authoring.** If playbook B _runs after_ A at deploy time, or module B _imports_ A, that says nothing about _writing_ the two files. The workers are not running the pipeline — they are **writing the files**, and disjoint files are written in parallel. Conflating "runs in sequence" with "author in sequence" is **the** trap.
+- A genuine **authoring** dependency — unit B literally can't be written until A's output exists on disk (B edits a file A creates) — is a `depends_on`, not a shared footprint. These are rarer than they look: a shared _convention_ (a variable name, a namespace, a hostname) is **pinned in the slice body**, not modeled as a dependency.
+
+**The canonical shape — one coherent slice, a parallel fan-out of its files:**
+
+> A new multi-file component or feature — e.g. an Ansible component's lifecycle playbooks (`10_configure_keycloak`, `11_deploy`, `17_configure_discovery`, `18_test`, `19_rollback`, `00_install`), or a service's `models.py` + `routes.py` + `tests.py` — is **one coherent slice** (its "done" = the component works end-to-end, verified once) whose work units are a **`fan-out`, one per file, run in parallel**. The lifecycle is serial _at runtime_; authoring its disjoint files is not. Shared conventions (namespace, hostname, var names) are pinned in the slice body so the parallel workers stay consistent; the slice verify catches any drift.
+
+So: **slice by coherence, parallelize by footprint.** A multi-file slice is the norm, not a smell — don't collapse it into one serial blob, and don't shatter it into one-file slices.
+
+### Classifying a slice's work units (Procedure step 3a, in full)
+
+Coherence decided what the slice _is_; now decide how its work runs. Walk the slice's files (from its `files:` set / the Spec's File Structure Plan) and group them into work units. **Lead with the footprint test, not intuition:**
+
+- **Footprint first — what must actually serialize?** Two units serialize **only on a shared footprint** (both edit the same file). Disjoint files → **parallel**. A runtime / deploy / import / logical order is **not** a reason to serialize — you are writing files, not running them (the trap; see "The second axis"). A true on-disk authoring dependency (B edits a file A creates) is a `depends_on`, not a merged unit; a shared _convention_ is pinned in the slice body, not a dependency.
+- **Same mechanical change over disjoint objects?** The _same_ edit per object (a rename across 8 files, a set-a-field codemod) → ONE **`mechanize`** unit whose footprint is _all_ the objects ("author one transform, apply across the set"). Don't mint a unit per object.
+- **Heterogeneous per-file work?** Each file is a _different_ authoring task (the component-lifecycle case: keycloak vs deploy vs test) → a **`fan-out`** — **one unit per file**, each with a `note` stating its task, all parallel (disjoint footprints). This is the common multi-file shape.
+- **Same file, steps that must be ordered?** Only _then_ is it **`serial`** — a shared-footprint chain authored in one ordered session. "Serial" means shared footprint, never "runs in sequence at runtime."
+- **Peel structural changes:** a non-mechanical change adjacent to a `mechanize` group is its **own** unit, never folded in.
+
+Record each slice's work units — each `{ footprint, depends_on?, execution, note? }` — and **pass them to `create_slice` as `work_units` in step 6**. Classifying the shape in prose is not enough: **emitting the array is what instantiates the units** (omitting it is the SP-tgs8gb step-6 gap that left 0 slices with work units). For a `fan-out` unit give each its `note` (the per-object task) so a worker is self-describing. The slice stays the validation envelope; work units are never independently verified.
+
+- **Declare the slice's file set.** List the repo-relative files the slice will edit (`files:`), drawn from the Spec's File Structure Plan. When two or more slices are meant to run **concurrently**, give them the same `parallel_group:` name — their `files` sets **must be disjoint** (the server refuses an overlapping group, naming the conflicting files). Cut parallel siblings file-disjoint up front so the merge is trivial; if two candidates must touch the same file, either sequence them (`depends_on`) or leave them ungrouped.
+
+## Re-slicing — the Spec changed under existing slices (Procedure step 0, in full)
+
+If `specs/SP-{n}/` already holds `SL-*.md` files, this is a **change-review**, not a fresh decomposition — the board flags this with a stale badge (`specStale` / `specChange: "requirements"`) on done slices whose parent Spec was edited after they were verified. Do NOT overwrite blindly:
+
+- Read the existing slice files (`get_slice` per handle, or `get_thinkube_file specs/SP-{n}/SL-{m}.md`) and their `status:` (`ready` / `doing` / `done` / `archived`).
+- Re-derive slices from the Spec's **current** Acceptance Criteria, then diff against what exists, classifying each as **keep** (still maps to an AC), **add** (an AC has no covering slice), or **obsolete** (no longer maps to any AC).
+- **The action depends on the slice's status — never react uniformly:**
+  | Status | Action on change |
+  | --- | --- |
+  | ready (not started) | revise / add / archive freely |
+  | doing | do **not** edit or archive — flag it; ask the user whether to keep, rescope, or set back to ready |
+  | done | leave it; if the change implies more work, propose a **new** slice. If it went substantively stale, let `/pair-next`'s sweep re-verify it — don't silently rewrite it here. |
+- To retire an obsolete slice, set its frontmatter `status: archived` (keep the file — numbers are never reused). Don't delete.
+- Present the keep/add/archive diff **annotated with each slice's status and the recommended action**; get the user's blessing before writing.
+
+## AC verifiability at the gate (Procedure step 4, in full)
+
+- **Flag any AC that isn't AI-verifiable at the gate it arms.** While mapping, an AC that can only be checked _after_ the gate it arms — a **human-executed** step ("the human verifies in a fresh session") or a **deploy/merge-circular** outcome (needs the merged/deployed result, but merge/deploy is gated on the AC) — is a **defect in the Spec, not a slice to mint**. Don't write a slice whose only "done" is such an AC; route it back to `/spec-prepare` to reframe (probabilistic → proxy + AI probe; deploy-circular → pre-merge/preview AC + a non-gating post-deploy smoke check). A genuine post-deploy confirmation is modeled as a **follow-up slice** that runs after the deploy, never as a Done condition of the deploying slice.
+- **Re-run the verifiability auditor when you touch the ACs.** The opening gate (TEP-tgzx3p) requires every AC to carry a certified `ac_verifications` entry before → Ready, emitted by `/spec-prepare`'s auditor (its step 7). If slicing surfaces an AC change — a reframe, a split, a newly-added AC — the Spec's map is now stale or incomplete: route back to `/spec-prepare` to re-audit and re-emit the map before `create_slice`. `createSlice`'s `readyGate` refuses a Spec with any undeclared AC (naming the ordinal), so an un-re-audited AC blocks the whole slice batch — surface that refusal and fix it at the Spec, never by hand-editing frontmatter.
+
+## Safety / fallback (in full)
+
+- **Kanban MCP tools absent in this session.** STOP and say so — do **not** fall back to freehand `Write` (freehand creation is how format drift happened). Fix: start a fresh session in the repo (`.mcp.json` loads at session start).
+- **Spec sections missing.** Refuse cleanly. Direct user to `/spec-prepare {n}`.
+- **AC unmatched by any slice.** Don't silently invent one. Surface the gap (ask whether the AC is still valid) or fold it into an existing slice with the user's blessing.
+- **A candidate has no single "done."** Reject it as a slice. Park it in the Spec's `## Design` / `## Constraints` instead.
+- **A candidate has its own AC / design.** It's a Spec, not a slice. Surface this — the user may want a new Spec.
+- **Spec is huge (>12 candidate slices).** Usually a sign the Spec should be split. Surface this before authoring files.

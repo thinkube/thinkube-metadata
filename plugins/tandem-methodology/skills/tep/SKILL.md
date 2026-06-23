@@ -22,6 +22,8 @@ A TEP is **not** a board-flowing card (TEP-0003 keeps the hierarchy Spec→Slice
 
 > **Decision-point protocol** (methodology `CLAUDE.md`): this is _human-paced_ authoring — converse → options → research → **read-back** → the human's explicit **"go."** Surface options as prose, never force convergence, and **approve ≠ execute**.
 
+> **See `reference.md`** (this skill's companion) for the rarely-needed detail: the read-modify-write mechanics, context-discipline rationale, the exact output shape, and the safety / fallback behaviour. Load it on demand — don't carry it in always.
+
 ## Mission
 
 Produce a fully-shaped `teps/TEP-{id}.md` in the canonical format, with:
@@ -38,15 +40,17 @@ Produce a fully-shaped `teps/TEP-{id}.md` in the canonical format, with:
 
 ## Context discipline
 
-- **The template is authoritative.** `TEP-TEMPLATE.md` is the single source of the shape — `write_tep` scaffolds from it. **Never read other TEPs to learn the format**; reading neighbours copies their drift.
-- **No plan mode.** Do **not** enter plan mode — it blocks in-file authoring. Structured `AskUserQuestion` pickers work in normal mode and compose with write-skeleton-then-fill. A skill self-entering plan mode would override its own guardrails.
-- **No uninstructed reads.** Fetch the one TEP you're filling — nothing else up front. `CLAUDE.md` before any codebase search; delegate genuine "what's in this codebase" to the `explorer` subagent.
+- **The template is authoritative** — `write_tep` scaffolds from `TEP-TEMPLATE.md`; never read other TEPs to learn the format.
+- **No plan mode** — it blocks in-file authoring; use `AskUserQuestion` pickers in normal mode.
+- **No uninstructed reads** — fetch only the one TEP you're filling; `CLAUDE.md` before any codebase search; delegate "what's in this codebase" to `explorer`.
+
+(Rationale for each in `reference.md`.)
 
 ## Procedure
 
 1. **Read methodology context** if not in session.
 2. **Open with the interview.** The conversation leads — ask the user what they want to enhance as the first turn. There's nothing to set up first.
-3. **Scaffold the file and keep it current as you talk.** Call `write_tep { tep: {id} }` with no body to lay down the `TEP-TEMPLATE.md` skeleton + canonical frontmatter. Mention the path once — `teps/TEP-{id}.md` — and, if the user wants a rendered view alongside the chat, point them at the Command Palette (_Markdown: Open Preview to the Side_); it's optional, and never quote a keybinding (they don't fire reliably in browser / code-server). As each section is agreed in chat, land it in the FILE — `write_tep` replaces the whole body, so each update is **read-modify-write**: `get_thinkube_file teps/TEP-{id}.md` to fetch the current body, apply your change, then `write_tep { tep: {id}, body }` the full body back. Always re-fetch immediately before each `write_tep`; never clobber text you didn't write. Set the title via `write_tep { tep, title }`. Chat and the file are both fine to review in — the file is just the durable record.
+3. **Scaffold the file and keep it current as you talk.** Call `write_tep { tep: {id} }` with no body to lay down the `TEP-TEMPLATE.md` skeleton + canonical frontmatter, then land each section in the FILE as it's agreed in chat. `write_tep` replaces the whole body, so every update is a **read-modify-write** cycle — see **`reference.md` → Read-modify-write mechanics** for the exact `get_thinkube_file` → modify → `write_tep` steps and the scaffolding / preview details.
    - **Goal + User Expectation come first** — they're the headline and seed the implementing specs' ACs.
    - Use **`AskUserQuestion`** for genuine forks (naming, scope, an either/or design choice) — not for things with an obvious default.
 4. **Explore only when grounding the Decision/Detailed Description** — and only what `CLAUDE.md` + docs don't answer; delegate to `explorer`.
@@ -62,14 +66,11 @@ Produce a fully-shaped `teps/TEP-{id}.md` in the canonical format, with:
 
 ## Output
 
-```
-✅ TEP-{id}: <title>
-   tep:    teps/TEP-{id}.md
-   status: proposed
-   next:   /spec-prepare to cut an implementing spec (set implements: TEP-{id})
-```
+Print the success block — id, title, `tep:` path, `status:`, and the suggested next step
+(`/spec-prepare`). The exact shape is in **`reference.md` → Output**.
 
 ## Safety / fallback
 
-- **No acceptance the user will commit to.** A TEP can sit `proposed` — don't force `accepted`.
-- **`write_tep` / `get_thinkube_file` absent in this session.** STOP and say so — do **not** fall back to a raw `Write`/`Edit`, which would write the TEP outside the board. Fix: start a fresh session in the repo so `.mcp.json` loads the kanban server.
+See **`reference.md` → Safety / fallback** — don't force `accepted` on a TEP the user won't commit
+to, and STOP (never raw `Write`/`Edit`) if `write_tep` / `get_thinkube_file` are absent in the
+session.
