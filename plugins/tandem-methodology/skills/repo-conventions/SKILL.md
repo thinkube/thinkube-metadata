@@ -61,6 +61,46 @@ All three must pass (exit 0) for a green. Replace these for a different project 
 
 **Documentation build (TEP-tgh6iy).** If this repo ships documentation — the Antora docs site, or a docs-with-code `.adoc` module that aggregates into it — the recipe **must include the docs build**, so a doc edit that breaks the site is a verification fail (no green = not Done). For the docs-platform repo that is `npm run build` (the Antora build; it exits non-zero on a broken `include::`, bad xref, or AsciiDoc error because the playbook sets `runtime.log.failure_level`). For a component repo whose docs aggregate elsewhere, build the docs site (or run an AsciiDoctor parse of the changed module) so breakage is caught in the same slice as the change.
 
+## Worktree setup
+
+A fresh worktree (TEP-0008) is a clean checkout: it has the committed source but **none** of the gitignored, locally-built dependencies a verify needs — `node_modules/`, a `.venv/`, a `target/` cache. So before the verification recipe above can run green in a new worktree, the orchestrator (the runner, th4wqh) **provisions** it by executing the command declared here.
+
+**The contract — a parseable, labeled command.** Declare exactly one provisioning command in a fenced block tagged `setup`. The runner reads the first ```` ```setup ```` block in this section and executes it (from the worktree root) once, on worktree creation. Keep it a single command (chain with `&&`); it must be idempotent (safe to re-run) and must produce **only gitignored** outputs (see the no-leak rule). If a repo needs nothing, declare the `none` example so the absence is explicit, not forgotten.
+
+Hand-edit the block below to your stack. Examples per stack:
+
+- **Node** — install the locked dependency tree:
+
+```setup
+npm ci
+```
+
+  (produces `node_modules/`, which must be gitignored.)
+
+- **Python** — create the virtualenv and install:
+
+```setup
+python -m venv .venv && .venv/bin/pip install -e .
+```
+
+  (produces `.venv/`, which must be gitignored.)
+
+- **Rust / Go** — warm the build/dependency cache:
+
+```setup
+cargo fetch
+```
+
+  (Go equivalent: `go mod download`; produces `target/` or the module cache.)
+
+- **none** — no gitignored deps to provision (pure-docs or pure-source repo):
+
+```setup
+true
+```
+
+**No-leak rule.** Provisioning outputs are **build artifacts, never board state**. Every path the setup command creates — `node_modules/`, `.venv/`, `target/` — must be covered by `.gitignore`, and the runner must **never** `git add -A` after provisioning. The trap: a gitignore entry like `node_modules/` (trailing slash) matches a real directory but **not** a `node_modules` **symlink** — so a symlinked dependency tree leaks into `git status` and a blanket `git add -A` would commit it. Therefore gitignore must match the output **as both a directory and a symlink** (e.g. list `node_modules` without the trailing slash, or add an explicit symlink-matching entry), and provisioning must stage **nothing** — outputs stay untracked, out of every commit.
+
 ## Things to never do
 
 - `git push --force` to `main`.
