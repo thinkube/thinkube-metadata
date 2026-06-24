@@ -62,6 +62,7 @@ Produce a fully-shaped `teps/TEP-{id}.md` in the canonical format, with:
 - The canonical section headers are **load-bearing** — don't rename them; `write_tep` scaffolds them from the template.
 - **Author only through `write_tep`** (board-aware) — a raw `Write`/`Edit` resolves against the session cwd (the code repo), not the board.
 - **One format, every TEP** — the ritual is the consistency (TEP-0009), not a promise.
+- **Name implementing specs by what they deliver — never by an invented code/alias.** A TEP is authored _before_ its specs exist, so they have no board id yet, and an invented `SP-A`/`SP-B`-style alias is as opaque to a human as the base36 id the board later mints. Throughout the Decision / Detailed Description / Implemented By, refer to each implementing spec by its **descriptive title** (the capability it delivers — e.g. _"Bounded, observable orchestration"_, not _"SP-B"_): the title is the one handle that is stable from TEP-authoring through spec creation and survives the board minting a real `SP-{id}`. A real `SP-{id}` or PR is added later in `Implemented By` only as **landing traceability**, paired with the title — never as the way the TEP refers to the spec.
 - Keep the two-way link in sync: a TEP records `implemented_by: [SP-…]` as specs are cut; each implementing spec carries `implements: TEP-{id}`.
 
 ## Output
