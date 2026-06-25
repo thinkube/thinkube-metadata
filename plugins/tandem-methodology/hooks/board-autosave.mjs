@@ -32,6 +32,40 @@
  */
 import { spawnSync } from "node:child_process";
 import * as path from "node:path";
+import { existsSync, readFileSync } from "node:fs";
+
+/**
+ * Resolve the board sidecar to autosave, WITHOUT depending on a per-user env:
+ *   1. `THINKUBE_BOARD_ROOT` / `THINKUBE_BOARD_SIDECAR` if set (explicit override);
+ *   2. else walk up from cwd for a `.mcp.json` whose kanban-server `env` declares
+ *      `THINKUBE_BOARD_ROOT` — the SAME value the MCP server uses, written into
+ *      every board-connected repo by the extension installer. So a session editing
+ *      the board (which runs from such a repo) auto-resolves its sidecar.
+ * Returns "" when no board can be found — the hook then skips harmlessly.
+ */
+function resolveBoardRoot() {
+  const env = process.env.THINKUBE_BOARD_ROOT || process.env.THINKUBE_BOARD_SIDECAR;
+  if (env) return env;
+  let dir = process.cwd();
+  for (let i = 0; i < 40; i++) {
+    const mcp = path.join(dir, ".mcp.json");
+    if (existsSync(mcp)) {
+      try {
+        const servers = JSON.parse(readFileSync(mcp, "utf8")).mcpServers || {};
+        for (const s of Object.values(servers)) {
+          const root = s && s.env && s.env.THINKUBE_BOARD_ROOT;
+          if (root) return root;
+        }
+      } catch {
+        /* malformed .mcp.json — keep walking up */
+      }
+    }
+    const parent = path.dirname(dir);
+    if (parent === dir) break;
+    dir = parent;
+  }
+  return "";
+}
 
 /**
  * Run git in `cwd`; never throws — returns {ok, status, stdout, stderr}.
@@ -154,10 +188,7 @@ function main() {
   // TEP-th3i18 #12/#13). Skipping the read is the headless-safe choice; the
   // pipe is simply left for the OS to close when we exit.
 
-  const boardDir =
-    process.env.THINKUBE_BOARD_ROOT ||
-    process.env.THINKUBE_BOARD_SIDECAR ||
-    "";
+  const boardDir = resolveBoardRoot();
 
   let result;
   try {
