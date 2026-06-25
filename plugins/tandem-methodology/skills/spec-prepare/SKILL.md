@@ -92,7 +92,7 @@ Gather the minimum, in the right order, and only after the governing document ex
 
    keyed by **1-based AC ordinal**, **exactly one entry per AC**, every ordinal `1..N` present. **Emitting the full map is what arms → Ready** — a Spec with any un-audited, `needs-reframe`, or undeclared AC cannot reach Ready (the gate blocks and names the ordinal). **Re-run this whole step whenever the ACs change.** See **`reference.md` → "The AC-verifiability auditor"** for the full verdict mechanics, the `{ run, env }` derivation, and the both-ends serialization contract.
 
-8. **Commit, then report.** Commit **and push** the spec file to the board and report the commit — don't ask first (board bookkeeping, per CLAUDE.md). Then print the path, AC count, the verification-map count (one entry per AC), and the suggested next step (`/slice {n}`).
+8. **Report — do NOT commit.** The `board-autosave` Stop hook commits + pushes the board sidecar at turn end; it owns board bookkeeping, so a manual `git commit` is redundant (and was only ever needed while the hook was unwired). Just print the path, AC count, the verification-map count (one entry per AC), and the suggested next step (`/slice {n}`).
 
 ## Constraints
 
