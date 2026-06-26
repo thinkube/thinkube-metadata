@@ -14,16 +14,18 @@ A reference document loaded by other bundle skills (`/spec-prepare`, `/slice`, `
 1. The team is **one human (navigator) + one AI (driver)** — not a group of humans.
 2. The **committed git repo is the single source of truth _and_ the board**.
 
-Consequences: the entire artifact set — specs, slices, **teps** (Tandem Enhancement Proposals), retros — lives as committed markdown in the **central Tandem sidecar board repo** (`thinkube-tandem`, TEP-0008), namespaced per Thinking Space — host-agnostic (the board repo can live on Gitea, GitHub, or offline; reinstall recovery is `git clone`). There is **no external issue tracker in the core loop**. "Done" is defined in two layers (TEP-0010): each **slice** is done by an **automated verifier** (fast, no human sign-off), and each **Spec** is done by a **single human acceptance gate** at the end — the human approves the assembled result and the automated re-verify passes, then the Spec's one PR merges. The per-slice automated greens stay; the spec-level human accept is the lightest sign-off, placed exactly where per-slice greens miss integration/UX regressions.
+Consequences: the entire artifact set — specs, slices, **teps** (Tandem Enhancement Proposals), retros — lives as committed markdown in the **central Tandem sidecar board repo** (`thinkube-tandem`, TEP-0008), namespaced per Thinking Space and **org-scoped** within it as a sequential tree (`<org>/teps/TEP-n/SP-m/SL-k.md`) — host-agnostic (the board repo can live on Gitea, GitHub, or offline; reinstall recovery is `git clone`). There is **no external issue tracker in the core loop**. "Done" is defined in two layers (TEP-0010): each **slice** is done by an **automated verifier** (fast, no human sign-off), and each **Spec** is done by a **single human acceptance gate** at the end — the human approves the assembled result and the automated re-verify passes, then the Spec's one PR merges. The per-slice automated greens stay; the spec-level human accept is the lightest sign-off, placed exactly where per-slice greens miss integration/UX regressions.
 
 ## Hierarchy: Spec → Slice
 
 Two concrete tiers. Grouping above a Spec is a `theme:` frontmatter tag (plus an optional one-paragraph `roadmap.md`) — not a tier.
 
-| Tier  | Lives at                 | Card?                 | Purpose                                                                              |
-| ----- | ------------------------ | --------------------- | ------------------------------------------------------------------------------------ |
-| Spec  | `specs/SP-{n}/spec.md`   | No — the document     | The documented unit of work: acceptance criteria, constraints, design, file plan.    |
-| Slice | `specs/SP-{n}/SL-{m}.md` | Yes — flows the board | One coherent end-to-end change you verify-and-commit as a single "done" (one green). |
+| Tier  | Lives at                       | Card?                 | Purpose                                                                              |
+| ----- | ------------------------------ | --------------------- | ------------------------------------------------------------------------------------ |
+| Spec  | `teps/TEP-n/SP-m/spec.md`      | No — the document     | The documented unit of work: acceptance criteria, constraints, design, file plan.    |
+| Slice | `teps/TEP-n/SP-m/SL-k.md`      | Yes — flows the board | One coherent end-to-end change you verify-and-commit as a single "done" (one green). |
+
+Specs nest under the TEP they implement and slices alongside their Spec — the board is an **org-scoped sequential tree** (`<org>/teps/TEP-n/SP-m/SL-k.md`) with **sequential ids** minted per board+org (`TEP-1`…, `SP-1`…, `SL-1`…), never opaque/hashed.
 
 - A **Slice** is **vertical** — a coherent end-to-end behaviour that, once green, is demonstrable on its own — **not a layer or file** ("add the Redis store" is a fragment of a slice, not a slice). A slice is **not** a renamed atomic task; slicing by layer/file recreates the tiny-task soup the unit exists to prevent.
 - A **Slice** is sized by **coherence, not the clock**. Bounds: if you can't state a single "done" for it → it's more than one slice, split it; if it has its own distinct acceptance criteria / design → it's not a slice, it's a **Spec**.
@@ -34,7 +36,7 @@ Two concrete tiers. Grouping above a Spec is a `theme:` frontmatter tag (plus an
 The canonical handle for a slice is **`SP-{n}_SL-{m}`** — e.g. `SP-3_SL-42` — hyphen _within_ each id, underscore _joins_ them. Used identically in the filename, the board chip, your instructions ("work on `SP-3_SL-42`"), and my references back.
 
 - Slices are numbered **per-Spec**: `SL-1`, `SL-2`… restart within each Spec, so a new Spec starts at `SL-1` and numbers stay small.
-- Handles are **per-repo** — each repo's board has its own `SP-`/`SL-` sequences. `SP-3_SL-42` is unique within a board; across repos, qualify by repo ("`SP-3_SL-42` in the extension").
+- Handles are scoped **per (board, org)** — each board+org namespace has its own `TEP-`/`SP-`/`SL-` sequences. `SP-3_SL-42` is unique within a board+org; across namespaces, qualify by board/org ("`SP-3_SL-42` in the extension").
 
 ## Slice file shape
 
@@ -131,7 +133,7 @@ Staleness is a normalized hash of the Spec's requirement sections with checkbox 
 
 ## Per-project board
 
-Each **Thinking Space**'s board lives in the **central Tandem sidecar repo** (`thinkube-tandem`, TEP-0008), under its namespace `<container>/<rel>/` derived from the workspace-folder layout (host-agnostic — never from a git remote). A Space is methodology-enabled **iff its namespace dir exists in the board repo** (located via `thinkube.boards.root`); there is no settings registry, and the extension never auto-enables. The **workspace navigator** discovers the Spaces across the open workspace folders and lets you move between the enabled boards. _(The co-located `.thinkube/` dir is deprecated — TEP-0008.)_
+Each **Thinking Space**'s board lives in the **central Tandem sidecar repo** (`thinkube-tandem`, TEP-0008), under its namespace `<container>/<rel>/<org>/` derived from the workspace-folder layout plus the org scope (host-agnostic — never from a git remote). A Space is methodology-enabled **iff its namespace dir exists in the board repo** (located via `thinkube.boards.root`); there is no settings registry, and the extension never auto-enables. The **workspace navigator** discovers the Spaces across the open workspace folders and lets you move between the enabled boards. _(The co-located `.thinkube/` dir is deprecated — TEP-0008.)_
 
 ## Pair modes
 
@@ -147,7 +149,7 @@ Within a Spec, the marked **bless point is acceptance** (TEP-0010) — there is 
 
 ## Slice creation (`/slice`)
 
-`/slice` decomposes a Spec into coherent slices, writing individual `specs/SP-{n}/SL-{m}.md` files **directly** — no issue minting, no checkbox-list intermediate, no GitHub API. It allocates the next per-Spec `SL-{m}` and refuses rows that have no single verifiable "done" (those go in the Spec, not on the board).
+`/slice` decomposes a Spec into coherent slices, writing individual `teps/TEP-{t}/SP-{n}/SL-{m}.md` files **directly** in the spec's tree dir — no issue minting, no checkbox-list intermediate, no GitHub API. It allocates the next per-Spec `SL-{m}` and refuses rows that have no single verifiable "done" (those go in the Spec, not on the board).
 
 ## Subagents
 

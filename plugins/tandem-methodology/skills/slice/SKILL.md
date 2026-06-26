@@ -1,5 +1,5 @@
 ---
-description: Decompose a Spec into coherent end-to-end Slices at specs/SP-{n}/SL-{m}.md. MUST BE USED when the user says "slice", "decompose the spec", "break this into slices", or "create slices for SP-X". Do not hand-author slice files yourself.
+description: Decompose a Spec into coherent end-to-end Slices at teps/TEP-{t}/SP-{n}/SL-{m}.md. MUST BE USED when the user says "slice", "decompose the spec", "break this into slices", or "create slices for SP-X". Do not hand-author slice files yourself.
 allowed-tools:
   [
     "Read",
@@ -18,13 +18,13 @@ thinkube-bundle: 0.0.1
 
 # /slice
 
-Read a fully-shaped Spec and cut it into **coherent slices** — each one an end-to-end change you can verify-and-commit as a single "done." Each slice is written **directly** as its own file at `specs/SP-{n}/SL-{m}.md` with `status: ready`. There is no checkbox-list intermediate, no materialiser, no issue minting — the files _are_ the board.
+Read a fully-shaped Spec and cut it into **coherent slices** — each one an end-to-end change you can verify-and-commit as a single "done." Each slice is written **directly** as its own file at `teps/TEP-{t}/SP-{n}/SL-{m}.md` (alongside its Spec in the org-scoped tree; `{t}` is the parent TEP) with `status: ready`. There is no checkbox-list intermediate, no materialiser, no issue minting — the files _are_ the board.
 
 > **Decision-point protocol** (methodology `CLAUDE.md`): this is _human-paced_ authoring — converse → options → research → **read-back** → the human's explicit **"go."** Surface options as prose, never force convergence, and **approve ≠ execute**.
 
 ## Mission
 
-Write one `specs/SP-{n}/SL-{m}.md` file per slice, where each slice:
+Write one `teps/TEP-{t}/SP-{n}/SL-{m}.md` file per slice, where each slice:
 
 - Is **one coherent, vertical, end-to-end change** — a thin cut through whatever layers the change touches that, once verified green and committed, leaves the system **observably more capable** (you could demo it).
 - Has a **single statable "done"** (one green from the verifier).
@@ -45,7 +45,7 @@ So: **slice by coherence, parallelize by footprint.** See `reference.md` ("What 
 
 ## Inputs
 
-- `$ARGUMENTS`: the Spec id `{n}` — an opaque string (base36-epoch for new Specs, a legacy integer for old ones).
+- `$ARGUMENTS`: the Spec id `{n}` — a sequential integer minted per board+org (`SP-1`, `SP-2`, …). The spec and its slices nest under the parent TEP `{t}` (from the spec's `implements:`).
 
 ## Context discipline
 
@@ -59,9 +59,9 @@ The parent Spec is your scope — gather only what it doesn't already give you:
 
 ## Procedure
 
-0. **Detect re-slicing (the Spec changed under existing slices).** If `specs/SP-{n}/` already holds `SL-*.md` files, this is a **change-review**, not a fresh decomposition (the board flags it with a `specStale` / `specChange: "requirements"` badge). Do NOT overwrite blindly: read the existing slices and their `status:`, re-derive from the Spec's **current** ACs, diff (keep / add / obsolete), and present the diff annotated with each slice's status for the user's blessing before writing. The action depends on status (ready → revise freely; `doing` → flag, don't touch; `done` → leave it, propose a new slice). See `reference.md` ("Re-slicing") for the full status table and rules.
+0. **Detect re-slicing (the Spec changed under existing slices).** If `teps/TEP-{t}/SP-{n}/` already holds `SL-*.md` files, this is a **change-review**, not a fresh decomposition (the board flags it with a `specStale` / `specChange: "requirements"` badge). Do NOT overwrite blindly: read the existing slices and their `status:`, re-derive from the Spec's **current** ACs, diff (keep / add / obsolete), and present the diff annotated with each slice's status for the user's blessing before writing. The action depends on status (ready → revise freely; `doing` → flag, don't touch; `done` → leave it, propose a new slice). See `reference.md` ("Re-slicing") for the full status table and rules.
 1. **Read methodology context** + `repo-conventions` for branch/commit rules that may influence slice ordering.
-2. **Load the Spec.** Use `get_thinkube_file specs/SP-{n}/spec.md` for the full body. If the spec is missing the four canonical sections (Acceptance Criteria / Constraints / Design / File Structure Plan), **stop** and direct the user to `/spec-prepare {n}` first.
+2. **Load the Spec.** Use `get_thinkube_file teps/TEP-{t}/SP-{n}/spec.md` for the full body. If the spec is missing the four canonical sections (Acceptance Criteria / Constraints / Design / File Structure Plan), **stop** and direct the user to `/spec-prepare {n}` first.
 3. **Brainstorm slices privately.** Working through the Design + File Structure Plan, draft candidate slices — cut **vertically** (coherent end-to-end behaviours), not by layer/file. For each, check:
    - **Is it demonstrable on its own?** If committing only this slice would leave the system half-built (a layer with nothing using it), it's a horizontal fragment — fold it into the vertical slice it serves.
    - Can you state a **single "done"** for it (one green)? If not, it's more than one slice — split it.
@@ -97,7 +97,7 @@ The parent Spec is your scope — gather only what it doesn't already give you:
 ```
 ✅ SP-{n} sliced
    wrote:   SP-{n}_SL-1 … SP-{n}_SL-{m}  (<count> slices, all status: ready)
-   at:      specs/SP-{n}/SL-*.md
+   at:      teps/TEP-{t}/SP-{n}/SL-*.md
    ac-coverage: <covered>/<total> ✔
    next:    advance from the board (Orchestrate)
 ```

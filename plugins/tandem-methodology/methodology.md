@@ -6,10 +6,11 @@ We pair-program human + Claude using **Tandem** — a methodology for a one-huma
 
 Hierarchy: **spec → slice**. (Epic/Story are not tiers — grouping is a `theme:` tag.)
 
-- Source of truth: committed markdown in the central Tandem sidecar board repo (`thinkube-tandem`, TEP-0008), namespaced per Thinking Space. Host-agnostic (Gitea / GitHub / offline); no external issue tracker in the core loop. Reinstall recovery is `git clone`.
-- A **Spec** is the documented unit (`specs/SP-{n}/spec.md`): acceptance criteria, constraints, design, file plan.
-- A **Slice** is the card that flows the board (`specs/SP-{n}/SL-{m}.md`): one coherent end-to-end change verified-and-committed as a single "done." Sized by coherence, not the clock. Handle: `SP-{n}_SL-{m}` (e.g. `SP-3_SL-42`); slices are numbered per-Spec.
-- Per-Thinking-Space: each Space's board lives in the sidecar repo under its `<container>/<rel>/` namespace (via `thinkube.boards.root`); a Space is enabled **iff** its namespace dir exists there. The workspace navigator moves between the enabled boards. (Co-located `.thinkube/` is deprecated — TEP-0008.)
+- Source of truth: committed markdown in the central Tandem sidecar board repo (`thinkube-tandem`, TEP-0008), namespaced per Thinking Space and **org-scoped** within it. Host-agnostic (Gitea / GitHub / offline); no external issue tracker in the core loop. Reinstall recovery is `git clone`.
+- The board is an **org-scoped sequential tree**: every artifact nests under its parent in `<org>/teps/TEP-n/SP-m/SL-k.md`. TEPs, Specs, and Slices carry **sequential ids** (`TEP-1`, `TEP-2`…; `SP-1`, `SP-2`…; `SL-1`, `SL-2`…), minted per board+org — never opaque/hashed ids.
+- A **Spec** is the documented unit (`teps/TEP-n/SP-m/spec.md`, nested under the TEP it implements): acceptance criteria, constraints, design, file plan.
+- A **Slice** is the card that flows the board (`teps/TEP-n/SP-m/SL-k.md`, alongside its Spec): one coherent end-to-end change verified-and-committed as a single "done." Sized by coherence, not the clock. Handle: `SP-{n}_SL-{m}` (e.g. `SP-3_SL-42`); TEP and Spec ids are sequential per board+org, slices per-Spec.
+- Per-Thinking-Space: each Space's board lives in the sidecar repo under its `<container>/<rel>/<org>/` namespace (via `thinkube.boards.root`); a Space is enabled **iff** its namespace dir exists there. The workspace navigator moves between the enabled boards. (Co-located `.thinkube/` is deprecated — TEP-0008.)
 - Phase model: a slice's `status:` frontmatter. Columns **Ready → Doing → Done**.
 
 **Work units (how a slice is built):** a slice decomposes into **work units** — each `{ footprint, execution: serial | mechanize | fan-out, depends_on? }` — pooled into a **DAG** the orchestrator schedules and runs (in parallel where the DAG allows). **Sequencing is by shared _footprint_, not arbitrary logical/build order:** two units serialize **iff** their footprints overlap (a source and its unit test are disjoint files → they run in **parallel**; a runtime/import order does **not** by itself serialize authoring). But footprint-disjointness is **necessary, not sufficient**: when units share a **contract** across disjoint files — a type/interface, a name/key, a schema, a message — define that contract as **one unit first** and have each implementer **and** the test `consumes` the contract unit's **file** (handle-free, no node-id) — `buildUnitDag` resolves that file reference into a real dependency edge on the producing unit. This is **interface-first, not serialization**: a `depends_on` node-id can't be authored before the slice is numbered (so an intra-slice contract dep was unauthorable), whereas `consumes` names the file and is writable up front and survives renumbering — and implementers depend only on the shared contract, **never each other and never a prose-pinned convention** (prose conventions demonstrably diverge; a consumed contract file doesn't), so the fan-out stays fully parallel while the shared shape is pinned. See `/slice` `reference.md` for the full `serial` / `mechanize` / `fan-out` classification and contract-first mechanics.
@@ -19,7 +20,7 @@ Hierarchy: **spec → slice**. (Epic/Story are not tiers — grouping is a `them
 Skills (this bundle):
 
 - `/spec-prepare` — author a Spec's body (acceptance criteria come from you).
-- `/slice` — decompose a Spec into coherent slices (writes `SL-{n}.md` files directly; no issue minting).
+- `/slice` — decompose a Spec into coherent slices (writes `teps/TEP-{t}/SP-{n}/SL-{m}.md` files directly in the spec's tree dir; no issue minting).
 - `/board`, `/retro` — board snapshot + retro journaling. Advancing a Spec's slices is **board-driven** (the Orchestrate command, SP-tgs8nz), not a chat skill; the legacy `/pair-start` + `/pair-next` are retired and their UI-driven replacement is under design.
 
 Subagents (this bundle):
