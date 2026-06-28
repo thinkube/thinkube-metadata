@@ -26,7 +26,7 @@ Branches go to `main` via the Spec's single PR. Long-lived feature branches are 
 
 **One PR per Spec** (TEP-0010) — never one per slice. The PR carries the whole Spec and merges at acceptance.
 
-- Title: `<spec title>` (matches `specs/SP-{n}/spec.md`'s `# heading`).
+- Title: `<spec title>` (matches `teps/TEP-{t}/SP-{n}/spec.md`'s `# heading`).
 - Body opens with a one-line summary + the Spec it closes (`Closes SP-3`), then lists the slices it delivers (`SP-3_SL-1 … SP-3_SL-4`).
 - Description includes:
   - What changed across the slices (a short paragraph).

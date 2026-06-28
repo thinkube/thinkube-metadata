@@ -45,6 +45,7 @@ Coherence decided what the slice _is_; now decide how its work runs. Walk the sl
 
 - **Footprint first — what must actually serialize?** Two units serialize **only on a shared footprint** (both edit the same file). Disjoint files → **parallel**. A runtime / deploy / import / logical order is **not** a reason to serialize — you are writing files, not running them (the trap; see "The second axis"). A true on-disk authoring dependency (B edits a file A creates) is expressed by B **`consumes`**-ing A's artifact — the edge the orchestrator resolves globally from footprints — not a merged unit.
 - **Contract-first when disjoint units share a contract.** Disjoint footprints are necessary but **not sufficient**: if the parallel units must agree on a shared **contract** (interface/type, name/key, schema, message, flag name), don't prose-pin it (prose-pinned conventions diverge — the opt-out-flag-name divergence when the contract-first gate was built). Make it a **contract-definition unit** authored first, and have each implementer **and** the test **`consumes`** that contract node's artifact — never each other, never a slice-body convention. The implementers still fan out in parallel off the one node.
+
 - **Same mechanical change over disjoint objects?** The _same_ edit per object (a rename across 8 files, a set-a-field codemod) → ONE **`mechanize`** unit whose footprint is _all_ the objects ("author one transform, apply across the set"). Don't mint a unit per object.
 - **Heterogeneous per-file work?** Each file is a _different_ authoring task (the component-lifecycle case: keycloak vs deploy vs test) → a **`fan-out`** — **one unit per file**, each with a `note` stating its task, all parallel (disjoint footprints). This is the common multi-file shape.
 - **Same file, steps that must be ordered?** Only _then_ is it **`serial`** — a shared-footprint chain authored in one ordered session. "Serial" means shared footprint, never "runs in sequence at runtime."
@@ -56,9 +57,9 @@ Record each slice's work units — each `{ footprint, consumes?, execution, note
 
 ## Re-slicing — the Spec changed under existing slices (Procedure step 0, in full)
 
-If `specs/SP-{n}/` already holds `SL-*.md` files, this is a **change-review**, not a fresh decomposition — the thinking space flags this with a stale badge (`specStale` / `specChange: "requirements"`) on done slices whose parent Spec was edited after they were verified. Do NOT overwrite blindly:
+If `teps/TEP-{t}/SP-{n}/` already holds `SL-*.md` files, this is a **change-review**, not a fresh decomposition — the thinking space flags this with a stale badge (`specStale` / `specChange: "requirements"`) on done slices whose parent Spec was edited after they were verified. Do NOT overwrite blindly:
 
-- Read the existing slice files (`get_slice { thinking_space: <id>, … }` per handle, or `get_thinkube_file { thinking_space: <id>, path: "specs/SP-{n}/SL-{m}.md" }`) and their `status:` (`ready` / `doing` / `done` / `archived`).
+- Read the existing slice files (`get_slice { thinking_space: <id>, … }` per handle, or `get_thinkube_file { thinking_space: <id>, path: "teps/TEP-{t}/SP-{n}/SL-{m}.md" }`) and their `status:` (`ready` / `doing` / `done` / `archived`).
 - Re-derive slices from the Spec's **current** Acceptance Criteria, then diff against what exists, classifying each as **keep** (still maps to an AC), **add** (an AC has no covering slice), or **obsolete** (no longer maps to any AC).
 - **The action depends on the slice's status — never react uniformly:**
   | Status              | Action on change                                                                                                                                                            |
