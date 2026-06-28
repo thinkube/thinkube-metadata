@@ -9,14 +9,14 @@ output shape, the fallback behaviour, or the rationale behind the context-discip
 The TEP body is authored incrementally as the conversation lands each section, but `write_tep`
 **replaces the whole body** — so every update is a **read-modify-write** cycle:
 
-1. `get_thinkube_file teps/TEP-{id}.md` to fetch the current body.
+1. `get_thinkube_file { thinking_space: <id>, path: "teps/TEP-{id}.md" }` to fetch the current body.
 2. Apply your change to that fetched text.
-3. `write_tep { tep: {id}, body }` the **full** body back.
+3. `write_tep { thinking_space: <id>, tep: {id}, body }` the **full** body back.
 
 Always re-fetch immediately before each `write_tep`; **never clobber text you didn't write**. Set
-the title via `write_tep { tep, title }`.
+the title via `write_tep { thinking_space: <id>, tep, title }`.
 
-Scaffolding: call `write_tep { tep: {id} }` with no body first to lay down the `TEP-TEMPLATE.md`
+Scaffolding: call `write_tep { thinking_space: <id>, tep: {id} }` with no body first to lay down the `TEP-TEMPLATE.md`
 skeleton + canonical frontmatter. Mention the path once — `teps/TEP-{id}.md`. If the user wants a
 rendered view alongside the chat, point them at the Command Palette (_Markdown: Open Preview to the
 Side_); it's optional, and **never quote a keybinding** (they don't fire reliably in browser /
@@ -47,5 +47,5 @@ code-server). Chat and the file are both fine to review in — the file is just 
 
 - **No acceptance the user will commit to.** A TEP can sit `proposed` — don't force `accepted`.
 - **`write_tep` / `get_thinkube_file` absent in this session.** STOP and say so — do **not** fall
-  back to a raw `Write`/`Edit`, which would write the TEP outside the board. Fix: start a fresh
+  back to a raw `Write`/`Edit`, which would write the TEP outside the thinking space. Fix: start a fresh
   session in the repo so `.mcp.json` loads the kanban server.

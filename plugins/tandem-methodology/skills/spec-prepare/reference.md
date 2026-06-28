@@ -26,7 +26,7 @@ The auditor returns, per AC, a verdict — `verifiable` or `needs-reframe(why)`:
 When — and only when — **every** AC is `verifiable`, emit the map:
 
 ```
-write_spec { spec: {n}, ac_verifications: { "1": { run, env }, "2": { run, env }, … } }
+write_spec { thinking_space: <id>, spec: {n}, ac_verifications: { "1": { run, env }, "2": { run, env }, … } }
 ```
 
 keyed by **1-based AC ordinal**, **exactly one entry per AC**, every ordinal `1..N` present (no orphan / missing keys). `write_spec` normalizes and serializes it to the Spec's `ac_verifications:` frontmatter; this is the per-AC declaration the **closing** gate (SP-tgzyfy / TEP-tgzx3p) runs as a single plan at Spec quiescence and gates Done / commit on all-green. **Emitting the full map is what arms → Ready.** A Spec with any un-audited, `needs-reframe`, or undeclared AC **cannot reach Ready** — the → Ready gate (`createSlice`'s `readyGate`) blocks and names the offending ordinal, so don't skip this step or emit a partial map. **Re-run this whole step whenever the ACs change** (and `/slice` re-checks it when it touches ACs).
@@ -45,4 +45,4 @@ keyed by **1-based AC ordinal**, **exactly one entry per AC**, every ordinal `1.
 - **No acceptance criteria the user will commit to.** Refuse to write — at least one user-observable criterion is required, or the → Ready gate will block the Spec's slices from advancing.
 - **An AC the auditor can't certify.** If an AC stays `needs-reframe` after a rework attempt — no AI actor + environment can verify it before its gate — it is **not an AC**: move its intent to a Design/Constraints note or a non-gating follow-up obligation, then drop the `- [ ]` line. Never emit an `ac_verifications` entry for it, and never leave it undeclared "for now" — the → Ready gate will block the whole Spec on it.
 - **Existing spec with user edits.** Re-fetch with `get_thinkube_file` first; preserve sections the user has filled out. `write_spec` rewrites the whole body, so only re-emit sections the user has agreed to update during this run — keep the rest verbatim. Re-run the step-7 audit when the ACs changed.
-- **`write_spec` / `get_thinkube_file` absent in this session.** STOP and say so — do **not** fall back to a raw `Write`/`Edit`, which would write the Spec outside the board (into the code repo). Fix: start a fresh session in the repo so `.mcp.json` loads the kanban server.
+- **`write_spec` / `get_thinkube_file` absent in this session.** STOP and say so — do **not** fall back to a raw `Write`/`Edit`, which would write the Spec outside the thinking space (into the code repo). Fix: start a fresh session in the repo so `.mcp.json` loads the kanban server.

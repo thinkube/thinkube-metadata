@@ -4,7 +4,7 @@ Rarely-needed depth for `/slice`. The always-loaded `SKILL.md` keeps the operati
 
 ## What a slice is (vertical, not a layer)
 
-A slice is the unit that flows the board and is the verification boundary — _one green_. The decisive test is **vertical, demonstrable capability**, not size or layer:
+A slice is the unit that flows the thinking space and is the verification boundary — _one green_. The decisive test is **vertical, demonstrable capability**, not size or layer:
 
 - **Slice (vertical — write a file):**
   - "Email/password login end-to-end — form → `POST /session` → validate → set cookie → redirect."
@@ -56,16 +56,16 @@ Record each slice's work units — each `{ footprint, consumes?, execution, note
 
 ## Re-slicing — the Spec changed under existing slices (Procedure step 0, in full)
 
-If `specs/SP-{n}/` already holds `SL-*.md` files, this is a **change-review**, not a fresh decomposition — the board flags this with a stale badge (`specStale` / `specChange: "requirements"`) on done slices whose parent Spec was edited after they were verified. Do NOT overwrite blindly:
+If `specs/SP-{n}/` already holds `SL-*.md` files, this is a **change-review**, not a fresh decomposition — the thinking space flags this with a stale badge (`specStale` / `specChange: "requirements"`) on done slices whose parent Spec was edited after they were verified. Do NOT overwrite blindly:
 
-- Read the existing slice files (`get_slice` per handle, or `get_thinkube_file specs/SP-{n}/SL-{m}.md`) and their `status:` (`ready` / `doing` / `done` / `archived`).
+- Read the existing slice files (`get_slice { thinking_space: <id>, … }` per handle, or `get_thinkube_file { thinking_space: <id>, path: "specs/SP-{n}/SL-{m}.md" }`) and their `status:` (`ready` / `doing` / `done` / `archived`).
 - Re-derive slices from the Spec's **current** Acceptance Criteria, then diff against what exists, classifying each as **keep** (still maps to an AC), **add** (an AC has no covering slice), or **obsolete** (no longer maps to any AC).
 - **The action depends on the slice's status — never react uniformly:**
-  | Status | Action on change |
-  | --- | --- |
-  | ready (not started) | revise / add / archive freely |
-  | doing | do **not** edit or archive — flag it; ask the user whether to keep, rescope, or set back to ready |
-  | done | leave it; if the change implies more work, propose a **new** slice. If it went substantively stale, let `/pair-next`'s sweep re-verify it — don't silently rewrite it here. |
+  | Status              | Action on change                                                                                                                                                            |
+  | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | ready (not started) | revise / add / archive freely                                                                                                                                               |
+  | doing               | do **not** edit or archive — flag it; ask the user whether to keep, rescope, or set back to ready                                                                           |
+  | done                | leave it; if the change implies more work, propose a **new** slice. If it went substantively stale, let `/pair-next`'s sweep re-verify it — don't silently rewrite it here. |
 - To retire an obsolete slice, set its frontmatter `status: archived` (keep the file — numbers are never reused). Don't delete.
 - Present the keep/add/archive diff **annotated with each slice's status and the recommended action**; get the user's blessing before writing.
 

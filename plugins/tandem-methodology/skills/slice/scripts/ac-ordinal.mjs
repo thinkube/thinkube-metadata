@@ -6,7 +6,7 @@
 // deterministic half of /slice step 4: the *ordinal ↔ AC text* enumeration is rote
 // (counting list items), while the *ordinal → slice* mapping stays model judgment.
 //
-// Read/transform/emit-to-stdout only — never writes board files.
+// Read/transform/emit-to-stdout only — never writes thinking-space files.
 //
 // Usage:
 //   node ac-ordinal.mjs [FILE]        # FILE, or stdin when omitted / "-"

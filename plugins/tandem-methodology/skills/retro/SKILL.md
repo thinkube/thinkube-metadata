@@ -24,7 +24,7 @@ Add a timestamped section to `retros/{YYYY-MM-DD}.md` capturing one of the stand
 
    If the inference isn't confident, ask the user once. If still ambiguous, write under `## misc`.
 
-2. **Write.** Call `mcp__thinkube-kanban__write_retro_note` with the note text framed under the chosen lens. The MCP tool appends to today's file with a timestamp.
+2. **Write.** Call `mcp__thinkube-kanban__write_retro_note { thinking_space: <id>, … }` with the note text framed under the chosen lens. The thinking space must be passed explicitly — if the invocation didn't name one, ask the user which thinking space to log to (never infer it from cwd). The MCP tool appends to today's file with a timestamp.
 
    The file shape ends up looking like:
 
@@ -51,7 +51,7 @@ PostgreSQL JSONB columns can't be indexed via GIN without an opclass. Spent 40 m
 Pair-programming on the auth-callback slice — Claude caught two off-by-one cases in the state validation.
 ```
 
-3. **Commit, then acknowledge.** Commit **and push** the retro file to the board — don't ask first (board bookkeeping, per CLAUDE.md). Then confirm in one line: "✏ Logged to retros/2026-05-19.md".
+3. **Commit, then acknowledge.** Commit **and push** the retro file to the thinking space — don't ask first (thinking-space bookkeeping, per CLAUDE.md). Then confirm in one line: "✏ Logged to retros/2026-05-19.md".
 
 ## Constraints
 
