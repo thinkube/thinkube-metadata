@@ -11,7 +11,7 @@
 //   ## File Structure Plan
 //
 // This script is read/transform/emit-to-stdout only — it never writes
-// board files (the secret-scan boundary stays in the MCP server).
+// thinking-space files (the secret-scan boundary stays in the MCP server).
 //
 // Usage:
 //   node skills/spec-prepare/scripts/scaffold-spec.mjs

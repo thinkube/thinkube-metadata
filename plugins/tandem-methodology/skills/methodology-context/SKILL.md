@@ -7,25 +7,25 @@ thinkube-bundle: 0.0.1
 
 # Tandem methodology context
 
-A reference document loaded by other bundle skills (`/spec-prepare`, `/slice`, `/pair-start`, `/pair-next`, `/board`, `/retro`) when they need to ground themselves in the shared vocabulary. Don't invoke directly.
+A reference document loaded by other bundle skills (`/spec-prepare`, `/slice`, `/pair-start`, `/pair-next`, `/thinking-space`, `/retro`) when they need to ground themselves in the shared vocabulary. Don't invoke directly.
 
 **Tandem** is a development methodology designed from scratch for a single human + one AI pair on a git repo. Two axioms shape everything below:
 
 1. The team is **one human (navigator) + one AI (driver)** — not a group of humans.
-2. The **committed git repo is the single source of truth _and_ the board**.
+2. The **committed git repo is the single source of truth _and_ the thinking space**.
 
-Consequences: the entire artifact set — specs, slices, **teps** (Tandem Enhancement Proposals), retros — lives as committed markdown in the **central Tandem sidecar board repo** (`thinkube-tandem`, TEP-0008), namespaced per Thinking Space and **org-scoped** within it as a sequential tree (`<org>/teps/TEP-n/SP-m/SL-k.md`) — host-agnostic (the board repo can live on Gitea, GitHub, or offline; reinstall recovery is `git clone`). There is **no external issue tracker in the core loop**. "Done" is defined in two layers (TEP-0010): each **slice** is done by an **automated verifier** (fast, no human sign-off), and each **Spec** is done by a **single human acceptance gate** at the end — the human approves the assembled result and the automated re-verify passes, then the Spec's one PR merges. The per-slice automated greens stay; the spec-level human accept is the lightest sign-off, placed exactly where per-slice greens miss integration/UX regressions.
+Consequences: the entire artifact set — specs, slices, **teps** (Tandem Enhancement Proposals), retros — lives as committed markdown in the **central Tandem sidecar thinking-space repo** (`thinkube-tandem`, TEP-0008), namespaced per Thinking Space and **org-scoped** within it as a sequential tree (`<org>/teps/TEP-n/SP-m/SL-k.md`) — host-agnostic (the thinking-space repo can live on Gitea, GitHub, or offline; reinstall recovery is `git clone`). There is **no external issue tracker in the core loop**. "Done" is defined in two layers (TEP-0010): each **slice** is done by an **automated verifier** (fast, no human sign-off), and each **Spec** is done by a **single human acceptance gate** at the end — the human approves the assembled result and the automated re-verify passes, then the Spec's one PR merges. The per-slice automated greens stay; the spec-level human accept is the lightest sign-off, placed exactly where per-slice greens miss integration/UX regressions.
 
 ## Hierarchy: Spec → Slice
 
 Two concrete tiers. Grouping above a Spec is a `theme:` frontmatter tag (plus an optional one-paragraph `roadmap.md`) — not a tier.
 
-| Tier  | Lives at                       | Card?                 | Purpose                                                                              |
-| ----- | ------------------------------ | --------------------- | ------------------------------------------------------------------------------------ |
-| Spec  | `teps/TEP-n/SP-m/spec.md`      | No — the document     | The documented unit of work: acceptance criteria, constraints, design, file plan.    |
-| Slice | `teps/TEP-n/SP-m/SL-k.md`      | Yes — flows the board | One coherent end-to-end change you verify-and-commit as a single "done" (one green). |
+| Tier  | Lives at                  | Card?                          | Purpose                                                                              |
+| ----- | ------------------------- | ------------------------------ | ------------------------------------------------------------------------------------ |
+| Spec  | `teps/TEP-n/SP-m/spec.md` | No — the document              | The documented unit of work: acceptance criteria, constraints, design, file plan.    |
+| Slice | `teps/TEP-n/SP-m/SL-k.md` | Yes — flows the thinking space | One coherent end-to-end change you verify-and-commit as a single "done" (one green). |
 
-Specs nest under the TEP they implement and slices alongside their Spec — the board is an **org-scoped sequential tree** (`<org>/teps/TEP-n/SP-m/SL-k.md`) with **sequential ids** minted per board+org (`TEP-1`…, `SP-1`…, `SL-1`…), never opaque/hashed.
+Specs nest under the TEP they implement and slices alongside their Spec — the thinking space is an **org-scoped sequential tree** (`<org>/teps/TEP-n/SP-m/SL-k.md`) with **sequential ids** minted per thinking space+org (`TEP-1`…, `SP-1`…, `SL-1`…), never opaque/hashed.
 
 - A **Slice** is **vertical** — a coherent end-to-end behaviour that, once green, is demonstrable on its own — **not a layer or file** ("add the Redis store" is a fragment of a slice, not a slice). A slice is **not** a renamed atomic task; slicing by layer/file recreates the tiny-task soup the unit exists to prevent.
 - A **Slice** is sized by **coherence, not the clock**. Bounds: if you can't state a single "done" for it → it's more than one slice, split it; if it has its own distinct acceptance criteria / design → it's not a slice, it's a **Spec**.
@@ -33,31 +33,30 @@ Specs nest under the TEP they implement and slices alongside their Spec — the 
 
 ## Card handle
 
-The canonical handle for a slice is **`SP-{n}_SL-{m}`** — e.g. `SP-3_SL-42` — hyphen _within_ each id, underscore _joins_ them. Used identically in the filename, the board chip, your instructions ("work on `SP-3_SL-42`"), and my references back.
+The canonical handle for a slice is **`SP-{n}_SL-{m}`** — e.g. `SP-3_SL-42` — hyphen _within_ each id, underscore _joins_ them. Used identically in the filename, the thinking-space chip, your instructions ("work on `SP-3_SL-42`"), and my references back.
 
 - Slices are numbered **per-Spec**: `SL-1`, `SL-2`… restart within each Spec, so a new Spec starts at `SL-1` and numbers stay small.
-- Handles are scoped **per (board, org)** — each board+org namespace has its own `TEP-`/`SP-`/`SL-` sequences. `SP-3_SL-42` is unique within a board+org; across namespaces, qualify by board/org ("`SP-3_SL-42` in the extension").
+- Handles are scoped **per (thinking space, org)** — each thinking space+org namespace has its own `TEP-`/`SP-`/`SL-` sequences. `SP-3_SL-42` is unique within a thinking space+org; across namespaces, qualify by thinking space/org ("`SP-3_SL-42` in the extension").
 
 ## Slice file shape
 
 ```
 ---
-uid: <stable-internal-id>          # never changes; the board's own link key
+uid: <stable-internal-id>          # never changes; the thinking space's own link key
 parent: SP-3                       # the parent Spec
 status: ready | doing | done | archived
 theme: <optional grouping tag>
 due: <optional yyyy-mm-dd>
 priority: <optional P0|P1|P2|P3>
 verified_req_hash: <stamped by /pair-next on verify>
-depends_on: [SP-3_SL-7]            # optional
 parallel: true                     # optional
 ---
 
 {slice description — what the one coherent change is}
 ```
 
-- `status:` **is** the board column — parsed as data, not scraped from prose.
-- **Identity is the `uid`** (stable forever; the board links on it); the **handle `SP-{n}_SL-{m}`** is the human reference. Reparenting a slice renumbers its handle but not its `uid`.
+- `status:` **is** the thinking-space column — parsed as data, not scraped from prose.
+- **Identity is the `uid`** (stable forever; the thinking space links on it); the **handle `SP-{n}_SL-{m}`** is the human reference. Reparenting a slice renumbers its handle but not its `uid`.
 - **Numbers are never reused.** A finished or abandoned slice is **archived** (`status: archived`, file kept) — never deleted — so the per-Spec `max+1` allocator can't collide.
 
 ## Spec body shape (canonical)
@@ -97,7 +96,7 @@ Acceptance criteria are elicited from the **user** during `/spec-prepare` — th
 | Doing  | The pair is actively working this slice. Keep **one slice in flight per Spec**. |
 | Done   | Verifier green for the slice, and the AC it satisfies is checked on the Spec.   |
 
-A Spec still being authored (no AC yet) is pre-board; its slices don't exist until it's sliced.
+A Spec still being authored (no AC yet) is pre-thinking-space; its slices don't exist until it's sliced.
 
 ## Quality gates (three; file checks + server-enforced)
 
@@ -118,7 +117,7 @@ A Spec runs on **one branch** `spec/SP-{n}` (a worktree when specs run in parall
 3. The AI runs the **acceptance card** (`accept_spec`: the automated all-ACs-checked + all-slices-Done re-verify).
 4. On pass → the Spec's **one PR merges/closes**. Spec done.
 
-The **acceptance card** is a spec-level card **auto-derived from the Spec's `## Acceptance Criteria`** (not hand-written) — the Spec graduating from document to a board card for its final step. It is the last card to reach Done. This re-introduces human sign-off **only at spec scope** — per-slice stays automated — because automated per-slice greens miss integration/UX regressions, and a bug can be _in an AC_ (so re-ticking boxes isn't enough; a human judging the assembled result is).
+The **acceptance card** is a spec-level card **auto-derived from the Spec's `## Acceptance Criteria`** (not hand-written) — the Spec graduating from document to a thinking-space card for its final step. It is the last card to reach Done. This re-introduces human sign-off **only at spec scope** — per-slice stays automated — because automated per-slice greens miss integration/UX regressions, and a bug can be _in an AC_ (so re-ticking boxes isn't enough; a human judging the assembled result is).
 
 ## Spec staleness (re-verify semantics)
 
@@ -131,25 +130,25 @@ Staleness is a normalized hash of the Spec's requirement sections with checkbox 
 
 `/pair-next` resolves substantively-stale slices **before** starting the next one: after advancing the finished slice, it sweeps the active Spec, re-runs the `verifier` against the current Spec, and re-opens any stale slice. `/pair-start` surfaces stale slices when it loads a Spec's context.
 
-## Per-project board
+## Per-project thinking space
 
-Each **Thinking Space**'s board lives in the **central Tandem sidecar repo** (`thinkube-tandem`, TEP-0008), under its namespace `<container>/<rel>/<org>/` derived from the workspace-folder layout plus the org scope (host-agnostic — never from a git remote). A Space is methodology-enabled **iff its namespace dir exists in the board repo** (located via `thinkube.boards.root`); there is no settings registry, and the extension never auto-enables. The **workspace navigator** discovers the Spaces across the open workspace folders and lets you move between the enabled boards. _(The co-located `.thinkube/` dir is deprecated — TEP-0008.)_
+Each **Thinking Space** lives in the **central Tandem sidecar repo** (`thinkube-tandem`, TEP-0008), under its namespace `<container>/<rel>/<org>/` derived from the workspace-folder layout plus the org scope (host-agnostic — never from a git remote). A Space is methodology-enabled **iff its namespace dir exists in the sidecar repo** (located via `thinkube.thinkingSpace.root`); there is no settings registry, and the extension never auto-enables. The **workspace navigator** discovers the Spaces across the open workspace folders and lets you move between the enabled thinking spaces. _(The co-located `.thinkube/` dir is deprecated — TEP-0008.)_
 
 ## Pair modes
 
-- `navigator`: AI reads + proposes only; the human writes the board/files.
+- `navigator`: AI reads + proposes only; the human writes the thinking space/files.
 - `driver`: AI is leading; both can write.
 - `both` (default): either party can write at will.
 
 ## Write authority
 
-Inside an invoked skill, board bookkeeping — moving cards, checking the AC a slice satisfies, stamping provenance/verification — is the **AI's job**: it does it and **reports the result with evidence**. The human steers substance and **intervenes by exception**; the AI never asks the human to move a card or re-invoke a command merely to advance mechanics, and stops only at a marked **bless point**, a **gate refusal**, or a **failed precondition**. (In `navigator` mode this inverts per mode awareness — the AI proposes, the human writes.)
+Inside an invoked skill, thinking-space bookkeeping — moving cards, checking the AC a slice satisfies, stamping provenance/verification — is the **AI's job**: it does it and **reports the result with evidence**. The human steers substance and **intervenes by exception**; the AI never asks the human to move a card or re-invoke a command merely to advance mechanics, and stops only at a marked **bless point**, a **gate refusal**, or a **failed precondition**. (In `navigator` mode this inverts per mode awareness — the AI proposes, the human writes.)
 
 Within a Spec, the marked **bless point is acceptance** (TEP-0010) — there is no mid-spec pick-bless or per-slice move confirmation. `/pair-next` runs the Spec's slices to completion autonomously and stops for the human only to **approve the assembled Spec before it merges**. The two human inputs per Spec are **define** (the Spec + ACs, up front) and **accept** (at the end); everything between is the AI advancing mechanics + the human intervening by exception.
 
 ## Slice creation (`/slice`)
 
-`/slice` decomposes a Spec into coherent slices, writing individual `teps/TEP-{t}/SP-{n}/SL-{m}.md` files **directly** in the spec's tree dir — no issue minting, no checkbox-list intermediate, no GitHub API. It allocates the next per-Spec `SL-{m}` and refuses rows that have no single verifiable "done" (those go in the Spec, not on the board).
+`/slice` decomposes a Spec into coherent slices, writing individual `teps/TEP-{t}/SP-{n}/SL-{m}.md` files **directly** in the spec's tree dir — no issue minting, no checkbox-list intermediate, no GitHub API. It allocates the next per-Spec `SL-{m}` and refuses rows that have no single verifiable "done" (those go in the Spec, not on the thinking space).
 
 ## Subagents
 
