@@ -1,5 +1,5 @@
 {
-  "description": "Tandem methodology hooks. board-autosave: at every turn end, commit+push the board sidecar (specs/slices/TEPs) so board state authored by orchestration / create_slice / write_spec is never left only on local disk. The hook self-resolves the board sidecar from THINKUBE_BOARD_ROOT or, failing that, the nearest .mcp.json — so no per-user env/settings wiring is required. (ownership-guard is intentionally NOT armed here: it still does a blocking readFileSync(0) like the one that hung #13, and it is a no-op until the orchestrator sets THINKUBE_ACTIVE_SLICE — arm it only after both are addressed.)",
+  "description": "Tandem methodology hooks. board-autosave (Stop): at every turn end, commit+push the board sidecar (specs/slices/TEPs) so board state authored by orchestration / create_slice / write_spec is never left only on local disk. The hook self-resolves the board sidecar from THINKUBE_BOARD_ROOT or, failing that, the nearest .mcp.json — so no per-user env/settings wiring is required. stale-cwd-warn (SessionStart): on resume, warn if the session's original working directory is gone (e.g. a spec worktree removed when the spec was Accepted) — recommend closing and reopening from the board; warn-only, since session closure isn't model/hook-invokable. (ownership-guard is intentionally NOT armed here: it still does a blocking readFileSync(0) like the one that hung #13, and it is a no-op until the orchestrator sets THINKUBE_ACTIVE_SLICE — arm it only after both are addressed.)",
   "hooks": {
     "Stop": [
       {
@@ -8,6 +8,17 @@
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/board-autosave.mjs\"",
             "timeout": 60
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/stale-cwd-warn.mjs\"",
+            "timeout": 10
           }
         ]
       }
