@@ -61,9 +61,21 @@ All three must pass (exit 0) for a green. Replace these for a different project 
 
 **Documentation build (TEP-tgh6iy).** If this repo ships documentation — the Antora docs site, or a docs-with-code `.adoc` module that aggregates into it — the recipe **must include the docs build**, so a doc edit that breaks the site is a verification fail (no green = not Done). For the docs-platform repo that is `npm run build` (the Antora build; it exits non-zero on a broken `include::`, bad xref, or AsciiDoc error because the playbook sets `runtime.log.failure_level`). For a component repo whose docs aggregate elsewhere, build the docs site (or run an AsciiDoctor parse of the changed module) so breakage is caught in the same slice as the change.
 
+## Acceptance-probe recipe (`.tandem/conventions.json`)
+
+Independent per-AC verification (TEP-6 mechanism 5) is driven by the repo's `acceptanceProbe` recipe in `.tandem/conventions.json` — the repo supplies the language, the methodology fills the templates:
+
+- **`sourcePath`** — where a `role: test` unit writes each AC's test (e.g. `src/acceptance/SP-{spec}_AC-{ac}.test.ts`; a Python repo declares a `pytest` path).
+- **`prepare`** *(optional)* — the BUILD step the closing gate runs **once** before the per-AC commands (e.g. `npx tsc -p tsconfig.test.json` when `run` targets compiled output). From-source runners (pytest, cargo test) declare none.
+- **`run`** — the per-AC command the gate executes (e.g. `node --test out-test/acceptance/SP-{spec}_AC-{ac}.test.js`).
+
+**One canonical fill rule:** `{spec}` = the composite `<tep>/<sp>` id sanitized path-safe (every non-`[A-Za-z0-9._-]` run → `_`, so spec `6/3` fills as `6_3` — the TEP segment prevents cross-TEP collisions); `{ac}` = the 1-based AC ordinal. `/spec-prepare`'s `write_spec` fills `run` into `ac_verifications` and `/slice` fills `sourcePath` into the test units' footprints with the same rule, so the written test and the declared command always match. No recipe declared ⇒ ACs fall back to the whole-suite command above (self-graded); declaring the recipe is what turns independence on.
+
 ## Worktree setup
 
 A fresh worktree (TEP-0008) is a clean checkout: it has the committed source but **none** of the gitignored, locally-built dependencies a verify needs — `node_modules/`, a `.venv/`, a `target/` cache. So before the verification recipe above can run green in a new worktree, the orchestrator (the runner, th4wqh) **provisions** it by executing the command declared here.
+
+**Lifecycle across runs (SP-6/7).** One code worktree lives per Spec for the Spec's whole life (retired at merge). A **(re)dispatched run starts from the branch's committed state**: the orchestrator resets uncommitted leftovers of a prior run (`reset --hard` + `clean -fd`; gitignored provisioning survives) unless a worker session is still live or completed-but-uncommitted work is about to be landed. A Spec with `role: test` units additionally gets a **tester worktree** — a detached snapshot at the branch's committed HEAD, re-snapshotted each run — where the test units author independently of the in-progress implementation; their finished tests are copied into the code worktree at slice completion, built via `prepare`, and run as the grade.
 
 **The contract — a parseable, labeled command.** Declare exactly one provisioning command in a fenced block tagged `setup`. The runner reads the first ` ```setup ` block in this section and executes it (from the worktree root) once, on worktree creation. Keep it a single command (chain with `&&`); it must be idempotent (safe to re-run) and must produce **only gitignored** outputs (see the no-leak rule). If a repo needs nothing, declare the `none` example so the absence is explicit, not forgotten.
 
