@@ -26,7 +26,7 @@ Fill in a Spec's body to the standard Tandem shape. The Spec nests under the TEP
 Produce a fully-shaped `teps/TEP-{t}/SP-{n}/spec.md` containing the four canonical sections, with:
 
 - **Acceptance criteria** that the → Ready gate will accept (non-empty checklist) and that are **user-observable / verifiable**.
-- A **verification map** (`ac_verifications`) — exactly one runnable `{ run, env }` per AC, certified by the verifiability auditor — emitted before → Ready so the **closing** AI-verification gate (SP-tgzyfy / TEP-tgzx3p) has something to run.
+- A **verification map** (`ac_verifications`) — exactly one entry per AC, certified by the verifiability auditor — emitted before → Ready so the **closing** AI-verification gate (SP-tgzyfy / TEP-tgzx3p) has something to run. Each entry is either a **runnable probe** (`{ run, env }`, where `run` points at the slice's held-out `acceptance/` command) or an **assessment** (`{ env: "assessment" }`) for a prose / UX / skill AC that no probe fits — graded by SP-7's independent assessor at the closing gate.
 - **Constraints** that bound the design (perf, compat, security, deadlines).
 - **Design** at the depth needed to start slicing, not a full implementation guide.
 - **File plan** naming the files the spec will touch.
@@ -89,13 +89,19 @@ Gather the minimum, in the right order, and only after the governing document ex
 - `other/file.tsx` — <reason>
 ```
 
-7. **Audit each AC's verifiability and emit the verification map.** Once the ACs and Design are settled, run an **AC-verifiability auditor** — the **opening** AI-verification gate (TEP-tgzx3p). Hand the drafted `## Acceptance Criteria` (plus the Design and the step-5 verification recipe) to an **adversarial pass via the `Task` tool** (the same delegation shape as `reviewer` / `verifier`), so each AC is interrogated with independent context. For each AC the auditor asks three questions — **actor** (must be the AI verifier), **environment** (`local` or `cluster`), and **availability before the gate it arms** — and returns `verifiable` or `needs-reframe(why)`. A `needs-reframe` AC is reworked (via `get_thinkube_file` → `write_spec`) and re-audited, and **never gets a verification entry**. When — and only when — **every** AC is `verifiable`, emit the map:
+7. **Audit each AC's verifiability and emit the verification map.** Once the ACs and Design are settled, run an **AC-verifiability auditor** — the **opening** AI-verification gate (TEP-tgzx3p). Hand the drafted `## Acceptance Criteria` (plus the Design and the step-5 verification recipe) to an **adversarial pass via the `Task` tool** (the same delegation shape as `reviewer` / `verifier`), so each AC is interrogated with independent context. For each AC the auditor asks three questions — **actor** (the AI verifier, or SP-7's independent **assessor** for a prose AC), **environment** (`local`, `cluster`, or `assessment`), and **availability before the gate it arms** — and returns one of **three verdicts**: `verifiable`, `assessment`, or `needs-reframe(why)`.
+
+   - **`verifiable`** — a runnable AC. Emit `{ run, env }` where **`run` points at the slice's held-out `acceptance/` probe** (the `acceptance/SP-{n}_SL-{m}.*` command SP-7's held-out fence keeps — the auditor **no longer overrides it to `npm test`**) and `env` is `local` or `cluster`.
+   - **`assessment`** — a **prose / UX / skill** AC that no probe fits (e.g. an instruction reads clearly, a methodology behaves as described). Emit `{ env: "assessment" }` — no `run`. SP-7's auditor certifies this as a legitimate third verdict, and the **closing** gate grades it via an **independent assessor** (SP-7's new `assessment` AC kind) reading the artifact, not a shell exit code.
+   - **`needs-reframe`** — reworked (via `get_thinkube_file` → `write_spec`) and re-audited, and **never gets a verification entry**.
+
+   When — and only when — **every** AC is `verifiable` **or** `assessment`, emit the map:
 
    ```
-   write_spec { thinking_space: <id>, spec: {n}, ac_verifications: { "1": { run, env }, "2": { run, env }, … } }
+   write_spec { thinking_space: <id>, spec: {n}, ac_verifications: { "1": { run, env }, "2": { env: "assessment" }, … } }
    ```
 
-   keyed by **1-based AC ordinal**, **exactly one entry per AC**, every ordinal `1..N` present. **Emitting the full map is what arms → Ready** — a Spec with any un-audited, `needs-reframe`, or undeclared AC cannot reach Ready (the gate blocks and names the ordinal). **Re-run this whole step whenever the ACs change.** See **`reference.md` → "The AC-verifiability auditor"** for the full verdict mechanics, the `{ run, env }` derivation, and the both-ends serialization contract.
+   keyed by **1-based AC ordinal**, **exactly one entry per AC**, every ordinal `1..N` present. **Emitting the full map is what arms → Ready** — a Spec with any un-audited, `needs-reframe`, or undeclared AC cannot reach Ready (the gate blocks and names the ordinal). **Re-run this whole step whenever the ACs change.** See **`reference.md` → "The AC-verifiability auditor"** for the full verdict mechanics, the `{ run, env }` / `assessment` derivation, and the both-ends serialization contract.
 
 8. **Report — do NOT commit.** The `thinking-space-autosave` Stop hook commits + pushes the thinking-space sidecar at turn end; it owns thinking-space bookkeeping, so a manual `git commit` is redundant (and was only ever needed while the hook was unwired). Just print the path, AC count, the verification-map count (one entry per AC), and the suggested next step (`/slice {n}`).
 
@@ -112,7 +118,7 @@ Gather the minimum, in the right order, and only after the governing document ex
 ✅ SP-{n}: <title>
    spec:    teps/TEP-{t}/SP-{n}/spec.md
    ac:      <count> acceptance criteria
-   verify:  <count> ac_verifications (1 per AC, all certified verifiable)
+   verify:  <count> ac_verifications (1 per AC — probe or assessment, all certified)
    files:   <count> in file plan
    next:    /slice {n}
 ```
