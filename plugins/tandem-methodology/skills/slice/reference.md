@@ -71,6 +71,22 @@ Coherence decided what the slice _is_; footprint decided how its authoring _para
 
 **Worked example.** In a Python repo whose `.tandem/conventions.json` declares `acceptanceProbe.sourcePath: "acceptance/SP-{spec}_AC-{ac}.py"` (run by `pytest`, no `prepare`), a slice "Email/password login end-to-end" of TEP-2/SP-5 that `satisfies` AC 2, with a contract pinning `create_session(email, password) -> Session | None`, fans out into `role: "code"` units for `models.py`, `routes.py` plus **one `role: "test"` unit**: `{ footprint: "acceptance/SP-2_5_AC-2.py", execution: "fan-out", role: "test", note: "a valid login form POST creates a session, sets the cookie, and redirects" }` — the path is the recipe filled with `(spec=2/5 → 2_5, ac=2)`. All three run concurrently — the code units in the spec worktree, the test unit in the tester snapshot — and the test-author never sees `models.py`/`routes.py` in progress. (A TypeScript repo would instead declare `src/acceptance/SP-{spec}_AC-{ac}.test.ts` with a `tsc` `prepare`; the methodology is identical, only the repo's recipe differs.)
 
+## Auditing the contract (Procedure step 3d, in full)
+
+The two-hands model concentrates risk in one artifact: the **contract** is the only thing the code-author and the test-author share — each builds against it **without seeing the other's work** — so a seam the contract leaves undefined is not a small vagueness, it is a fork: both hands must invent it, they invent it differently, and the gate goes red against a *correct-in-spirit* implementation. The audit exists to find those forks before any worker runs.
+
+**The method — a dry-run, not a review.** Don't ask "is this contract clear?" (an author-shaped question that always comes back yes). Spawn an adversarial subagent (`Task`, independent context) and make it *do the tester's job in miniature*: for each `role: "test"` unit's note, sketch the test **using only the contract** — the imports, the setup that establishes the note's preconditions, the action, the assertion — and **name the first thing it had to guess**. A skeleton that writes cleanly certifies the seam; a guess names the gap precisely.
+
+**The recurring gap classes:**
+
+- **Arming/configuration** — the note says "when X is configured / enabled / in strict mode" and the contract defines X's *behaviour* but not its *switch*. The tester must arm the very state it tests; if the contract doesn't name the mechanism (an env var, an injectable parameter, a factory argument), tester and implementer wire it differently. *(The real case: "with an approval secret configured" — no arming seam → that AC's tests went 0/4 against a working gate.)*
+- **State location** — where does the thing live (a directory the caller passes? a well-known path? process state)? A store with hidden state can't be set up or torn down from a test.
+- **Observable effect** — what exactly does the test assert? "Refuses" must name the observable: a thrown error (which?), a `false` return, an error payload naming the reason.
+- **Unnamed constants** — a TTL, a key format, a hash algorithm, a default. If behaviour pivots on the value (expiry boundaries!), the contract names it — as an exported constant when a test must reference it.
+- **Cross-slice reach** — a note whose behaviour crosses into another slice's seam (this slice's gate driven through that slice's tool): the UNION of contracts must cover the whole drive path, or the note must be scoped down.
+
+**Route the fix at the right altitude.** A gap the *slicer* owns (a missing export, an unnamed constant, an arming parameter) → fix the contract (`update_slice` re-cuts `contract` on an existing slice) and re-audit. A gap the *Design* owns (the Spec itself never defines how the feature is configured) → route back to `/spec-prepare` (its auditor's **controllability** question is this same check at the AC level), fix the Design, then re-slice. Never leave the guess to the workers: they are built to make reasonable engineering decisions autonomously, which is exactly what forks an undefined seam.
+
 ## Re-slicing — the Spec changed under existing slices (Procedure step 0, in full)
 
 If `teps/TEP-{t}/SP-{n}/` already holds `SL-*.md` files, this is a **change-review**, not a fresh decomposition — the thinking space flags this with a stale badge (`specStale` / `specChange: "requirements"`) on done slices whose parent Spec was edited after they were verified. Do NOT overwrite blindly:
