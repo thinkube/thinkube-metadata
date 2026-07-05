@@ -117,6 +117,8 @@ The parent Spec is your scope — gather only what it doesn't already give you:
    next:    advance from the thinking space (Orchestrate)
 ```
 
+**Orchestrate is a human board command (SP-tgs8nz), not an MCP tool** — the AI cannot run it (capability boundary, `methodology.md`). Writing the slices at `status: ready` IS the deliverable; present the `next:` line as a **handoff** ("you advance them via Orchestrate"), never as a self-offer ("want me to open SL-1 for orchestration?") and never flip a slice's `status:` as a stand-in for actually running it.
+
 ## Safety / fallback
 
 Refuse cleanly on the common failure modes — **kanban MCP tools absent** (STOP, never freehand `Write`), **Spec sections missing** (direct to `/spec-prepare {n}`), **an unmatched AC** (surface the gap, don't invent a slice), **a candidate with no single "done"** (park it in the Spec), **a candidate with its own AC/design** (it's a Spec), and **a huge Spec >12 candidate slices** (propose a split). See `reference.md` ("Safety / fallback") for each case in full.
