@@ -34,6 +34,16 @@ code-server). Chat and the file are both fine to review in — the file is just 
   before any codebase search; delegate genuine "what's in this codebase" to the `explorer`
   subagent.
 
+## Sizing implementing specs
+
+Default to **one spec per working repo** — the spec is the merge boundary, so one spec is one merge. Splitting a TEP into more specs multiplies the merges, the acceptance gates, and the coordination between them, and buys nothing unless a real boundary forces the split. Three boundaries force it:
+
+- **A different repo** — code that lands in a separate working repo is a separate merge, so a separate spec.
+- **A genuinely independent landing** — a piece that can ship on its own, with its own acceptance, and does not wait on the rest.
+- **A different verification actor** — the result is checked by a different actor or environment than the rest of the work.
+
+If none of these hold, keep it one spec. When you do list several candidate seams as separate specs, write down why each one cannot fold into the others — that sentence is the test, and if you cannot write it, the seams are one spec.
+
 ## Output
 
 ```
