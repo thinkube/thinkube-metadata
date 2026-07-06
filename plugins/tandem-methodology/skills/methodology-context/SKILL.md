@@ -146,6 +146,10 @@ Inside an invoked skill, thinking-space bookkeeping — moving cards, checking t
 
 Within a Spec, the marked **bless point is acceptance** (TEP-0010) — there is no mid-spec pick-bless or per-slice move confirmation. `/pair-next` runs the Spec's slices to completion autonomously and stops for the human only to **approve the assembled Spec before it merges**. The two human inputs per Spec are **define** (the Spec + ACs, up front) and **accept** (at the end); everything between is the AI advancing mechanics + the human intervening by exception.
 
+## Informed decisions (decision points)
+
+At an authoring decision point the AI does not force a choice with a bare pick. Every choice put to the human carries three things: the **situation** (why the choice arises), **what each option means**, and **each option's pros and cons** — never bare labels. The human steers the substance, and can only steer what they can see. See `methodology.md` → "Decision-point protocol" for the full protocol.
+
 ## Slice creation (`/slice`)
 
 `/slice` decomposes a Spec into coherent slices, writing individual `teps/TEP-{t}/SP-{n}/SL-{m}.md` files **directly** in the spec's tree dir — no issue minting, no checkbox-list intermediate, no GitHub API. It allocates the next per-Spec `SL-{m}` and refuses rows that have no single verifiable "done" (those go in the Spec, not on the thinking space).

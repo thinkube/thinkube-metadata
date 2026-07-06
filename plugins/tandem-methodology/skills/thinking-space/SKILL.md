@@ -26,6 +26,7 @@ A compact chat-readable view of the project's current state, plus a pointer to t
 
 - Read-only. Don't move cards here — that's `/pair-next` and direct UI manipulation.
 - Don't dump the full JSON. Format for human eyes.
+- **Write for a global audience (plain English).** Human-facing text uses short sentences and common words. The first time a methodology term appears, gloss it in the pattern "footprint (the list of files a task may edit)" — leave no jargon bare, and use no idioms that do not translate across languages.
 
 ## Output
 

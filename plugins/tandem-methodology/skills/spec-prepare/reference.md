@@ -33,6 +33,10 @@ write_spec { thinking_space: <id>, spec: {n}, ac_verifications: { "1": { run, en
 
 keyed by **1-based AC ordinal**, **exactly one entry per AC**, every ordinal `1..N` present (no orphan / missing keys). `write_spec` normalizes and serializes it to the Spec's `ac_verifications:` frontmatter; this is the per-AC declaration the **closing** gate (SP-tgzyfy / TEP-tgzx3p) resolves at Spec quiescence and gates Done / commit on all-green — **running** each `verifiable` entry's `run` command and routing each `assessment` entry to SP-7's independent assessor. **Emitting the full map is what arms → Ready.** A Spec with any un-audited, `needs-reframe`, or undeclared AC **cannot reach Ready** — the → Ready gate (`createSlice`'s `readyGate`) blocks and names the offending ordinal, so don't skip this step or emit a partial map. **Re-run this whole step whenever the ACs change** (and `/slice` re-checks it when it touches ACs).
 
+## Sizing a spec (one spec, one merge)
+
+The spec is the merge boundary — one spec lands as one merge, behind one acceptance gate. So the default size is **one spec per working repo**: fold the whole coherent change into a single spec unless a real boundary forces a split. The boundaries that force one: a **different repo** (a separate merge), a **genuinely independent landing** (it can ship on its own with its own acceptance), or a **different verification actor** (a different actor or environment grades it). Run this check before scaffolding, so you never lay down a skeleton for work that is really two specs — or split work that is really one.
+
 ## Constraints (full)
 
 - The four section headers (`## Acceptance Criteria`, `## Constraints`, `## Design`, `## File Structure Plan`) are **load-bearing** — the quality gates and the staleness hash look for these exact strings. Don't rename them.

@@ -58,6 +58,7 @@ Pair-programming on the auth-callback slice — Claude caught two off-by-one cas
 - **One note per call.** Don't batch — the granularity is the point.
 - **Don't paraphrase the user's note.** Lens classification + light formatting only.
 - **Don't read existing retros** unless the user asks for context. The skill is write-mostly.
+- **Write for a global audience (plain English).** Human-facing text uses short sentences and common words. The first time a methodology term appears, gloss it in the pattern "footprint (the list of files a task may edit)" — leave no jargon bare, and use no idioms that do not translate across languages.
 
 ## Output
 
