@@ -21,7 +21,7 @@ Skills (this bundle):
 
 - `/spec-prepare` — author a Spec's body (acceptance criteria come from you).
 - `/slice` — decompose a Spec into coherent slices (writes `teps/TEP-{t}/SP-{n}/SL-{m}.md` files directly in the spec's tree dir; no issue minting).
-- `/board`, `/retro` — board snapshot + retro journaling. Advancing a Spec's slices is **board-driven** (the Orchestrate command, SP-tgs8nz), not a chat skill; the legacy `/pair-start` + `/pair-next` are retired and their UI-driven replacement is under design.
+- `/board`, `/retro` — board snapshot + retro journaling. Building a Spec is **board-driven** (Orchestrate dispatches the SPEC; its slices advance as outcomes — SP-tgs8nz), not a chat skill; the legacy `/pair-start` + `/pair-next` are retired and their UI-driven replacement is under design.
 
 Subagents (this bundle):
 
@@ -56,7 +56,7 @@ At authoring decision points (`/tep`, `/spec-prepare`, `/slice`) the AI works **
 **Capability boundary — never offer what no tool backs.** An **offer** ("want me to X?") is legitimate **only if `X` maps to a tool the AI can actually call.** If the next step is a **human-only** action, state it as a **handoff** ("you run `X` in the extension") — never as a self-offer, and never flip a status label as a stand-in for it (that only desyncs the board from reality). The human-only actions in this lifecycle, none of which the AI can perform:
 
 - **Approve** — the review panel's maintainer-only button that mints the content-bound approval token (`open_review` opens the surface; the AI cannot press it — it cannot synthesize the human's "go").
-- **Orchestrate** — advancing a Spec's ready slices runs the workers over the slice's work units; it is a **board command** (SP-tgs8nz), not an MCP tool. The AI writes slices to `status: ready` and **hands off** — it does not "open a slice for orchestration."
+- **Orchestrate** — a **board command** (SP-tgs8nz) that dispatches a **SPEC**: it pools every ready slice's work units into one run. Two verbs, two objects — a Spec is *orchestrated* (dispatched); a slice *advances* (its status moves to Done as an OUTCOME of the run). Slices are never individually orchestrated. The AI writes slices to `status: ready` and **hands off** ("Orchestrate SP-{n}") — it cannot run the command.
 - **Reload Window / install** — activating a rebuilt extension is a code-server action the human takes.
 
 When in doubt, check your tool inventory before phrasing an offer; a `next:` handoff line in a skill's Output is a description of the human's next move, not a menu of things to volunteer.
