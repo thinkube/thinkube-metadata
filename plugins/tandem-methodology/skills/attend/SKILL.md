@@ -72,7 +72,7 @@ Only after stating this do you read the item and begin. (The cwd-fallback wrappe
    1. **Read the Spec's intent** with `get_thinkube_file { thinking_space, relative_path: "teps/TEP-{t}/SP-{n}/spec.md" }` — the Goal / Design / Acceptance Criteria as *intent*, not as a checklist to fish evidence from.
    2. **Re-align at Spec grain** — bring the implementation back in line with the Spec's intent, bounded by the divergence in your args.
    3. **Verify** with the repo's recipe at whatever grain the rework touched.
-   4. **Hand back for re-orchestration.** A Spec's advance is the **Orchestrate board command (SP-tgs8nz), not a tool you can call** — so this is a **handoff**, not a self-offer: state that the Spec is ready for the human to re-orchestrate. Do **not** flip a slice's status as a stand-in for running Orchestrate.
+   4. **Hand back for re-orchestration.** A Spec's advance is the **Orchestrate board command, not a tool you can call** — so this is a **handoff**, not a self-offer: state that the Spec is ready for the human to re-orchestrate. Do **not** flip a slice's status as a stand-in for running Orchestrate.
 5. **Sign off** with the mandated block (below). This is the last thing you do.
 
 ### The discovery rule — keep the session bounded

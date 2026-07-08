@@ -11,20 +11,20 @@ Hand-edit this file after installing the bundle. The bundle ships with the defau
 
 ## Branches
 
-**One branch per Spec** (TEP-0010), named `spec/SP-{n}`:
+**One branch per Spec**, named `spec/SP-{n}`:
 
 ```
 spec/SP-3
 spec/SP-7
 ```
 
-Every slice under the Spec lands as **commits on that one branch** — there is **no per-slice branch**. The branch opens when the Spec's first slice starts and closes when the Spec is accepted (its one PR merges). When specs run in parallel, the branch is a **worktree** (TEP-0008) that lives for the whole Spec and is retired at merge — not per-slice.
+Every slice under the Spec lands as **commits on that one branch** — there is **no per-slice branch**. The branch opens when the Spec's first slice starts and closes when the Spec is accepted (its one PR merges). When specs run in parallel, the branch is a **worktree** that lives for the whole Spec and is retired at merge — not per-slice.
 
 Branches go to `main` via the Spec's single PR. Long-lived feature branches are an exception, not the default.
 
 ## Pull requests
 
-**One PR per Spec** (TEP-0010) — never one per slice. The PR carries the whole Spec and merges at acceptance.
+**One PR per Spec** — never one per slice. The PR carries the whole Spec and merges at acceptance.
 
 - Title: `<spec title>` (matches `teps/TEP-{t}/SP-{n}/spec.md`'s `# heading`).
 - Body opens with a one-line summary + the Spec it closes (`Closes SP-3`), then lists the slices it delivers (`SP-3_SL-1 … SP-3_SL-4`).
@@ -59,11 +59,11 @@ The `verifier` subagent runs the commands below to gate a slice's move to **Done
 
 All three must pass (exit 0) for a green. Replace these for a different project if its toolchain differs; where a project has no test suite, the typecheck + build pair stands in for "one green."
 
-**Documentation build (TEP-tgh6iy).** If this repo ships documentation — the Antora docs site, or a docs-with-code `.adoc` module that aggregates into it — the recipe **must include the docs build**, so a doc edit that breaks the site is a verification fail (no green = not Done). For the docs-platform repo that is `npm run build` (the Antora build; it exits non-zero on a broken `include::`, bad xref, or AsciiDoc error because the playbook sets `runtime.log.failure_level`). For a component repo whose docs aggregate elsewhere, build the docs site (or run an AsciiDoctor parse of the changed module) so breakage is caught in the same slice as the change.
+**Documentation build.** If this repo ships documentation — the Antora docs site, or a docs-with-code `.adoc` module that aggregates into it — the recipe **must include the docs build**, so a doc edit that breaks the site is a verification fail (no green = not Done). For the docs-platform repo that is `npm run build` (the Antora build; it exits non-zero on a broken `include::`, bad xref, or AsciiDoc error because the playbook sets `runtime.log.failure_level`). For a component repo whose docs aggregate elsewhere, build the docs site (or run an AsciiDoctor parse of the changed module) so breakage is caught in the same slice as the change.
 
 ## Acceptance-probe recipe (`.tandem/conventions.json`)
 
-Independent per-AC verification (TEP-6 mechanism 5) is driven by the repo's `acceptanceProbe` recipe in `.tandem/conventions.json` — the repo supplies the language, the methodology fills the templates:
+Independent per-AC verification is driven by the repo's `acceptanceProbe` recipe in `.tandem/conventions.json` — the repo supplies the language, the methodology fills the templates:
 
 - **`sourcePath`** — where a `role: test` unit writes each AC's test (e.g. `src/acceptance/SP-{spec}_AC-{ac}.test.ts`; a Python repo declares a `pytest` path).
 - **`prepare`** *(optional)* — the BUILD step the closing gate runs **once** before the per-AC commands (e.g. `npx tsc -p tsconfig.test.json` when `run` targets compiled output). From-source runners (pytest, cargo test) declare none.
@@ -73,9 +73,9 @@ Independent per-AC verification (TEP-6 mechanism 5) is driven by the repo's `acc
 
 ## Worktree setup
 
-A fresh worktree (TEP-0008) is a clean checkout: it has the committed source but **none** of the gitignored, locally-built dependencies a verify needs — `node_modules/`, a `.venv/`, a `target/` cache. So before the verification recipe above can run green in a new worktree, the orchestrator (the runner, th4wqh) **provisions** it by executing the command declared here.
+A fresh worktree is a clean checkout: it has the committed source but **none** of the gitignored, locally-built dependencies a verify needs — `node_modules/`, a `.venv/`, a `target/` cache. So before the verification recipe above can run green in a new worktree, the orchestrator (the runner) **provisions** it by executing the command declared here.
 
-**Lifecycle across runs (SP-6/7).** One code worktree lives per Spec for the Spec's whole life (retired at merge). A **(re)dispatched run starts from the branch's committed state**: the orchestrator resets uncommitted leftovers of a prior run (`reset --hard` + `clean -fd`; gitignored provisioning survives) unless a worker session is still live or completed-but-uncommitted work is about to be landed. A Spec with `role: test` units additionally gets a **tester worktree** — a detached snapshot at the branch's committed HEAD, re-snapshotted each run — where the test units author independently of the in-progress implementation; their finished tests are copied into the code worktree at slice completion, built via `prepare`, and run as the grade.
+**Lifecycle across runs.** One code worktree lives per Spec for the Spec's whole life (retired at merge). A **(re)dispatched run starts from the branch's committed state**: the orchestrator resets uncommitted leftovers of a prior run (`reset --hard` + `clean -fd`; gitignored provisioning survives) unless a worker session is still live or completed-but-uncommitted work is about to be landed. A Spec with `role: test` units additionally gets a **tester worktree** — a detached snapshot at the branch's committed HEAD, re-snapshotted each run — where the test units author independently of the in-progress implementation; their finished tests are copied into the code worktree at slice completion, built via `prepare`, and run as the grade.
 
 **The contract — a parseable, labeled command.** Declare exactly one provisioning command in a fenced block tagged `setup`. The runner reads the first ` ```setup ` block in this section and executes it (from the worktree root) once, on worktree creation. Keep it a single command (chain with `&&`); it must be idempotent (safe to re-run) and must produce **only gitignored** outputs (see the no-leak rule). If a repo needs nothing, declare the `none` example so the absence is explicit, not forgotten.
 

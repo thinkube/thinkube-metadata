@@ -14,7 +14,7 @@ A reference document loaded by other bundle skills (`/spec-prepare`, `/slice`, `
 1. The team is **one human (navigator) + one AI (driver)** — not a group of humans.
 2. The **committed git repo is the single source of truth _and_ the thinking space**.
 
-Consequences: the entire artifact set — specs, slices, **teps** (Tandem Enhancement Proposals), retros — lives as committed markdown in the **central Tandem sidecar thinking-space repo** (`thinkube-tandem`, TEP-0008), namespaced per Thinking Space and **org-scoped** within it as a sequential tree (`<org>/teps/TEP-n/SP-m/SL-k.md`) — host-agnostic (the thinking-space repo can live on Gitea, GitHub, or offline; reinstall recovery is `git clone`). There is **no external issue tracker in the core loop**. "Done" is defined in two layers (TEP-0010): each **slice** is done by an **automated verifier** (fast, no human sign-off), and each **Spec** is done by a **single human acceptance gate** at the end — the human approves the assembled result and the automated re-verify passes, then the Spec's one PR merges. The per-slice automated greens stay; the spec-level human accept is the lightest sign-off, placed exactly where per-slice greens miss integration/UX regressions.
+Consequences: the entire artifact set — specs, slices, **teps** (Tandem Enhancement Proposals), retros — lives as committed markdown in the **central Tandem sidecar thinking-space repo** (`thinkube-tandem`), namespaced per Thinking Space and **org-scoped** within it as a sequential tree (`<org>/teps/TEP-n/SP-m/SL-k.md`) — host-agnostic (the thinking-space repo can live on Gitea, GitHub, or offline; reinstall recovery is `git clone`). There is **no external issue tracker in the core loop**. "Done" is defined in two layers: each **slice** is done by an **automated verifier** (fast, no human sign-off), and each **Spec** is done by a **single human acceptance gate** at the end — the human approves the assembled result and the automated re-verify passes, then the Spec's one PR merges. The per-slice automated greens stay; the spec-level human accept is the lightest sign-off, placed exactly where per-slice greens miss integration/UX regressions.
 
 ## Hierarchy: Spec → Slice
 
@@ -102,15 +102,15 @@ A Spec still being authored (no AC yet) is pre-thinking-space; its slices don't 
 
 | Transition             | Gate                                                                                                                                                                                                                                                                               |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Slice → Ready          | The slice's parent Spec has a non-empty `## Acceptance Criteria` **and every AC carries a certified `ac_verifications` entry** — `createSlice`'s `readyGate` refuses a Spec with any undeclared AC, naming the ordinal (the auditor in `/spec-prepare` emits the map; TEP-tgzx3p). |
+| Slice → Ready          | The slice's parent Spec has a non-empty `## Acceptance Criteria` **and every AC carries a certified `ac_verifications` entry** — `createSlice`'s `readyGate` refuses a Spec with any undeclared AC, naming the ordinal (the auditor in `/spec-prepare` emits the map). |
 | Slice → Done           | Verifier green for the slice's change, and the AC it satisfies is checked on the Spec. **Reviewer + verifier both run inside this single gate** — no Review/Verify handoff columns.                                                                                                |
 | Spec acceptance → Done | The acceptance card reaches Done only when **every slice is Done, every AC box is checked, and a human-accept is recorded** (`accept_spec`). The MCP server **refuses** otherwise, naming the blocker — like `move_slice` refuses an unchecked AC.                                 |
 
 The slice **is** the per-slice verification boundary — "one green," automated. The **Spec** has one more, human gate on top: acceptance (below). (The old "≥1 comment" gate is gone: there is no second human to hand off to.)
 
-## Spec lifecycle: one branch, one PR, one acceptance gate (TEP-0010)
+## Spec lifecycle: one branch, one PR, one acceptance gate
 
-A Spec runs on **one branch** `spec/SP-{n}` (a worktree when specs run in parallel, TEP-0008); every slice lands as **commits on that branch**, and the Spec produces **exactly one PR** — no per-slice branch or PR. Slices execute **consecutively and autonomously**: the human defines the goal up front (the Spec + its acceptance criteria) and `/pair-next` runs the Ready slices through Doing→Done to completion **without pausing between them**. The **only** human gate is **acceptance**, at the end:
+A Spec runs on **one branch** `spec/SP-{n}` (a worktree when specs run in parallel); every slice lands as **commits on that branch**, and the Spec produces **exactly one PR** — no per-slice branch or PR. Slices execute **consecutively and autonomously**: the human defines the goal up front (the Spec + its acceptance criteria) and `/pair-next` runs the Ready slices through Doing→Done to completion **without pausing between them**. The **only** human gate is **acceptance**, at the end:
 
 1. The AI **explains** the assembled implementation across the slices (ideally a real end-to-end demonstration).
 2. The human **approves** (or sends it back) — the session's single bless point.
@@ -132,7 +132,7 @@ Staleness is a normalized hash of the Spec's requirement sections with checkbox 
 
 ## Per-project thinking space
 
-Each **Thinking Space** lives in the **central Tandem sidecar repo** (`thinkube-tandem`, TEP-0008), under its namespace `<container>/<rel>/<org>/` derived from the workspace-folder layout plus the org scope (host-agnostic — never from a git remote). A Space is methodology-enabled **iff its namespace dir exists in the sidecar repo** (located via `thinkube.thinkingSpace.root`); there is no settings registry, and the extension never auto-enables. The **workspace navigator** discovers the Spaces across the open workspace folders and lets you move between the enabled thinking spaces. _(The co-located `.thinkube/` dir is deprecated — TEP-0008.)_
+Each **Thinking Space** lives in the **central Tandem sidecar repo** (`thinkube-tandem`), under its namespace `<container>/<rel>/<org>/` derived from the workspace-folder layout plus the org scope (host-agnostic — never from a git remote). A Space is methodology-enabled **iff its namespace dir exists in the sidecar repo** (located via `thinkube.thinkingSpace.root`); there is no settings registry, and the extension never auto-enables. The **workspace navigator** discovers the Spaces across the open workspace folders and lets you move between the enabled thinking spaces. _(The co-located `.thinkube/` dir is deprecated.)_
 
 ## Pair modes
 
@@ -144,7 +144,7 @@ Each **Thinking Space** lives in the **central Tandem sidecar repo** (`thinkube-
 
 Inside an invoked skill, thinking-space bookkeeping — moving cards, checking the AC a slice satisfies, stamping provenance/verification — is the **AI's job**: it does it and **reports the result with evidence**. The human steers substance and **intervenes by exception**; the AI never asks the human to move a card or re-invoke a command merely to advance mechanics, and stops only at a marked **bless point**, a **gate refusal**, or a **failed precondition**. (In `navigator` mode this inverts per mode awareness — the AI proposes, the human writes.)
 
-Within a Spec, the marked **bless point is acceptance** (TEP-0010) — there is no mid-spec pick-bless or per-slice move confirmation. `/pair-next` runs the Spec's slices to completion autonomously and stops for the human only to **approve the assembled Spec before it merges**. The two human inputs per Spec are **define** (the Spec + ACs, up front) and **accept** (at the end); everything between is the AI advancing mechanics + the human intervening by exception.
+Within a Spec, the marked **bless point is acceptance** — there is no mid-spec pick-bless or per-slice move confirmation. `/pair-next` runs the Spec's slices to completion autonomously and stops for the human only to **approve the assembled Spec before it merges**. The two human inputs per Spec are **define** (the Spec + ACs, up front) and **accept** (at the end); everything between is the AI advancing mechanics + the human intervening by exception.
 
 ## Informed decisions (decision points)
 
