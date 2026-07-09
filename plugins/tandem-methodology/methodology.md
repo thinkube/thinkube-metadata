@@ -6,7 +6,7 @@ We pair-program human + Claude using **Tandem** — a methodology for a one-huma
 
 Hierarchy: **spec → slice**. (Epic/Story are not tiers — grouping is a `theme:` tag.)
 
-- Source of truth: committed markdown in the central Tandem sidecar board repo (`thinkube-tandem`), namespaced per Thinking Space and **org-scoped** within it. Host-agnostic (Gitea / GitHub / offline); no external issue tracker in the core loop. Reinstall recovery is `git clone`.
+- Source of truth: committed markdown in the central Tandem sidecar board repo (`thinkube-tandem-store`), namespaced per Thinking Space and **org-scoped** within it. Host-agnostic (Gitea / GitHub / offline); no external issue tracker in the core loop. Reinstall recovery is `git clone`.
 - The board is an **org-scoped sequential tree**: every artifact nests under its parent in `<org>/teps/TEP-n/SP-m/SL-k.md`. TEPs, Specs, and Slices carry **sequential ids** (`TEP-1`, `TEP-2`…; `SP-1`, `SP-2`…; `SL-1`, `SL-2`…), minted per board+org — never opaque/hashed ids.
 - A **Spec** is the documented unit (`teps/TEP-n/SP-m/spec.md`, nested under the TEP it implements): acceptance criteria, constraints, design, file plan.
 - A **Slice** is the card that flows the board (`teps/TEP-n/SP-m/SL-k.md`, alongside its Spec): one coherent end-to-end change verified-and-committed as a single "done." Sized by coherence, not the clock. Handle: `SP-{n}_SL-{m}` (e.g. `SP-3_SL-42`); TEP and Spec ids are sequential per board+org, slices per-Spec.
