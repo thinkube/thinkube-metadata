@@ -45,6 +45,11 @@ const RETIRED_SKILL_TOKENS = [
 const FORBIDDEN_TOKENS = [
   { label: "base36", re: /base36/gi },
   { label: "epoch id", re: /epoch id/gi },
+  // One naming convention (TEP-14): space names use the workspace spelling
+  // (Platform/core/…) — the disk-path spelling and the "home-relative"
+  // vocabulary are retired.
+  { label: "thinkube-platform/ (disk-path spelling)", re: /thinkube-platform\//g },
+  { label: "home-relative (retired vocabulary)", re: /home-relative/gi },
 ];
 
 function skillExists(name) {
