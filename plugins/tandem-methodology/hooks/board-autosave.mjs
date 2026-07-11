@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Stop hook: board-autosave (SP-th3ias_SL-3 / TEP-th1ddy).
+ * Stop hook: board-autosave.
  *
  * Takes commit+push of the board sidecar off the model. At turn end it runs, in
  * the board sidecar working tree:
@@ -184,8 +184,7 @@ export function autosave(boardDir, opts = {}) {
 function main() {
   // We deliberately DO NOT read stdin. The Stop payload is unused, and a
   // blocking `readFileSync(0)` wedges forever under the harness's open stdin
-  // pipe (this is exactly what hung the first headless orchestration —
-  // TEP-th3i18 #12/#13). Skipping the read is the headless-safe choice; the
+  // pipe (this is exactly what hung the first headless orchestration). Skipping the read is the headless-safe choice; the
   // pipe is simply left for the OS to close when we exit.
 
   const boardDir = resolveBoardRoot();
