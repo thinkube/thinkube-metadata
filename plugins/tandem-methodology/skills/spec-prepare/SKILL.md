@@ -7,6 +7,7 @@ allowed-tools:
     "Glob",
     "mcp__thinkube-kanban__get_thinkube_file",
     "mcp__thinkube-kanban__write_spec",
+    "mcp__thinkube-kanban__open_review",
     "Task",
   ]
 argument-hint: "<spec-number>"
@@ -110,7 +111,8 @@ Gather the minimum, in the right order, and only after the governing document ex
 
    keyed by **1-based AC ordinal**, **exactly one entry per AC**, every ordinal `1..N` present. **Emitting the full map is what arms → Ready** — a Spec with any un-audited, `needs-reframe`, or undeclared AC cannot reach Ready (the gate blocks and names the ordinal). **Re-run this whole step whenever the ACs change.** See **`reference.md` → "The AC-verifiability auditor"** for the full verdict mechanics, the `{ run, env }` / `assessment` derivation, and the both-ends serialization contract.
 
-8. **Report — do NOT commit.** The `thinking-space-autosave` Stop hook commits + pushes the thinking-space sidecar at turn end; it owns thinking-space bookkeeping, so a manual `git commit` is redundant (and was only ever needed while the hook was unwired). Just print the path, AC count, the verification-map count (one entry per AC), and the suggested next step (`/slice {n}`).
+8. **Open the review panel — the MANDATORY closing move.** Call `open_review { thinking_space, kind: "spec", id: "TEP-{t}/SP-{n}" }` so the Approve button is already on the human's screen when your report lands. Never end by telling the human to ask for the panel — summoning it is this skill's job; clicking Approve is theirs.
+9. **Report — do NOT commit.** The `thinking-space-autosave` Stop hook commits + pushes the thinking-space sidecar at turn end; it owns thinking-space bookkeeping, so a manual `git commit` is redundant. Print the path, AC count, the verification-map count (one entry per AC), and the next step: click **Approve** in the panel just opened, then `/slice {n}`.
 
 ## Constraints
 

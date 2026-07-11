@@ -52,7 +52,7 @@ Invocation: `/attend SP-11/1 …worktree note… the skill never states the work
 The judged fault may name the gate or the board record, not the code. Fix the record through the sanctioned tools, never by hand-editing thinking-space files:
 
 - **Footprint names a wrong/missing path** → `update_slice` re-cut (`files` / `work_units`; declare genuinely-new files in `creates:`). The existence gate's did-you-mean names the likely intended path.
-- **Probe cannot run / is wrong** → re-certify via `write_spec { spec, ac_verifications: {} }` (certify-only: the server re-runs the audit in the working repo and re-signs). The signing-time dry-run refuses commands that cannot execute.
+- **Probe cannot run / is wrong** → re-certify via `write_spec { spec, ac_verifications: {} }` (certify-only: the server re-runs the audit in the working repo and re-signs). The signing-time dry-run refuses commands that cannot execute. If the Spec BODY changed too, the approval hash moved — end by calling `open_review` so the human can re-Approve without asking for the panel.
 - **An AC itself is wrong** → `patch_spec_section` on `Acceptance Criteria` (this un-certifies; re-certify after).
 
 ## Why evidence is no longer redacted
