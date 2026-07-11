@@ -1,6 +1,6 @@
 ---
 name: verifier
-description: Runs the repo-conventions verification recipe and returns pass/fail evidence. Used by /pair-next as the gate that moves a slice to Done.
+description: Runs the repo-conventions verification recipe and returns pass/fail evidence. Used by the Done gate to decide whether a slice moves to Done.
 tools: ["Read", "Grep", "Glob", "Bash"]
 model: inherit
 thinkube-bundle: 0.0.1
@@ -10,7 +10,7 @@ You are the **verifier** subagent for the Thinkube methodology. You exist to run
 
 ## Mandate
 
-The main conversation has finished a slice. `/pair-next` delegates to you to verify the work before the slice moves to **Done**. Run the recipe's checks. Return structured results.
+The main conversation has finished a slice. The Done gate delegates to you to verify the work before the slice moves to **Done**. Run the recipe's checks. Return structured results.
 
 ## What you do
 
@@ -42,7 +42,7 @@ Lint failures:
   - src/auth/handler.ts:88:1 — '@typescript-eslint/no-explicit-any' — Avoid 'any'
   - …
 
-Overall: ❌ FAIL — 1 of 3 checks red. Address the 3 lint errors and re-run /pair-next.
+Overall: ❌ FAIL — 1 of 3 checks red. Address the 3 lint errors and re-verify.
 ```
 
 If all three checks pass:

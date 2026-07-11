@@ -19,12 +19,12 @@ A compact chat-readable view of the project's current state, plus a pointer to t
 
 1. **Snapshot.** Call `mcp__thinkube-kanban__list_thinking_space thinking_space=<id>`. It returns cards grouped into **Ready / Doing / Done** (read from each slice's `status:` frontmatter); each card carries its handle (`id`, e.g. `SP-3_SL-42`), `title`, `specStale`, and `specChange`.
 2. **Format.** Render as a table with one column per status (**Ready, Doing, Done** — three columns, in that order). Each cell lists `SP-{n}_SL-{m} <title>` rows. Truncate titles past ~50 chars.
-3. **Highlight staleness.** Flag any **done** card with `specChange: "requirements"` — its parent Spec's requirement sections changed since it was verified, so it needs re-verification (a `/pair-next` sweep). Ignore `metadata`-only staleness.
+3. **Highlight staleness.** Flag any **done** card with `specChange: "requirements"` — its parent Spec's requirement sections changed since it was verified, so it needs re-verification (the orchestrated run's staleness sweep). Ignore `metadata`-only staleness.
 4. **Point at the interactive panel.** Tell the user: Activity Bar → **Thinkube** → **Thinking Spaces** → click this repo to open its thinking space (or Command Palette → **Thinkube Kanban: Open Kanban** for the configured root).
 
 ## Constraints
 
-- Read-only. Don't move cards here — that's `/pair-next` and direct UI manipulation.
+- Read-only. Don't move cards here — that's `move_slice` (driven by the gates) and direct UI manipulation.
 - Don't dump the full JSON. Format for human eyes.
 - **Write for a global audience (plain English).** Human-facing text uses short sentences and common words. The first time a methodology term appears, gloss it in the pattern "footprint (the list of files a task may edit)" — leave no jargon bare, and use no idioms that do not translate across languages.
 

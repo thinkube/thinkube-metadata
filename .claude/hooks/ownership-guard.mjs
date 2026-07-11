@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * PreToolUse(Edit|Write) ownership guard (SP-tgpwbm AC4 / TEP-tgpupa).
+ * PreToolUse(Edit|Write) ownership guard.
  *
  * Refuses an edit to a file the active slice does not own, per the ownership
  * arbiter's durable store. Exit 0 = allow; exit 2 = block (stderr is shown to

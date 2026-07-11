@@ -7,7 +7,7 @@ thinkube-bundle: 0.0.1
 
 # Tandem methodology context
 
-A reference document loaded by other bundle skills (`/spec-prepare`, `/slice`, `/pair-start`, `/pair-next`, `/thinking-space`, `/retro`) when they need to ground themselves in the shared vocabulary. Don't invoke directly.
+A reference document loaded by other bundle skills (`/spec-prepare`, `/slice`, `/attend`, `/thinking-space`, `/retro`) when they need to ground themselves in the shared vocabulary. Don't invoke directly.
 
 **Tandem** is a development methodology designed from scratch for a single human + one AI pair on a git repo. Two axioms shape everything below:
 
@@ -48,7 +48,7 @@ status: ready | doing | done | archived
 theme: <optional grouping tag>
 due: <optional yyyy-mm-dd>
 priority: <optional P0|P1|P2|P3>
-verified_req_hash: <stamped by /pair-next on verify>
+verified_req_hash: <stamped on verify at the Done gate>
 parallel: true                     # optional
 ---
 
@@ -110,12 +110,12 @@ The slice **is** the per-slice verification boundary — "one green," automated.
 
 ## Spec lifecycle: one branch, one PR, one acceptance gate
 
-A Spec runs on **one branch** `spec/SP-{n}` (a worktree when specs run in parallel); every slice lands as **commits on that branch**, and the Spec produces **exactly one PR** — no per-slice branch or PR. Slices execute **consecutively and autonomously**: the human defines the goal up front (the Spec + its acceptance criteria) and `/pair-next` runs the Ready slices through Doing→Done to completion **without pausing between them**. The **only** human gate is **acceptance**, at the end:
+A Spec runs on **one branch** `spec/SP-{n}` (a worktree when specs run in parallel); every slice lands as **commits on that branch** — per-unit `wip(<unit>)` checkpoints, then the verified slice commits — and the Spec produces **exactly one PR** — no per-slice branch or PR. Slices execute **consecutively and autonomously**: the human defines the goal up front (the Spec + its acceptance criteria) and the orchestrated run advances the Ready slices through Doing→Done to completion **without pausing between them**. The **only** human gate is **acceptance**, at the end:
 
 1. The AI **explains** the assembled implementation across the slices (ideally a real end-to-end demonstration).
 2. The human **approves** (or sends it back) — the session's single bless point.
 3. The AI runs the **acceptance card** (`accept_spec`: the automated all-ACs-checked + all-slices-Done re-verify).
-4. On pass → the Spec's **one PR merges/closes**. Spec done.
+4. On pass → the Spec's **one PR squash-merges** (`main` gets one verified commit per Spec; the working trail stays on the PR). Spec done.
 
 The **acceptance card** is a spec-level card **auto-derived from the Spec's `## Acceptance Criteria`** (not hand-written) — the Spec graduating from document to a thinking-space card for its final step. It is the last card to reach Done. This re-introduces human sign-off **only at spec scope** — per-slice stays automated — because automated per-slice greens miss integration/UX regressions, and a bug can be _in an AC_ (so re-ticking boxes isn't enough; a human judging the assembled result is).
 
@@ -126,9 +126,9 @@ A `done` slice goes **stale** when its parent Spec changes **substantively**:
 - **`requirements` (substantive — marks slices stale):** edits to the Spec's `## Acceptance Criteria` text, `## Design`, or `## Constraints`.
 - **`metadata` (non-substantive — never stale):** `status:`/column moves, theme/priority/due edits, **and AC checkbox toggles** (`- [ ]` ↔ `- [x]`) — which record completion, not a requirement change.
 
-Staleness is a normalized hash of the Spec's requirement sections with checkbox state stripped. `/pair-next` stamps each verified slice with the spec requirement-hash it validated against (`verified_req_hash:` in the slice's frontmatter); a slice is stale when the current hash differs. A slice with no baseline is never flagged.
+Staleness is a normalized hash of the Spec's requirement sections with checkbox state stripped. The Done gate stamps each verified slice with the spec requirement-hash it validated against (`verified_req_hash:` in the slice's frontmatter); a slice is stale when the current hash differs. A slice with no baseline is never flagged.
 
-`/pair-next` resolves substantively-stale slices **before** starting the next one: after advancing the finished slice, it sweeps the active Spec, re-runs the `verifier` against the current Spec, and re-opens any stale slice. `/pair-start` surfaces stale slices when it loads a Spec's context.
+The orchestrated run resolves substantively-stale slices **before** starting the next one: after advancing the finished slice, it sweeps the active Spec, re-runs the `verifier` against the current Spec, and re-opens any stale slice. Stale slices are also surfaced when a Spec's context is loaded.
 
 ## Per-project thinking space
 
@@ -144,7 +144,7 @@ Each **Thinking Space** lives in the **central Tandem sidecar repo** (`thinkube-
 
 Inside an invoked skill, thinking-space bookkeeping — moving cards, checking the AC a slice satisfies, stamping provenance/verification — is the **AI's job**: it does it and **reports the result with evidence**. The human steers substance and **intervenes by exception**; the AI never asks the human to move a card or re-invoke a command merely to advance mechanics, and stops only at a marked **bless point**, a **gate refusal**, or a **failed precondition**. (In `navigator` mode this inverts per mode awareness — the AI proposes, the human writes.)
 
-Within a Spec, the marked **bless point is acceptance** — there is no mid-spec pick-bless or per-slice move confirmation. `/pair-next` runs the Spec's slices to completion autonomously and stops for the human only to **approve the assembled Spec before it merges**. The two human inputs per Spec are **define** (the Spec + ACs, up front) and **accept** (at the end); everything between is the AI advancing mechanics + the human intervening by exception.
+Within a Spec, the marked **bless point is acceptance** — there is no mid-spec pick-bless or per-slice move confirmation. The orchestrated run advances the Spec's slices to completion autonomously and stops for the human only to **approve the assembled Spec before it merges**. The two human inputs per Spec are **define** (the Spec + ACs, up front) and **accept** (at the end); everything between is the AI advancing mechanics + the human intervening by exception.
 
 ## Informed decisions (decision points)
 
