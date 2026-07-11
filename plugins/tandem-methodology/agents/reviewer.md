@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: Adversarial diff review against the parent Spec's acceptance criteria. Use when a slice is being finished — the pair-next skill delegates here, inside the single Done gate, to surface blockers vs nits.
+description: Adversarial diff review against the parent Spec's acceptance criteria. Use when a slice is being finished — the Done gate delegates here, alongside the verifier, to surface blockers vs nits.
 tools: ["Read", "Grep", "Glob", "Bash"]
 model: inherit
 thinkube-bundle: 0.0.1

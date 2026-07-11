@@ -10,6 +10,12 @@
  * session is still stale). Surface a warning recommending the user close it and
  * reopen a fresh session from the board.
  *
+ * LEGACY SAFETY NET: attend sessions now open in the CANONICAL repo (not the
+ * Spec's worktree), so new sessions survive worktree retirement and never
+ * strand — there is no close-this-session ritual anymore. This hook remains
+ * only for OLD sessions that were opened inside a since-removed worktree and
+ * are later resumed. Keep the detection; expect it to fire ever more rarely.
+ *
  * Detection-only: Claude Code exposes no model/skill/hook session-termination, so
  * this WARNS (via `additionalContext`); the human (or the host closing the tab)
  * does the actual close.

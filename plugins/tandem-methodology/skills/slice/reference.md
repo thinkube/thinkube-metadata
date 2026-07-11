@@ -102,7 +102,7 @@ If `teps/TEP-{t}/SP-{n}/` already holds `SL-*.md` files, this is a **change-revi
   | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
   | ready (not started) | revise / add / archive freely                                                                                                                                               |
   | doing               | do **not** edit or archive — flag it; ask the user whether to keep, rescope, or set back to ready                                                                           |
-  | done                | leave it; if the change implies more work, propose a **new** slice. If it went substantively stale, let `/pair-next`'s sweep re-verify it — don't silently rewrite it here. |
+  | done                | leave it; if the change implies more work, propose a **new** slice. If it went substantively stale, let the orchestrated run's staleness sweep re-verify it — don't silently rewrite it here. |
 - To retire an obsolete slice, set its frontmatter `status: archived` (keep the file — numbers are never reused). Don't delete.
 - Present the keep/add/archive diff **annotated with each slice's status and the recommended action**; get the user's blessing before writing.
 
