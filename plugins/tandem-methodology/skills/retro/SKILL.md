@@ -51,7 +51,7 @@ PostgreSQL JSONB columns can't be indexed via GIN without an opclass. Spent 40 m
 Pair-programming on the auth-callback slice — Claude caught two off-by-one cases in the state validation.
 ```
 
-3. **Commit, then acknowledge.** Commit **and push** the retro file to the thinking space — don't ask first (thinking-space bookkeeping, per CLAUDE.md). Then confirm in one line: "✏ Logged to retros/2026-05-19.md".
+3. **Acknowledge — do NOT commit.** The `board-autosave` Stop hook commits + pushes the thinking-space sidecar at turn end; it owns board bookkeeping, so a manual `git commit` here is redundant (and this step previously contradicted the other skills' doctrine — fixed 2026-07-14). Just confirm in one line: "✏ Logged to retros/2026-05-19.md". (If this session predates the plugin's enablement, the hook is not armed — the note still lands on disk and the next armed session's turn end sweeps it.)
 
 ## Constraints
 
