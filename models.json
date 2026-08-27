@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "description": "Thinkube model catalog \u2014 available models for mirroring and deployment",
+  "description": "Thinkube model catalog — available models for mirroring and deployment",
   "models": [
     {
       "id": "openai/gpt-oss-20b",
@@ -1278,6 +1278,26 @@
       "license": "apache-2.0",
       "gated": false,
       "serving_name": "prism-ml/Bonsai-8B-gguf"
+    },
+    {
+      "id": "zebra-rules-qwen35-4b",
+      "name": "Zebra Rules (Qwen3.5-4B fine-tune)",
+      "params_b": 4.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen3.5-4B GRPO-tuned to translate zebra-puzzle clues into formal rules. Produced by the zebra-grpo example notebook.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "zebra-rules-qwen35-4b",
+      "is_finetuned": true
     }
   ]
 }
