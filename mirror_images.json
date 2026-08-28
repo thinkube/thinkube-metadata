@@ -283,9 +283,9 @@
       "description": "NVIDIA CUDA 13.0 with cuDNN runtime on Ubuntu 24.04 LTS for ML/DL workloads"
     },
     {
-      "source": "nvcr.io/nvidia/pytorch:25.11-py3",
-      "destination_name": "pytorch:25.11-py3",
-      "description": "NVIDIA PyTorch 25.11 - NGC optimized framework for GPU compute"
+      "source": "nvcr.io/nvidia/pytorch:26.03-py3",
+      "destination_name": "pytorch:26.03-py3",
+      "description": "NVIDIA PyTorch 26.03 (torch 2.11) - NGC optimized framework for GPU compute. Torch version is load-bearing: see tk-jupyter-base.Containerfile.j2"
     },
     {
       "source": "ghcr.io/huggingface/text-embeddings-inference:86-latest",
