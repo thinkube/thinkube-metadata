@@ -255,6 +255,42 @@
         "test": "18_test.yaml",
         "uninstall": "19_rollback.yaml"
       }
+    },
+    "vllm": {
+      "display_name": "vLLM",
+      "description": "GPU inference server for large language models, driven by the LLM Gateway (Apache 2.0)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "vllm",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-vllm-gradio",
+        "fixed_name": "vllm"
+      }
+    },
+    "tensorrt": {
+      "display_name": "TensorRT-LLM",
+      "description": "NVIDIA TensorRT-LLM inference server, driven by the LLM Gateway (Apache 2.0)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "tensorrt",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-tensorrt-llm-harmony",
+        "fixed_name": "tensorrt"
+      }
+    },
+    "text-embeddings": {
+      "display_name": "Text Embeddings",
+      "description": "Text embeddings inference server, driven by the LLM Gateway (Apache 2.0)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "text-embeddings",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-text-embeddings",
+        "fixed_name": "text-embeddings"
+      }
     }
   }
 }
