@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "description": "Thinkube optional components — installable services",
+  "description": "Thinkube optional components \u2014 installable services",
   "components": {
     "prometheus": {
       "display_name": "Prometheus",
@@ -20,7 +20,10 @@
       "description": "Dashboard visualization and metrics exploration platform",
       "category": "monitoring",
       "icon": "/icons/tk_observability.svg",
-      "requirements": ["keycloak", "prometheus"],
+      "requirements": [
+        "keycloak",
+        "prometheus"
+      ],
       "namespace": "perses",
       "playbooks": {
         "install": "00_install.yaml",
@@ -46,7 +49,10 @@
       "description": "Web-based PostgreSQL database administration tool",
       "category": "data",
       "icon": "/icons/tk_data.svg",
-      "requirements": ["postgresql", "keycloak"],
+      "requirements": [
+        "postgresql",
+        "keycloak"
+      ],
       "namespace": "pgadmin",
       "playbooks": {
         "install": "00_install.yaml",
@@ -85,7 +91,9 @@
       "description": "Open-source vector database with GraphQL interface for AI applications (BSD-3)",
       "category": "ai",
       "icon": "/icons/tk_vector.svg",
-      "requirements": ["harbor"],
+      "requirements": [
+        "harbor"
+      ],
       "namespace": "weaviate",
       "playbooks": {
         "install": "00_install.yaml",
@@ -98,7 +106,9 @@
       "description": "Open-source embedding database for AI applications (Apache 2.0)",
       "category": "ai",
       "icon": "/icons/tk_vector.svg",
-      "requirements": ["harbor"],
+      "requirements": [
+        "harbor"
+      ],
       "namespace": "chroma",
       "playbooks": {
         "install": "00_install.yaml",
@@ -111,7 +121,12 @@
       "description": "Unified LLM API proxy with load balancing, cost tracking, and rate limiting",
       "category": "ai",
       "icon": "/icons/tk_ai.svg",
-      "requirements": ["harbor", "keycloak", "postgresql", "seaweedfs"],
+      "requirements": [
+        "harbor",
+        "keycloak",
+        "postgresql",
+        "seaweedfs"
+      ],
       "namespace": "litellm",
       "playbooks": {
         "install": "00_install.yaml",
@@ -137,7 +152,12 @@
       "description": "NLP/LLM data annotation and curation platform for AI model training (Apache 2.0)",
       "category": "ai",
       "icon": "/icons/tk_design.svg",
-      "requirements": ["harbor", "keycloak", "opensearch", "valkey"],
+      "requirements": [
+        "harbor",
+        "keycloak",
+        "opensearch",
+        "valkey"
+      ],
       "namespace": "argilla",
       "playbooks": {
         "install": "00_install.yaml",
@@ -176,7 +196,12 @@
       "description": "LLM observability platform for tracing and monitoring AI applications (MIT)",
       "category": "ai",
       "icon": "/icons/tk_observability.svg",
-      "requirements": ["postgresql", "keycloak", "clickhouse", "valkey"],
+      "requirements": [
+        "postgresql",
+        "keycloak",
+        "clickhouse",
+        "valkey"
+      ],
       "namespace": "langfuse",
       "playbooks": {
         "install": "00_install.yaml",
@@ -189,7 +214,9 @@
       "description": "Fast local LLM inference server with GPU acceleration (MIT)",
       "category": "ai",
       "icon": "/icons/tk_ai.svg",
-      "requirements": ["harbor"],
+      "requirements": [
+        "harbor"
+      ],
       "namespace": "ollama",
       "playbooks": {
         "install": "00_install.yaml",
@@ -202,8 +229,27 @@
       "description": "Low-code AI workflow builder for RAG pipelines and LLM applications (MIT)",
       "category": "ai",
       "icon": "/icons/tk_ai.svg",
-      "requirements": ["keycloak", "postgresql"],
+      "requirements": [
+        "keycloak",
+        "postgresql"
+      ],
       "namespace": "langflow",
+      "playbooks": {
+        "install": "00_install.yaml",
+        "test": "18_test.yaml",
+        "uninstall": "19_rollback.yaml"
+      }
+    },
+    "cvat": {
+      "display_name": "CVAT",
+      "description": "Computer vision annotation tool for labelling images and video (MIT)",
+      "category": "ai",
+      "icon": "/icons/tk_design.svg",
+      "requirements": [],
+      "architectures": [
+        "amd64"
+      ],
+      "namespace": "cvat",
       "playbooks": {
         "install": "00_install.yaml",
         "test": "18_test.yaml",
