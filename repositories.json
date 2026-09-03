@@ -81,16 +81,16 @@
       "ssh_url": "git@github.com:thinkube/thinkube.org.git"
     },
     {
-      "name": "tkt-webapp-vue-fastapi",
+      "name": "tkt-webapp-react-fastapi",
       "org": "thinkube",
-      "full_name": "thinkube/tkt-webapp-vue-fastapi",
-      "description": "Vue.js + FastAPI web application template",
+      "full_name": "thinkube/tkt-webapp-react-fastapi",
+      "description": "React + shadcn/ui + FastAPI web application template",
       "type": "application_template",
       "category": "templates",
       "deployment_type": "app",
       "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/tkt-webapp-vue-fastapi",
-      "ssh_url": "git@github.com:thinkube/tkt-webapp-vue-fastapi.git"
+      "github_url": "https://github.com/thinkube/tkt-webapp-react-fastapi",
+      "ssh_url": "git@github.com:thinkube/tkt-webapp-react-fastapi.git"
     },
     {
       "name": "tkt-vllm-gradio",
