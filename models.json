@@ -424,7 +424,8 @@
       "stop_tokens": [],
       "license": "apache-2.0",
       "gated": false,
-      "serving_name": "Qwen/Qwen3-8B"
+      "serving_name": "Qwen/Qwen3-8B",
+      "tool_call_parser": "hermes"
     },
     {
       "id": "Qwen/Qwen3-14B",
@@ -443,7 +444,8 @@
       "stop_tokens": [],
       "license": "apache-2.0",
       "gated": false,
-      "serving_name": "Qwen/Qwen3-14B"
+      "serving_name": "Qwen/Qwen3-14B",
+      "tool_call_parser": "hermes"
     },
     {
       "id": "Qwen/Qwen3-30B-A3B",
@@ -462,7 +464,8 @@
       "stop_tokens": [],
       "license": "apache-2.0",
       "gated": false,
-      "serving_name": "Qwen/Qwen3-30B-A3B"
+      "serving_name": "Qwen/Qwen3-30B-A3B",
+      "tool_call_parser": "hermes"
     },
     {
       "id": "Qwen/Qwen3-32B",
@@ -481,7 +484,8 @@
       "stop_tokens": [],
       "license": "apache-2.0",
       "gated": false,
-      "serving_name": "Qwen/Qwen3-32B"
+      "serving_name": "Qwen/Qwen3-32B",
+      "tool_call_parser": "hermes"
     },
     {
       "id": "Qwen/Qwen3.5-4B",
