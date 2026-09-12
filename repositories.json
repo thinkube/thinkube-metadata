@@ -203,6 +203,17 @@
       "ssh_url": "git@github.com:thinkube/thinkube-cicd-monitor.git"
     },
     {
+      "name": "thinkube-notebook-view",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-notebook-view",
+      "description": "VS Code extension that shows a Thinkube Notebooks notebook in an IDE tab, clipboard working, opened from the terminal by Claude Code",
+      "type": "vscode_extension",
+      "category": "extensions",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-notebook-view",
+      "ssh_url": "git@github.com:thinkube/thinkube-notebook-view.git"
+    },
+    {
       "name": "thinkube-tandem",
       "org": "thinkube",
       "full_name": "thinkube/thinkube-tandem",
