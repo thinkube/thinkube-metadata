@@ -1,0 +1,134 @@
+# Thinkube release manifest — v1.35.5+thinkube.0.1.0
+#
+# The first kubeadm-based Thinkube release. Replaces the k8s-snap delivery
+# mechanism while preserving all platform behaviour.
+#
+# Version string: v<K8S_PATCH>+thinkube.<TK_VERSION>
+#   K8s portion bumps when the bundled Kubernetes version changes.
+#   Thinkube portion bumps when Thinkube playbooks/installer change.
+#   Both move independently (see thinkube-installer KUBEADM_MIGRATION_PLAN.md §5.1).
+#
+# This file is referenced by tag from channels.json — never edit a published
+# manifest in place. Always cut a new version.
+
+version: "v1.35.5+thinkube.0.1.0"
+released: "2026-05-24"  # placeholder — updated on actual tag day
+notes_url: "https://github.com/thinkube/thinkube/releases/tag/v1.35.5%2Bthinkube.0.1.0"
+
+# -----------------------------------------------------------------------------
+# Cluster — the kubeadm-based Kubernetes distribution.
+# Section is optional in a manifest; present here because 0.1.0 includes it.
+# -----------------------------------------------------------------------------
+cluster:
+  kubernetes:
+    minor: "1.35"                            # apt repo: pkgs.k8s.io/core:/stable:/v1.35/deb/
+    patch: "1.35.5"
+    apt_revision: "1.1"                      # resolves as kubeadm=1.35.5-1.1
+    eol: "2027-02-28"
+  containerd:
+    package: containerd.io
+    apt_version: "2.2.4-1"                   # 2.x: SystemdCgroup required on both legacy + new CRI plugins
+    apt_source: "https://download.docker.com/linux/ubuntu"
+  runc:
+    bundled_with: containerd.io
+  cilium:
+    helm_repo: "https://helm.cilium.io"
+    chart: cilium
+    version: "1.19.4"
+  openebs_rawfile:
+    helm_repo: "https://openebs.github.io/rawfile-localpv"
+    chart: rawfile-localpv
+    version: "0.13.1"                        # not 0.14.0 — breaking config changes, 4 days old
+  envoy_gateway:
+    helm_repo: "https://docs.envoyproxy.io/release/v1.3.0"
+    chart: gateway-helm
+    version: "v1.8.0"                        # latest stable in the v1.8 line
+  gateway_api_crds:
+    version: "v1.5.1"                        # required by Envoy Gateway 1.8
+    url: "https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/experimental-install.yaml"
+  gpu_operator:
+    helm_repo: "https://helm.ngc.nvidia.com/nvidia"
+    chart: gpu-operator
+    version: "v26.3.1"                       # bumped from v26.3.0 (latest patch in 26.3 line)
+
+# -----------------------------------------------------------------------------
+# Platform — capability-neutral API contract.
+# Apps consume capabilities, not implementations. The connector layer (below)
+# fulfils each capability against the deployment target.
+# -----------------------------------------------------------------------------
+platform:
+  api_version: "1"
+  capabilities:
+    identity:           { impl: keycloak,         version: "26.0.5" }
+    registry:           { impl: harbor,           version: "2.11.1" }
+    git:                { impl: gitea,            version: "1.22.0" }
+    cd:                 { impl: argocd,           version: "2.13.0" }
+    workflow:           { impl: argo_workflows,   version: "3.5.13" }
+    rdbms:              { impl: postgresql,       version: "16.4" }
+    object_storage:     { impl: seaweedfs,        version: "3.79" }
+    shared_filesystem:  { impl: juicefs,          version: "1.2.1" }
+    dns:                { impl: bind9,            version: "9.20.4" }
+    tls:                { impl: acme_letsencrypt, version: "n/a" }
+    secrets:            { impl: k8s_secrets,      version: "n/a" }
+    model_registry:     { impl: mlflow,           version: "2.18.0" }
+    observability:      { impl: perses,           version: "0.50.0" }
+
+# -----------------------------------------------------------------------------
+# Connectors — adapters that fulfil the Platform API per deployment target.
+# 0.1.0 ships exactly one: the self-hosted connector, in which the in-cluster
+# Platform components directly satisfy the API.
+# Schema reserves room for additional connectors targeting other substrates;
+# specific implementations are tracked separately.
+# -----------------------------------------------------------------------------
+connectors:
+  self_hosted:
+    version: "0.1.0"
+    implements:
+      - identity
+      - registry
+      - git
+      - cd
+      - workflow
+      - rdbms
+      - object_storage
+      - shared_filesystem
+      - dns
+      - tls
+      - secrets
+      - model_registry
+      - observability
+
+# -----------------------------------------------------------------------------
+# AI Lab — private-cluster-only dev environment. Three sub-components at three
+# existing URLs (jupyter.<domain>, code.<domain>, control.<domain>).
+# Not deployable on cloud connectors; implementation-named by design.
+# -----------------------------------------------------------------------------
+ai_lab:
+  scope: private_only
+  notebooks:
+    jupyterhub: "5.2.1"
+    theme: "thinkube-ai-lab-theme@v1.0.0"
+    extension: "tk-ai-extension@v0.3.0"
+  code:
+    code_server: "4.96.4"
+    extension: "thinkube-ai-integration@v0.1.0"
+  console:
+    thinkube_control: "0.1.0"
+
+# -----------------------------------------------------------------------------
+# Apps — user-built workloads consuming the Platform API. The release manifest
+# does not enumerate apps; they are user artefacts published independently.
+# -----------------------------------------------------------------------------
+apps: {}
+
+# -----------------------------------------------------------------------------
+# Client binaries — fetched by the installer / playbooks during install.
+# -----------------------------------------------------------------------------
+binaries:
+  kubectl:
+    url: "https://dl.k8s.io/release/v1.35.5/bin/linux/{arch}/kubectl"
+    arches: [amd64, arm64]
+  helm:
+    version: "v3.16.4"
+    url: "https://get.helm.sh/helm-v3.16.4-linux-{arch}.tar.gz"
+    arches: [amd64, arm64]

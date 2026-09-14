@@ -1,0 +1,15 @@
+{
+  "_comment": "Channel pointers for Thinkube releases. The installer reads this file (resolution-time only — no background polling) to map a channel name to a concrete version + metadata tag. See thinkube-installer KUBEADM_MIGRATION_PLAN.md §5.3 for the full design. Mutable file on main; release manifests resolved via the immutable git tag listed under metadata_tag.",
+  "schema_version": 1,
+  "updated": "2026-05-24T00:00:00Z",
+  "channels": {
+    "stable": null,
+    "latest": null,
+    "testing": {
+      "version": "v1.35.5+thinkube.0.1.0",
+      "metadata_tag": "v1.35.5+thinkube.0.1.0"
+    },
+    "v0.1": null,
+    "k8s-1.35": null
+  }
+}
