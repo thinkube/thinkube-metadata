@@ -236,15 +236,15 @@
       "ssh_url": "git@github.com:thinkube/tk-ai-extension.git"
     },
     {
-      "name": "thinkube-ai-lab-theme",
+      "name": "thinkube-notebooks-theme",
       "org": "thinkube",
-      "full_name": "thinkube/thinkube-ai-lab-theme",
-      "description": "Thinkube AI Lab theme for JupyterLab",
+      "full_name": "thinkube/thinkube-notebooks-theme",
+      "description": "Thinkube Notebooks theme for JupyterLab",
       "type": "jupyterlab_extension",
       "category": "jupyter-extensions",
       "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/thinkube-ai-lab-theme",
-      "ssh_url": "git@github.com:thinkube/thinkube-ai-lab-theme.git"
+      "github_url": "https://github.com/thinkube/thinkube-notebooks-theme",
+      "ssh_url": "git@github.com:thinkube/thinkube-notebooks-theme.git"
     },
     {
       "name": "tk-package-version",
@@ -280,15 +280,15 @@
       "ssh_url": "git@github.com:thinkube/tk-node-setup.git"
     },
     {
-      "name": "thinkube-ai-examples",
+      "name": "thinkube-notebooks-examples",
       "org": "thinkube",
-      "full_name": "thinkube/thinkube-ai-examples",
+      "full_name": "thinkube/thinkube-notebooks-examples",
       "description": "AI development examples and tutorials for Thinkube platform",
       "type": "examples",
       "category": "misc",
       "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/thinkube-ai-examples",
-      "ssh_url": "git@github.com:thinkube/thinkube-ai-examples.git"
+      "github_url": "https://github.com/thinkube/thinkube-notebooks-examples",
+      "ssh_url": "git@github.com:thinkube/thinkube-notebooks-examples.git"
     },
     {
       "name": "thinkube-monitor",
