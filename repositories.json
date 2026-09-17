@@ -168,6 +168,18 @@
       "ssh_url": "git@github.com:thinkube/tkt-knative-demo.git"
     },
     {
+      "name": "tkt-docling",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-docling",
+      "description": "Docling PDF conversion — Markdown, HTML, text, Docling JSON, DocTags and JATS XML, as Argo workflow steps, with Granite-Docling on the LLM Gateway",
+      "type": "application_template",
+      "category": "templates",
+      "deployment_type": "app",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-docling",
+      "ssh_url": "git@github.com:thinkube/tkt-docling.git"
+    },
+    {
       "name": "thinkube-style",
       "org": "thinkube",
       "full_name": "thinkube/thinkube-style",
