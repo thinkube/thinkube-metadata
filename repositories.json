@@ -269,17 +269,6 @@
       "ssh_url": "git@github.com:thinkube/thinkube-devpi.git"
     },
     {
-      "name": "tk-node-setup",
-      "org": "thinkube",
-      "full_name": "thinkube/tk-node-setup",
-      "description": "Node setup and configuration utilities",
-      "type": "infrastructure",
-      "category": "misc",
-      "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/tk-node-setup",
-      "ssh_url": "git@github.com:thinkube/tk-node-setup.git"
-    },
-    {
       "name": "thinkube-notebooks-examples",
       "org": "thinkube",
       "full_name": "thinkube/thinkube-notebooks-examples",
