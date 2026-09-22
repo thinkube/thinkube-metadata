@@ -1,4 +1,3 @@
-
 {
   "version": "1.0.0",
   "description": "Thinkube ecosystem repository metadata",
@@ -56,17 +55,6 @@
       "clone_for_development": true,
       "github_url": "https://github.com/thinkube/thinkube-metadata",
       "ssh_url": "git@github.com:thinkube/thinkube-metadata.git"
-    },
-    {
-      "name": "thinkube-documentation",
-      "org": "thinkube",
-      "full_name": "thinkube/thinkube-documentation",
-      "description": "Internal documentation, specifications, and developer guides for Thinkube platform",
-      "type": "documentation",
-      "category": "docs",
-      "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/thinkube-documentation",
-      "ssh_url": "git@github.com:thinkube/thinkube-documentation.git"
     },
     {
       "name": "thinkube.org",
@@ -237,15 +225,15 @@
       "ssh_url": "git@github.com:thinkube/thinkube-tandem.git"
     },
     {
-      "name": "tk-ai-extension",
+      "name": "tk-notebook-mcp",
       "org": "thinkube",
-      "full_name": "thinkube/tk-ai-extension",
-      "description": "AI-powered JupyterLab extension for tk-ai lab",
+      "full_name": "thinkube/tk-notebook-mcp",
+      "description": "Jupyter server extension that lets thinkube-control list, edit and run notebook cells",
       "type": "jupyterlab_extension",
       "category": "jupyter-extensions",
       "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/tk-ai-extension",
-      "ssh_url": "git@github.com:thinkube/tk-ai-extension.git"
+      "github_url": "https://github.com/thinkube/tk-notebook-mcp",
+      "ssh_url": "git@github.com:thinkube/tk-notebook-mcp.git"
     },
     {
       "name": "thinkube-notebooks-theme",
@@ -323,6 +311,17 @@
       "clone_for_development": false,
       "github_url": "https://github.com/thinkube/tk-vllm-wheels",
       "ssh_url": "git@github.com:thinkube/tk-vllm-wheels.git"
+    },
+    {
+      "name": "thinkube-venvs",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-venvs",
+      "description": "Release tarballs of the Python environments that JupyterHub notebook pods download at start",
+      "type": "library",
+      "category": "misc",
+      "clone_for_development": false,
+      "github_url": "https://github.com/thinkube/thinkube-venvs",
+      "ssh_url": "git@github.com:thinkube/thinkube-venvs.git"
     },
     {
       "name": "thinkube-harbor-arm64",
