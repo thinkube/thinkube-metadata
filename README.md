@@ -1,4 +1,4 @@
-# ⚠️ Under Development - Not Ready for Use
+# thinkube-metadata
 
 Metadata for the Thinkube ecosystem: the repository, model, image and
 optional-component catalogues that `thinkube-control` reads.
