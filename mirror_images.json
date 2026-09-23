@@ -18,16 +18,6 @@
       "description": "Busybox 1.37.0 from GCR mirror"
     },
     {
-      "source": "mirror.gcr.io/library/busybox:musl",
-      "destination_name": "busybox:musl",
-      "description": "Busybox musl variant from GCR mirror - for Kaniko build"
-    },
-    {
-      "source": "mirror.gcr.io/library/debian:bookworm-slim",
-      "destination_name": "debian:bookworm-slim",
-      "description": "Debian Bookworm slim from GCR mirror - for Kaniko build"
-    },
-    {
       "source": "mirror.gcr.io/library/python:3.12.13-slim-bookworm",
       "destination_name": "python:3.12-slim",
       "description": "Python 3.12.13 slim Bookworm - pinned to Debian 12 to avoid Trixie GPG issues"
@@ -119,16 +109,6 @@
       "destination_name": "opa:0.63.0",
       "architectures": ["amd64"],
       "description": "Open Policy Agent 0.63.0 - authorization engine for CVAT (Apache 2.0, amd64-only at this version)"
-    },
-    {
-      "source": "gcr.io/kaniko-project/executor:v1.24.0",
-      "destination_name": "kaniko-executor:latest",
-      "description": "Kaniko executor v1.24.0 from Google - pinned version for reproducible builds"
-    },
-    {
-      "source": "gcr.io/kaniko-project/warmer:v1.24.0",
-      "destination_name": "kaniko-warmer:v1.24.0",
-      "description": "Kaniko warmer v1.24.0 - cache warming for faster builds"
     },
     {
       "source": "quay.io/buildah/stable:v1.43.4",
