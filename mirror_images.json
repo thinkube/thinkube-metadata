@@ -131,6 +131,11 @@
       "description": "Kaniko warmer v1.24.0 - cache warming for faster builds"
     },
     {
+      "source": "quay.io/buildah/stable:v1.43.4",
+      "destination_name": "buildah:v1.43.4",
+      "description": "Buildah 1.43.4 - builds app, thinkube-control and custom images in Argo Workflows (Apache 2.0)"
+    },
+    {
       "source": "gcr.io/go-containerregistry/crane:v0.21.5",
       "destination_name": "crane:latest",
       "description": "crane v0.21.5 from Google - manifest list creation without podman/Docker daemon"
