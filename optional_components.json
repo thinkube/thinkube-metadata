@@ -245,7 +245,12 @@
       "description": "Computer vision annotation tool for labelling images and video (MIT)",
       "category": "ai",
       "icon": "/icons/tk_design.svg",
-      "requirements": [],
+      "requirements": [
+        "postgresql",
+        "keycloak",
+        "clickhouse",
+        "valkey"
+      ],
       "architectures": [
         "amd64"
       ],
