@@ -83,11 +83,6 @@
       "description": "Chroma 1.5.8 - embedding database for AI applications"
     },
     {
-      "source": "ghcr.io/berriai/litellm:main-v1.83.7-stable",
-      "destination_name": "litellm:latest",
-      "description": "LiteLLM v1.83.7 - unified LLM API proxy with load balancing and cost tracking"
-    },
-    {
       "source": "docker.io/argilla/argilla-server:v2.8.0",
       "destination_name": "argilla:latest",
       "description": "Argilla v2.8.0 - NLP/LLM data annotation and curation platform (Apache 2.0)"
