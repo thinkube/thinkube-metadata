@@ -225,15 +225,15 @@
       "ssh_url": "git@github.com:thinkube/thinkube-tandem.git"
     },
     {
-      "name": "thinkube-agent-chat",
+      "name": "thinkube-tandem-chat",
       "org": "thinkube",
-      "full_name": "thinkube/thinkube-agent-chat",
-      "description": "VS Code extension: the @pi and @opencode agents in VS Code's chat, on Thinkube's local models and MCP servers",
+      "full_name": "thinkube/thinkube-tandem-chat",
+      "description": "VS Code extension: Thinkube Tandem Chat, the Tandem chats (powered by Pi and opencode) in VS Code's chat panel, on Thinkube's models and MCP servers",
       "type": "vscode_extension",
       "category": "extensions",
       "clone_for_development": true,
-      "github_url": "https://github.com/thinkube/thinkube-agent-chat",
-      "ssh_url": "git@github.com:thinkube/thinkube-agent-chat.git"
+      "github_url": "https://github.com/thinkube/thinkube-tandem-chat",
+      "ssh_url": "git@github.com:thinkube/thinkube-tandem-chat.git"
     },
     {
       "name": "tk-notebook-mcp",
