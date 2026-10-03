@@ -206,6 +206,46 @@
       "license": "apache-2.0",
       "gated": false,
       "serving_name": "unsloth/Qwen3.5-4B"
+    },
+    {
+      "id": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+      "name": "Qwen 3.6 35B-A3B NVFP4 (Blackwell)",
+      "params_b": 35.0,
+      "active_params_b": 3.0,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "Qwen 3.6 35B MoE (3B active), NVIDIA ModelOpt NVFP4 for Blackwell. Vision + text, thinking mode, tool use. Served as the gateway alias thinkube-fast.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+      "tool_call_parser": "qwen3_xml"
+    },
+    {
+      "id": "nvidia/Qwen3.8-27B-NVFP4",
+      "name": "Qwen 3.8 27B NVFP4 (Blackwell)",
+      "params_b": 27.0,
+      "active_params_b": null,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "Qwen 3.8 27B dense, NVIDIA ModelOpt NVFP4 for Blackwell. Vision + text, thinking mode, tool use. Served as the gateway alias thinkube-deep.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "nvidia/Qwen3.8-27B-NVFP4",
+      "tool_call_parser": "qwen3_coder"
     }
   ]
 }
