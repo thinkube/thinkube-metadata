@@ -1,0 +1,251 @@
+{
+  "version": "1.0.0",
+  "description": "Thinkube model catalog — available models for mirroring and deployment",
+  "models": [
+    {
+      "id": "openai/gpt-oss-20b",
+      "name": "GPT-OSS 20B",
+      "params_b": 20.9,
+      "active_params_b": 3.6,
+      "quantization": "MXFP4",
+      "context_length": 131072,
+      "description": "OpenAI GPT-OSS 20B (21B MoE, 3.6B active). Harmony format with analysis channel.",
+      "server_type": [
+        "tensorrt-llm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "gptoss",
+      "tool_use": true,
+      "stop_tokens": [
+        "<|return|>",
+        "<|call|>"
+      ],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "openai/gpt-oss-20b",
+      "weight_bytes": 13761316904,
+      "allow_patterns": [
+        "config.json",
+        "generation_config.json",
+        "chat_template.jinja",
+        "special_tokens_map.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "model.safetensors.index.json",
+        "model-*.safetensors"
+      ]
+    },
+    {
+      "id": "Qwen/Qwen3-8B",
+      "name": "Qwen 3 8B",
+      "params_b": 8.2,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "Qwen 3 8B dense model. 128K context, thinking mode, tool use. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "Qwen/Qwen3-8B",
+      "tool_call_parser": "hermes"
+    },
+    {
+      "id": "Qwen/Qwen3.5-4B",
+      "name": "Qwen 3.5 4B",
+      "params_b": 4.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.5 4B dense model. 262K context, thinking mode. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "Qwen/Qwen3.5-4B"
+    },
+    {
+      "id": "unsloth/Qwen3.6-27B-NVFP4",
+      "name": "Qwen 3.6 27B NVFP4 (Blackwell)",
+      "params_b": 27.0,
+      "active_params_b": null,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "Qwen 3.6 27B NVFP4 multimodal. Native Blackwell quantization for DGX Spark. Vision + text + tool calling.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "speculative_config": "{\"method\": \"dflash\", \"model\": \"z-lab/Qwen3.6-27B-DFlash\", \"num_speculative_tokens\": 8}",
+      "enforce_eager": false,
+      "serving_name": "unsloth/Qwen3.6-27B-NVFP4"
+    },
+    {
+      "id": "z-lab/Qwen3.6-27B-DFlash",
+      "name": "Qwen3.6-27B DFlash drafter",
+      "role": "drafter",
+      "params_b": 2.0,
+      "quantization": "BF16",
+      "description": "DFlash block-diffusion speculative drafter for Qwen3.6-27B. Auxiliary model: runs inside the target's vLLM via --speculative-config, never served standalone.",
+      "server_type": [],
+      "task": "text-generation",
+      "license": "apache-2.0",
+      "gated": true
+    },
+    {
+      "id": "ibm-granite/granite-docling-258M",
+      "name": "Granite-Docling 258M",
+      "params_b": 0.258,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 8192,
+      "description": "IBM Granite-Docling 258M vision-language model. Converts a page image to DocTags: layout, tables, formulas, code and reading order, for Docling's VLM pipeline. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "image-text-to-text",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "ibm-granite/granite-docling-258M"
+    },
+    {
+      "id": "unsloth/Qwen3.5-4B-GGUF",
+      "name": "Qwen 3.5 4B (GGUF/Ollama)",
+      "params_b": 4.7,
+      "active_params_b": null,
+      "quantization": "Q4_K_M",
+      "context_length": 262144,
+      "description": "Qwen 3.5 4B for structured extraction (NER/POS). 262K context, 201 languages. Apache 2.0.",
+      "server_type": [
+        "ollama"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "qwen3.5-4b"
+    },
+    {
+      "id": "ollama/qwen3.5:27b",
+      "name": "Qwen 3.5 27B (Ollama Library)",
+      "source": "ollama",
+      "params_b": 27.0,
+      "active_params_b": null,
+      "quantization": "Q4_K_M",
+      "context_length": 262144,
+      "description": "Qwen 3.5 27B multimodal (vision + text) from Ollama library. Includes native tool calling, thinking, and vision. 262K context. Apache 2.0.",
+      "server_type": [
+        "ollama"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3.5",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "qwen3.5:27b"
+    },
+    {
+      "id": "Qwen/Qwen3-Embedding-0.6B",
+      "name": "Qwen3 Embedding 0.6B",
+      "params_b": 0.6,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 8192,
+      "description": "Alibaba Qwen3 embedding model (0.6B). 1024 dimensions, 8192 token context. 100+ languages. TEI-native (Qwen3 architecture). Apache 2.0 license.",
+      "server_type": [
+        "text-embeddings"
+      ],
+      "task": "feature-extraction",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "Qwen/Qwen3-Embedding-0.6B"
+    },
+    {
+      "id": "unsloth/Qwen3.5-4B",
+      "name": "Qwen 3.5 4B (Unsloth)",
+      "params_b": 4.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.5 4B for QLoRA fine-tuning. 262K context. Supports GGUF export. Apache 2.0.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "unsloth/Qwen3.5-4B"
+    },
+    {
+      "id": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+      "name": "Qwen 3.6 35B-A3B NVFP4 (Blackwell)",
+      "params_b": 35.0,
+      "active_params_b": 3.0,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "Qwen 3.6 35B MoE (3B active), NVIDIA ModelOpt NVFP4 for Blackwell. Vision + text, thinking mode, tool use. Served as the gateway alias thinkube-fast.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+      "tool_call_parser": "qwen3_xml"
+    },
+    {
+      "id": "nvidia/Qwen3.8-27B-NVFP4",
+      "name": "Qwen 3.8 27B NVFP4 (Blackwell)",
+      "params_b": 27.0,
+      "active_params_b": null,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "Qwen 3.8 27B dense, NVIDIA ModelOpt NVFP4 for Blackwell. Vision + text, thinking mode, tool use. Served as the gateway alias thinkube-deep.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "nvidia/Qwen3.8-27B-NVFP4",
+      "tool_call_parser": "qwen3_coder"
+    }
+  ]
+}

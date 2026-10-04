@@ -1,0 +1,283 @@
+{
+  "version": "1.2.0",
+  "description": "Container images to mirror from public registries to Harbor. Source tags are pinned to specific versions for reproducible installs. Destination names are relative to harbor_registry/library/. The 'architectures' field specifies which platforms to mirror; omit for default (amd64+arm64).",
+  "images": [
+    {
+      "source": "mirror.gcr.io/library/alpine:3.22.4",
+      "destination_name": "alpine:latest",
+      "description": "Alpine 3.22.4 from GCR mirror"
+    },
+    {
+      "source": "docker.io/alpine/git:v2.52.0",
+      "destination_name": "alpine-git:latest",
+      "description": "Alpine with Git v2.52.0 from Docker Hub - for JupyterHub clone-examples init container"
+    },
+    {
+      "source": "mirror.gcr.io/library/busybox:1.37.0",
+      "destination_name": "busybox:latest",
+      "description": "Busybox 1.37.0 from GCR mirror"
+    },
+    {
+      "source": "mirror.gcr.io/library/python:3.12.13-slim-bookworm",
+      "destination_name": "python:3.12-slim",
+      "description": "Python 3.12.13 slim Bookworm - pinned to Debian 12 to avoid Trixie GPG issues"
+    },
+    {
+      "source": "mirror.gcr.io/library/python:3.12.13-alpine",
+      "destination_name": "python:3.12-alpine",
+      "description": "Python 3.12.13 Alpine - latest security-fix release March 2026"
+    },
+    {
+      "source": "mirror.gcr.io/library/python:3.12.13-bookworm",
+      "destination_name": "python:3.12",
+      "description": "Python 3.12.13 full Bookworm - pinned to Debian 12, base for code-server-dev"
+    },
+    {
+      "source": "mirror.gcr.io/library/golang:1.27.1",
+      "destination_name": "golang:1.27.1",
+      "description": "Golang 1.27.1 from GCR mirror"
+    },
+    {
+      "source": "mirror.gcr.io/library/golang:1.27-alpine",
+      "destination_name": "golang:1.27-alpine",
+      "description": "Golang 1.27 Alpine from GCR mirror - for LLM proxy builds"
+    },
+    {
+      "source": "mirror.gcr.io/library/node:22-alpine",
+      "destination_name": "node:22-alpine",
+      "description": "Node.js 22 LTS from GCR mirror - fallback version"
+    },
+    {
+      "source": "mirror.gcr.io/library/node:24-alpine",
+      "destination_name": "node:24-alpine",
+      "description": "Node.js 24 LTS 'Krypton' from GCR mirror - latest LTS October 2025"
+    },
+    {
+      "source": "docker.io/valkey/valkey:7.2-alpine",
+      "destination_name": "valkey:7.2-alpine",
+      "description": "Valkey 7.2 Alpine - Redis-compatible with BSD license"
+    },
+    {
+      "source": "public.ecr.aws/docker/library/postgres:18-alpine",
+      "destination_name": "postgres:18-alpine",
+      "description": "PostgreSQL 18 Alpine from AWS ECR - latest release September 2025"
+    },
+    {
+      "source": "docker.io/dpage/pgadmin4:9.14.0",
+      "destination_name": "pgadmin4:latest",
+      "description": "PgAdmin 4 9.14.0 - PostgreSQL management tool from Docker Hub"
+    },
+    {
+      "source": "docker.io/qdrant/qdrant:v1.18.0",
+      "destination_name": "qdrant:v1.18.0",
+      "description": "Qdrant v1.18.0 - vector database"
+    },
+    {
+      "source": "docker.io/semitechnologies/weaviate:1.36.8",
+      "destination_name": "weaviate:latest",
+      "description": "Weaviate 1.36.8 - vector database with GraphQL interface"
+    },
+    {
+      "source": "docker.io/chromadb/chroma:1.5.8",
+      "destination_name": "chroma:latest",
+      "description": "Chroma 1.5.8 - embedding database for AI applications"
+    },
+    {
+      "source": "docker.io/argilla/argilla-server:v2.8.0",
+      "destination_name": "argilla:latest",
+      "description": "Argilla v2.8.0 - NLP/LLM data annotation and curation platform (Apache 2.0)"
+    },
+    {
+      "source": "docker.io/cvat/server:v2.62.0",
+      "destination_name": "cvat-server:latest",
+      "architectures": ["amd64"],
+      "description": "CVAT Server v2.62.0 - computer vision annotation tool backend (MIT, amd64-only)"
+    },
+    {
+      "source": "docker.io/cvat/ui:v2.62.0",
+      "destination_name": "cvat-ui:latest",
+      "architectures": ["amd64"],
+      "description": "CVAT UI v2.62.0 - computer vision annotation tool frontend (MIT, amd64-only)"
+    },
+    {
+      "source": "docker.io/openpolicyagent/opa:0.63.0",
+      "destination_name": "opa:0.63.0",
+      "architectures": ["amd64"],
+      "description": "Open Policy Agent 0.63.0 - authorization engine for CVAT (Apache 2.0, amd64-only at this version)"
+    },
+    {
+      "source": "quay.io/buildah/stable:v1.43.4",
+      "destination_name": "buildah:v1.43.4",
+      "description": "Buildah 1.43.4 - builds app, thinkube-control and custom images in Argo Workflows (Apache 2.0)"
+    },
+    {
+      "source": "gcr.io/go-containerregistry/crane:v0.21.5",
+      "destination_name": "crane:latest",
+      "description": "crane v0.21.5 from Google - manifest list creation without podman/Docker daemon"
+    },
+    {
+      "source": "docker.io/rust:1.95.0-alpine",
+      "destination_name": "rust:alpine",
+      "description": "Rust 1.95.0 Alpine - latest stable with edition 2024 support"
+    },
+    {
+      "source": "mirror.gcr.io/library/ubuntu:24.04",
+      "destination_name": "ubuntu:24.04",
+      "description": "Ubuntu 24.04 from GCR mirror - used for Jupyter ML CPU image"
+    },
+    {
+      "source": "mirror.gcr.io/library/nginx:1.30.0-alpine",
+      "destination_name": "nginx:stable-alpine",
+      "description": "Nginx 1.30.0 Alpine from GCR mirror - for frontend serving"
+    },
+    {
+      "source": "quay.io/prometheus/prometheus:v3.11.2",
+      "destination_name": "prometheus:latest",
+      "description": "Prometheus v3.11.2 monitoring system from Quay.io"
+    },
+    {
+      "source": "quay.io/prometheus/alertmanager:v0.32.0",
+      "destination_name": "alertmanager:latest",
+      "description": "Prometheus Alertmanager v0.32.0 from Quay.io"
+    },
+    {
+      "source": "quay.io/prometheus/node-exporter:v1.11.1",
+      "destination_name": "node-exporter:latest",
+      "description": "Prometheus Node Exporter v1.11.1 from Quay.io"
+    },
+    {
+      "source": "registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.10.1",
+      "destination_name": "kube-state-metrics:latest",
+      "description": "Kube State Metrics v2.10.1 for Kubernetes object metrics"
+    },
+    {
+      "source": "quay.io/prometheus/blackbox-exporter:v0.28.0",
+      "destination_name": "blackbox-exporter:latest",
+      "description": "Prometheus Blackbox Exporter v0.28.0 from Quay.io"
+    },
+    {
+      "source": "docker.io/library/nats:2.12.0-alpine",
+      "destination_name": "nats:2.12.0-alpine",
+      "description": "NATS messaging system 2.12.0 from Docker Hub"
+    },
+    {
+      "source": "docker.io/natsio/nats-box:0.18.1",
+      "destination_name": "nats-box:0.18.1",
+      "description": "NATS CLI toolbox 0.18.1 from Docker Hub"
+    },
+    {
+      "source": "docker.io/langflowai/langflow:1.9.0",
+      "destination_name": "langflow:latest",
+      "description": "Langflow 1.9.0 - low-code AI workflow builder for RAG and LLM applications (MIT)"
+    },
+    {
+      "source": "docker.io/opensearchproject/opensearch:2",
+      "destination_name": "opensearch:2",
+      "description": "OpenSearch 2.x search and analytics engine (Apache-2.0)"
+    },
+    {
+      "source": "docker.io/opensearchproject/opensearch-dashboards:2",
+      "destination_name": "opensearch-dashboards:2",
+      "description": "OpenSearch Dashboards 2.x visualization UI (Apache-2.0)"
+    },
+    {
+      "source": "docker.io/langfuse/langfuse:3.173.0",
+      "destination_name": "langfuse:3.173.0",
+      "description": "Langfuse LLM observability platform 3.173.0 from Docker Hub"
+    },
+    {
+      "source": "docker.io/langfuse/langfuse-worker:3.173.0",
+      "destination_name": "langfuse-worker:3.173.0",
+      "description": "Langfuse worker 3.173.0 - processes events from Redis queue to ClickHouse"
+    },
+    {
+      "source": "docker.io/ollama/ollama:0.21.1",
+      "destination_name": "ollama:latest",
+      "description": "Ollama 0.21.1 LLM inference server - fast local inference with GPU acceleration (MIT)"
+    },
+    {
+      "source": "docker.io/curlimages/curl:8.19.0",
+      "destination_name": "curl:latest",
+      "description": "Curl 8.19.0 utility image from Docker Hub"
+    },
+    {
+      "source": "gcr.io/knative-samples/helloworld-go:latest",
+      "destination_name": "helloworld-go:latest",
+      "description": "Knative Hello World Go sample from GCR - demo image, no versioned releases"
+    },
+    {
+      "source": "docker.io/juicedata/juicefs-csi-driver:v0.30.0",
+      "destination_name": "juicefs-csi-driver:v0.30.0",
+      "description": "JuiceFS CSI driver v0.30.0 for distributed RWX storage"
+    },
+    {
+      "source": "docker.io/juicedata/mount:ce-v1.2.3",
+      "destination_name": "juicefs-mount:ce-v1.2.3",
+      "description": "JuiceFS mount pod image CE v1.2.3 for CSI driver"
+    },
+    {
+      "source": "registry.k8s.io/sig-storage/livenessprobe:v2.11.0",
+      "destination_name": "livenessprobe:v2.11.0",
+      "description": "Kubernetes CSI liveness probe sidecar"
+    },
+    {
+      "source": "registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.9.0",
+      "destination_name": "csi-node-driver-registrar:v2.9.0",
+      "description": "Kubernetes CSI node driver registrar sidecar"
+    },
+    {
+      "source": "registry.k8s.io/sig-storage/csi-provisioner:v2.2.2",
+      "destination_name": "csi-provisioner:v2.2.2",
+      "description": "Kubernetes CSI external provisioner sidecar"
+    },
+    {
+      "source": "registry.k8s.io/sig-storage/csi-resizer:v1.9.0",
+      "destination_name": "csi-resizer:v1.9.0",
+      "description": "Kubernetes CSI external resizer sidecar"
+    },
+    {
+      "source": "nvcr.io/nvidia/tensorrt-llm/release:1.3.0rc13",
+      "destination_name": "tensorrt-llm-spark:1.3.0rc13",
+      "architectures": ["arm64"],
+      "description": "NVIDIA TensorRT-LLM 1.3.0rc13 for DGX Spark (arm64) - Nemotron-H NVFP4, trtllm-serve, FA2"
+    },
+    {
+      "source": "nvcr.io/nvidia/tensorrt-llm/release:1.3.0rc13",
+      "destination_name": "tensorrt-llm:1.3.0rc13",
+      "architectures": ["amd64"],
+      "description": "NVIDIA TensorRT-LLM 1.3.0rc13 standard release (amd64) - trtllm-serve, FA2"
+    },
+    {
+      "source": "docker.io/nvidia/cuda:13.0.0-base-ubuntu24.04",
+      "destination_name": "cuda:13.0.0-base-ubuntu24.04",
+      "description": "NVIDIA CUDA 13.0 base image on Ubuntu 24.04 LTS - October 2025 release"
+    },
+    {
+      "source": "docker.io/nvidia/cuda:13.0.0-devel-ubuntu24.04",
+      "destination_name": "cuda:13.0.0-devel-ubuntu24.04",
+      "description": "NVIDIA CUDA 13.0 development image with compilers on Ubuntu 24.04 LTS"
+    },
+    {
+      "source": "docker.io/nvidia/cuda:13.0.0-cudnn-runtime-ubuntu24.04",
+      "destination_name": "cuda:13.0.0-cudnn-runtime-ubuntu24.04",
+      "description": "NVIDIA CUDA 13.0 with cuDNN runtime on Ubuntu 24.04 LTS for ML/DL workloads"
+    },
+    {
+      "source": "nvcr.io/nvidia/pytorch:26.03-py3",
+      "destination_name": "pytorch:26.03-py3",
+      "description": "NVIDIA PyTorch 26.03 (torch 2.11) - NGC optimized framework for GPU compute. Torch version is load-bearing: see tk-jupyter-base.Containerfile.j2"
+    },
+    {
+      "source": "ghcr.io/huggingface/text-embeddings-inference:86-latest",
+      "destination_name": "text-embeddings-inference:86-latest",
+      "architectures": ["amd64"],
+      "description": "HuggingFace TEI with flash attention for Ampere GPUs (sm_86, amd64)"
+    },
+    {
+      "source": "ghcr.io/huggingface/text-embeddings-inference:121-latest",
+      "destination_name": "text-embeddings-inference:121-latest",
+      "architectures": ["arm64"],
+      "description": "HuggingFace TEI with flash attention for DGX Spark (sm_121, ARM64 Blackwell GB10)"
+    }
+  ]
+}
