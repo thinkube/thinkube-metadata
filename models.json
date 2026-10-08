@@ -225,7 +225,21 @@
       "license": "apache-2.0",
       "gated": false,
       "serving_name": "nvidia/Qwen3.6-35B-A3B-NVFP4",
-      "tool_call_parser": "qwen3_xml"
+      "tool_call_parser": "qwen3_xml",
+      "calibration": {
+        "uma": {
+          "vllm": "0.23.1.dev0+g0fc695fc6.d20260617",
+          "context": 32768,
+          "weight_bytes": 21872120955,
+          "kv_bytes_per_token": 23122,
+          "overhead_bytes": 7581940777,
+          "node_delta_bytes": 53687091200,
+          "measured_with": {
+            "share": 0.38,
+            "kv_tokens": 873501
+          }
+        }
+      }
     },
     {
       "id": "nvidia/Qwen3.8-27B-NVFP4",
