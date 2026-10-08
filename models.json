@@ -72,7 +72,21 @@
       "stop_tokens": [],
       "license": "apache-2.0",
       "gated": false,
-      "serving_name": "Qwen/Qwen3.5-4B"
+      "serving_name": "Qwen/Qwen3.5-4B",
+      "calibration": {
+        "uma": {
+          "vllm": "0.23.1.dev0+g0fc695fc6.d20260617",
+          "context": 32768,
+          "weight_bytes": 9244917105,
+          "kv_bytes_per_token": 34848,
+          "overhead_bytes": 4354680914,
+          "node_delta_bytes": 40372692582,
+          "measured_with": {
+            "share": 0.27,
+            "kv_tokens": 622095
+          }
+        }
+      }
     },
     {
       "id": "unsloth/Qwen3.6-27B-NVFP4",
