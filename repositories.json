@@ -156,6 +156,18 @@
       "ssh_url": "git@github.com:thinkube/tkt-knative-demo.git"
     },
     {
+      "name": "tkt-flows-component",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-flows-component",
+      "description": "Thinkube Flows component — a Knative service that gives flow node types, registered by its address",
+      "type": "application_template",
+      "category": "templates",
+      "deployment_type": "knative",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-flows-component",
+      "ssh_url": "git@github.com:thinkube/tkt-flows-component.git"
+    },
+    {
       "name": "tkt-docling",
       "org": "thinkube",
       "full_name": "thinkube/tkt-docling",
