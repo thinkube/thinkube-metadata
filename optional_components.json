@@ -278,6 +278,18 @@
         "url": "https://github.com/thinkube/tkt-text-embeddings",
         "fixed_name": "text-embeddings"
       }
+    },
+    "scoring": {
+      "display_name": "Scoring",
+      "description": "CPU service that scores AI system outputs against references, so every measurement uses one implementation (Apache 2.0)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "scoring",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-scoring",
+        "fixed_name": "scoring"
+      }
     }
   }
 }
