@@ -256,6 +256,25 @@
       }
     },
     {
+      "id": "Qwen/Qwen3.6-35B-A3B",
+      "name": "Qwen 3.6 35B-A3B (BF16, fine-tuning)",
+      "params_b": 35.0,
+      "active_params_b": 3.0,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.6 35B MoE (3B active) in BF16, the weights the NVFP4 serving model is quantized from: the base for LoRA fine-tuning on the DGX Spark. 72 GB. Apache 2.0.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "Qwen/Qwen3.6-35B-A3B"
+    },
+    {
       "id": "nvidia/Qwen3.8-27B-NVFP4",
       "name": "Qwen 3.8 27B NVFP4 (Blackwell)",
       "params_b": 27.0,

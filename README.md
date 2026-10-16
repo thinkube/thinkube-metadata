@@ -29,6 +29,12 @@ python3 -m json.tool repositories.json > /dev/null
 
 thinkube-control keeps a fetched catalogue in memory for 5 minutes, so a change shows there within that time.
 
+`models.json` lists only models that were used and tested on the platform,
+so that what it offers is what is supported. A model the platform's own work
+uses (a base for fine-tuning, a model a template serves) is added here when
+that work starts, not left in a user's catalogue; `server_type` says what it
+is for: a serving backend, or `unsloth` for a model used only for fine-tuning.
+
 ## License
 
 Apache License 2.0 - See [LICENSE](LICENSE)
