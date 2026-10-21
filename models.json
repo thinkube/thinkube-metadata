@@ -239,6 +239,10 @@
       "license": "apache-2.0",
       "gated": false,
       "serving_name": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+      "aliases": ["thinkube-fast"],
+      "capabilities": ["agent", "vision"],
+      "default_agent": true,
+      "max_output": 32768,
       "tool_call_parser": "qwen3_xml",
       "calibration": {
         "uma": {
@@ -292,7 +296,53 @@
       "license": "apache-2.0",
       "gated": false,
       "serving_name": "nvidia/Qwen3.8-27B-NVFP4",
+      "aliases": ["thinkube-deep"],
+      "capabilities": ["agent"],
+      "max_output": 8192,
       "tool_call_parser": "qwen3_coder"
+    },
+    {
+      "id": "local-inference-lab/Qwen3.8-Flash-Next-FLARE",
+      "name": "Qwen 3.8 Flash Next (Flare, DGX Spark)",
+      "params_b": 125.0,
+      "active_params_b": 6.0,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "Model card: https://huggingface.co/local-inference-lab/Qwen3.8-Flash-Next-FLARE",
+      "server_type": [
+        "flare"
+      ],
+      "task": "image-text-to-text",
+      "format": "flare",
+      "revision": "gb10",
+      "allow_patterns": [
+        "*.safetensors",
+        "README.md"
+      ],
+      "publisher": {
+        "namespace": "local-inference-lab",
+        "key_sha256": "937c0143f6856d3ee8ad164f62e3d804bd825d7a8750d0accb9a5849f703a8c1"
+      },
+      "weight_bytes": 80208514253,
+      "calibration": {
+        "uma": {
+          "context": 262144,
+          "weight_bytes": 80208514253,
+          "kv_bytes_per_token": 0,
+          "overhead_bytes": 9663676416,
+          "node_delta_bytes": 91268055040,
+          "measured_with": {"share": 0.70, "kv_tokens": 0}
+        }
+      },
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "lil-license-1.0",
+      "gated": false,
+      "serving_name": "local-inference-lab/Qwen3.8-Flash-Next-FLARE",
+      "aliases": ["thinkube-flash-next"],
+      "reasoning_format": "qwen3",
+      "capabilities": ["agent", "vision"],
+      "max_output": 32768
     }
   ]
 }

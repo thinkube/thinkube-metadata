@@ -278,6 +278,18 @@
         "url": "https://github.com/thinkube/tkt-text-embeddings",
         "fixed_name": "text-embeddings"
       }
+    },
+    "flare": {
+      "display_name": "Flare",
+      "description": "NVIDIA Flare inference server for Blackwell GPUs (DGX Spark, RTX PRO 6000), driven by the LLM Gateway (Apache 2.0)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "flare",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-flare",
+        "fixed_name": "flare"
+      }
     }
   }
 }
