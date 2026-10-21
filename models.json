@@ -239,6 +239,10 @@
       "license": "apache-2.0",
       "gated": false,
       "serving_name": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+      "aliases": ["thinkube-fast"],
+      "capabilities": ["agent", "vision"],
+      "default_agent": true,
+      "max_output": 32768,
       "tool_call_parser": "qwen3_xml",
       "calibration": {
         "uma": {
@@ -292,6 +296,9 @@
       "license": "apache-2.0",
       "gated": false,
       "serving_name": "nvidia/Qwen3.8-27B-NVFP4",
+      "aliases": ["thinkube-deep"],
+      "capabilities": ["agent"],
+      "max_output": 8192,
       "tool_call_parser": "qwen3_coder"
     },
     {
@@ -335,7 +342,10 @@
       "stop_tokens": [],
       "license": "lil-license-1.0",
       "gated": false,
-      "serving_name": "local-inference-lab/Qwen3.8-Flash-Next-FLARE"
+      "serving_name": "local-inference-lab/Qwen3.8-Flash-Next-FLARE",
+      "aliases": ["thinkube-flash-next"],
+      "capabilities": ["agent", "vision"],
+      "max_output": 32768
     }
   ]
 }
