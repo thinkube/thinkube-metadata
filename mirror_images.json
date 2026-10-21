@@ -278,6 +278,11 @@
       "destination_name": "text-embeddings-inference:121-latest",
       "architectures": ["arm64"],
       "description": "HuggingFace TEI with flash attention for DGX Spark (sm_121, ARM64 Blackwell GB10)"
+    },
+    {
+      "source": "ghcr.io/local-inference-lab/flare:sha-e7b8c016474f3b58d390910a7368f58a792b4744",
+      "destination_name": "flare:e7b8c01",
+      "description": "Flare local inference server for Blackwell GPUs (SM120/SM121), built by Local Inference Lab from github.com/NVIDIA/flare-local-inference at commit e7b8c01 - base of tkt-flare"
     }
   ]
 }
