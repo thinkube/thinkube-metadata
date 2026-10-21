@@ -293,6 +293,35 @@
       "gated": false,
       "serving_name": "nvidia/Qwen3.8-27B-NVFP4",
       "tool_call_parser": "qwen3_coder"
+    },
+    {
+      "id": "local-inference-lab/Qwen3.8-Flash-Next-FLARE",
+      "name": "Qwen 3.8 Flash Next (Flare, DGX Spark)",
+      "params_b": 125.0,
+      "active_params_b": 6.0,
+      "quantization": "NVFP4",
+      "context_length": 262144,
+      "description": "This model is based on Qwen3.8-Flash-Next-NVFP4-MXFP8-CSF-QAD by Local Inference Lab, Inc., a non-profit organization, available at https://huggingface.co/local-inference-lab/Qwen3.8-Flash-Next-NVFP4-MXFP8-CSF-QAD. Qwen3.8-Flash-Next-NVFP4-MXFP8-CSF-QAD is licensed under the Local Inference Lab License, Version 1.0. An alpha Flare runtime package of Qwen3.8-Flash-Next (125B, 6B active) for one DGX Spark: NVFP4 experts, MXFP8 attention, MTP speculative decoding, up to 8 requests at once. Its 51B n-gram embedding table stays on disk.",
+      "server_type": [
+        "flare"
+      ],
+      "task": "image-text-to-text",
+      "format": "flare",
+      "revision": "gb10",
+      "allow_patterns": [
+        "*.safetensors",
+        "README.md"
+      ],
+      "publisher": {
+        "namespace": "local-inference-lab",
+        "key_sha256": "937c0143f6856d3ee8ad164f62e3d804bd825d7a8750d0accb9a5849f703a8c1"
+      },
+      "weight_bytes": 78000000000,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "lil-license-1.0",
+      "gated": false,
+      "serving_name": "local-inference-lab/Qwen3.8-Flash-Next-FLARE"
     }
   ]
 }
