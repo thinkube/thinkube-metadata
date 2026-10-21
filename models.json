@@ -323,10 +323,6 @@
         "namespace": "local-inference-lab",
         "key_sha256": "937c0143f6856d3ee8ad164f62e3d804bd825d7a8750d0accb9a5849f703a8c1"
       },
-      "server_args": [
-        "--embedding-table-cache-size",
-        "2GiB"
-      ],
       "weight_bytes": 80208514253,
       "calibration": {
         "uma": {
