@@ -344,6 +344,7 @@
       "gated": false,
       "serving_name": "local-inference-lab/Qwen3.8-Flash-Next-FLARE",
       "aliases": ["thinkube-flash-next"],
+      "reasoning_format": "qwen3",
       "capabilities": ["agent", "vision"],
       "max_output": 32768
     }
