@@ -159,6 +159,19 @@
       "ssh_url": "git@github.com:thinkube/tkt-sglang.git"
     },
     {
+      "name": "tkt-transformers",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-transformers",
+      "description": "Speech to text, text to image and text to speech with Hugging Face models — model managed by LLM Gateway",
+      "type": "application_template",
+      "category": "templates",
+      "deployment_type": "component",
+      "fixed_name": "transformers",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-transformers",
+      "ssh_url": "git@github.com:thinkube/tkt-transformers.git"
+    },
+    {
       "name": "tkt-stable-diffusion",
       "org": "thinkube",
       "full_name": "thinkube/tkt-stable-diffusion",

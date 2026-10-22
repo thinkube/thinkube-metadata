@@ -338,6 +338,32 @@
         "url": "https://github.com/thinkube/tkt-sglang",
         "fixed_name": "sglang"
       }
+    },
+    "transformers": {
+      "display_name": "Transformers",
+      "description": "Speech to text, text to image and text to speech with Hugging Face models, driven by the LLM Gateway (MIT)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "transformers",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-transformers",
+        "fixed_name": "transformers"
+      }
+    },
+    "unsloth": {
+      "display_name": "Unsloth",
+      "description": "Unsloth fine-tuning in notebooks: the unsloth venv and the thinkube-unsloth notebooks (AGPL-3.0)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [
+        "jupyterhub"
+      ],
+      "namespace": "unsloth",
+      "playbooks": {
+        "install": "00_install.yaml",
+        "uninstall": "19_rollback.yaml"
+      }
     }
   }
 }

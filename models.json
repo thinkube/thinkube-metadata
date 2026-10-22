@@ -231,6 +231,81 @@
       "serving_name": "Qwen/Qwen3-Embedding-0.6B"
     },
     {
+      "id": "openai/whisper-large-v3-turbo",
+      "name": "Whisper large v3 turbo",
+      "params_b": 0.8,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": null,
+      "description": "Model card: https://huggingface.co/openai/whisper-large-v3-turbo",
+      "server_type": [
+        "transformers"
+      ],
+      "task": "automatic-speech-recognition",
+      "allow_patterns": [
+        "*.json",
+        "*.txt",
+        "model.safetensors"
+      ],
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false,
+      "serving_name": "openai/whisper-large-v3-turbo"
+    },
+    {
+      "id": "Tongyi-MAI/Z-Image-Turbo",
+      "name": "Z-Image Turbo",
+      "params_b": 10.2,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": null,
+      "description": "Model card: https://huggingface.co/Tongyi-MAI/Z-Image-Turbo",
+      "server_type": [
+        "transformers"
+      ],
+      "task": "text-to-image",
+      "allow_patterns": [
+        "model_index.json",
+        "scheduler/*",
+        "text_encoder/*",
+        "tokenizer/*",
+        "transformer/*",
+        "vae/*"
+      ],
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "Tongyi-MAI/Z-Image-Turbo"
+    },
+    {
+      "id": "suno/bark-small",
+      "name": "Bark small",
+      "params_b": 0.4,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": null,
+      "description": "Model card: https://huggingface.co/suno/bark-small",
+      "server_type": [
+        "transformers"
+      ],
+      "task": "text-to-speech",
+      "allow_patterns": [
+        "*.json",
+        "pytorch_model.bin",
+        "speaker_embeddings/*"
+      ],
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false,
+      "serving_name": "suno/bark-small"
+    },
+    {
       "id": "unsloth/Qwen3.5-4B",
       "name": "Qwen 3.5 4B (Unsloth)",
       "params_b": 4.7,
