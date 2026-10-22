@@ -146,6 +146,19 @@
       "ssh_url": "git@github.com:thinkube/tkt-llama-cpp-prism.git"
     },
     {
+      "name": "tkt-sglang",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-sglang",
+      "description": "SGLang inference server — model managed by LLM Gateway",
+      "type": "application_template",
+      "category": "templates",
+      "deployment_type": "component",
+      "fixed_name": "sglang",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-sglang",
+      "ssh_url": "git@github.com:thinkube/tkt-sglang.git"
+    },
+    {
       "name": "tkt-stable-diffusion",
       "org": "thinkube",
       "full_name": "thinkube/tkt-stable-diffusion",

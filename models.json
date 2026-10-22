@@ -64,7 +64,8 @@
       "context_length": 262144,
       "description": "Qwen 3.5 4B dense model. 262K context, thinking mode. Apache 2.0.",
       "server_type": [
-        "vllm"
+        "vllm",
+        "sglang"
       ],
       "task": "text-generation",
       "reasoning_format": "qwen3",

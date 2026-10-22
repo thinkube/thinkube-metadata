@@ -326,6 +326,18 @@
         "url": "https://github.com/thinkube/tkt-llama-cpp-prism",
         "fixed_name": "llama-cpp-prism"
       }
+    },
+    "sglang": {
+      "display_name": "SGLang",
+      "description": "SGLang inference server for Hugging Face models on NVIDIA GPUs, driven by the LLM Gateway (Apache 2.0)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "sglang",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-sglang",
+        "fixed_name": "sglang"
+      }
     }
   }
 }
