@@ -165,6 +165,32 @@
       "serving_name": "qwen3.5-4b"
     },
     {
+      "id": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+      "name": "Ternary Bonsai 2 27B (PQ2_0)",
+      "params_b": 27.0,
+      "active_params_b": null,
+      "quantization": "PQ2_0",
+      "context_length": 262144,
+      "description": "Model card: https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf",
+      "server_type": [
+        "llama-cpp-prism"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*-PQ2_0.gguf",
+        "*-mmproj-Q8_0.gguf",
+        "README.md",
+        "LICENSE",
+        "NOTICE.txt"
+      ],
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "prism-ml/Ternary-Bonsai-2-27B-gguf"
+    },
+    {
       "id": "ollama/qwen3.5:27b",
       "name": "Qwen 3.5 27B (Ollama Library)",
       "source": "ollama",

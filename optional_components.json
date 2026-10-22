@@ -314,6 +314,18 @@
         "url": "https://github.com/thinkube/tkt-llama-cpp",
         "fixed_name": "llama-cpp"
       }
+    },
+    "llama-cpp-prism": {
+      "display_name": "llama.cpp (PrismML)",
+      "description": "PrismML's llama.cpp fork for the 1-bit and ternary Bonsai models on NVIDIA GPUs, driven by the LLM Gateway (MIT)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "llama-cpp-prism",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-llama-cpp-prism",
+        "fixed_name": "llama-cpp-prism"
+      }
     }
   }
 }
