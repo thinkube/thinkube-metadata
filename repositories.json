@@ -355,6 +355,17 @@
       "ssh_url": "git@github.com:thinkube/thinkube-notebooks-examples.git"
     },
     {
+      "name": "thinkube-unsloth",
+      "org": "thinkube",
+      "full_name": "thinkube/thinkube-unsloth",
+      "description": "Notebooks that use Unsloth",
+      "type": "examples",
+      "category": "misc",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/thinkube-unsloth",
+      "ssh_url": "git@github.com:thinkube/thinkube-unsloth.git"
+    },
+    {
       "name": "thinkube-monitor",
       "org": "thinkube",
       "full_name": "thinkube/thinkube-monitor",
