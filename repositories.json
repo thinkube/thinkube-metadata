@@ -120,6 +120,19 @@
       "ssh_url": "git@github.com:thinkube/tkt-flare.git"
     },
     {
+      "name": "tkt-llama-cpp",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-llama-cpp",
+      "description": "llama.cpp inference server for GGUF models — model managed by LLM Gateway",
+      "type": "application_template",
+      "category": "templates",
+      "deployment_type": "component",
+      "fixed_name": "llama-cpp",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-llama-cpp",
+      "ssh_url": "git@github.com:thinkube/tkt-llama-cpp.git"
+    },
+    {
       "name": "tkt-stable-diffusion",
       "org": "thinkube",
       "full_name": "thinkube/tkt-stable-diffusion",

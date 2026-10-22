@@ -302,6 +302,18 @@
         "url": "https://github.com/thinkube/tkt-flare",
         "fixed_name": "flare"
       }
+    },
+    "llama-cpp": {
+      "display_name": "llama.cpp",
+      "description": "llama.cpp inference server for GGUF models on NVIDIA GPUs, driven by the LLM Gateway (MIT)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "llama-cpp",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-llama-cpp",
+        "fixed_name": "llama-cpp"
+      }
     }
   }
 }
