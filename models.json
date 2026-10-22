@@ -282,36 +282,6 @@
       "serving_name": "Tongyi-MAI/Z-Image-Turbo"
     },
     {
-      "id": "nota-ai/bk-sdm-tiny",
-      "name": "BK-SDM Tiny",
-      "params_b": 0.5,
-      "active_params_b": null,
-      "quantization": "FP32",
-      "context_length": null,
-      "description": "Model card: https://huggingface.co/nota-ai/bk-sdm-tiny",
-      "server_type": [
-        "transformers"
-      ],
-      "task": "text-to-image",
-      "allow_patterns": [
-        "model_index.json",
-        "feature_extractor/*",
-        "scheduler/scheduler_config.json",
-        "*/config.json",
-        "tokenizer/*",
-        "safety_checker/model.safetensors",
-        "text_encoder/model.safetensors",
-        "unet/diffusion_pytorch_model.safetensors",
-        "vae/diffusion_pytorch_model.safetensors"
-      ],
-      "reasoning_format": null,
-      "tool_use": false,
-      "stop_tokens": [],
-      "license": "creativeml-openrail-m",
-      "gated": false,
-      "serving_name": "nota-ai/bk-sdm-tiny"
-    },
-    {
       "id": "suno/bark-small",
       "name": "Bark small",
       "params_b": 0.4,
