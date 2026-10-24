@@ -393,6 +393,12 @@
         "unsloth"
       ],
       "task": "text-generation",
+      "allow_patterns": [
+        "*.json",
+        "*.safetensors",
+        "*.md",
+        "LICENSE"
+      ],
       "reasoning_format": null,
       "tool_use": true,
       "stop_tokens": [],
