@@ -426,13 +426,13 @@
       "serving_name": "Qwen/Qwen3.5-9B"
     },
     {
-      "id": "google/gemma-4-12B-it",
-      "name": "Gemma 4 12B Instruct (BF16, fine-tuning)",
-      "params_b": 12.0,
+      "id": "google/gemma-4-E4B-it",
+      "name": "Gemma 4 E4B Instruct (BF16, fine-tuning)",
+      "params_b": 8.0,
       "active_params_b": null,
       "quantization": "BF16",
-      "context_length": 262144,
-      "description": "Gemma 4 12B Instruct in BF16, a base for LoRA and QLoRA fine-tuning on text. 262K context. 24 GB. Apache 2.0.",
+      "context_length": 131072,
+      "description": "Gemma 4 E4B Instruct (effective 4B, 8B stored) in BF16, a base for LoRA and QLoRA fine-tuning on text. 128K context. 16 GB. Apache 2.0.",
       "server_type": [
         "unsloth"
       ],
@@ -442,7 +442,7 @@
       "stop_tokens": [],
       "license": "apache-2.0",
       "gated": false,
-      "serving_name": "google/gemma-4-12B-it"
+      "serving_name": "google/gemma-4-E4B-it"
     },
     {
       "id": "Qwen/Qwen3.8-27B",
