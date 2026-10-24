@@ -382,6 +382,82 @@
       "serving_name": "Qwen/Qwen3.6-35B-A3B"
     },
     {
+      "id": "meta-llama/Llama-3.1-8B-Instruct",
+      "name": "Llama 3.1 8B Instruct (BF16, fine-tuning)",
+      "params_b": 8.0,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 131072,
+      "description": "Llama 3.1 8B Instruct in BF16, a base for LoRA and QLoRA fine-tuning and the reference model of llebre's benchmarks. 128K context. 16 GB. Llama 3.1 Community License; gated.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "llama3.1",
+      "gated": true,
+      "serving_name": "meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "id": "Qwen/Qwen3.5-9B",
+      "name": "Qwen 3.5 9B (BF16, fine-tuning)",
+      "params_b": 9.7,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.5 9B dense in BF16, a base for LoRA and QLoRA fine-tuning on text. 262K context, thinking mode. 19 GB. Apache 2.0.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "Qwen/Qwen3.5-9B"
+    },
+    {
+      "id": "google/gemma-4-12B-it",
+      "name": "Gemma 4 12B Instruct (BF16, fine-tuning)",
+      "params_b": 12.0,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Gemma 4 12B Instruct in BF16, a base for LoRA and QLoRA fine-tuning on text. 262K context. 24 GB. Apache 2.0.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "google/gemma-4-12B-it"
+    },
+    {
+      "id": "Qwen/Qwen3.8-27B",
+      "name": "Qwen 3.8 27B (BF16, fine-tuning)",
+      "params_b": 27.8,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Qwen 3.8 27B dense in BF16, the weights the NVFP4 serving model is quantized from: a base for QLoRA fine-tuning on two 24 GB GPUs. 262K context. 56 GB. Apache 2.0.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "Qwen/Qwen3.8-27B"
+    },
+    {
       "id": "nvidia/Qwen3.8-27B-NVFP4",
       "name": "Qwen 3.8 27B NVFP4 (Blackwell)",
       "params_b": 27.0,
