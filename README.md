@@ -35,6 +35,12 @@ uses (a base for fine-tuning, a model a template serves) is added here when
 that work starts, not left in a user's catalogue; `server_type` says what it
 is for: a serving backend, or `unsloth` for a model used only for fine-tuning.
 
+A model missing here is missing because it was not tested yet. Any work that
+uses a new model (a benchmark, a fine-tuning, a template) adds its entry on
+`main` first and mirrors it through Thinkube Control, so the catalogue grows
+with every model the platform is seen to run. The entry reaches `release-*`
+with the next release.
+
 ## License
 
 Apache License 2.0 - See [LICENSE](LICENSE)
