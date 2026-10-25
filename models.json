@@ -342,8 +342,13 @@
       "license": "apache-2.0",
       "gated": false,
       "serving_name": "nvidia/Qwen3.6-35B-A3B-NVFP4",
-      "aliases": ["thinkube-fast"],
-      "capabilities": ["agent", "vision"],
+      "aliases": [
+        "thinkube-fast"
+      ],
+      "capabilities": [
+        "agent",
+        "vision"
+      ],
       "default_agent": true,
       "max_output": 32768,
       "tool_call_parser": "qwen3_xml",
@@ -464,6 +469,25 @@
       "serving_name": "Qwen/Qwen3.8-27B"
     },
     {
+      "id": "Qwen/Qwen3-14B",
+      "name": "Qwen 3 14B (BF16, fine-tuning)",
+      "params_b": 14.8,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 40960,
+      "description": "Qwen 3 14B dense in BF16, 29.5 GB: a base for LoRA fine-tuning across two 24 GB GPUs (FSDP2 or the layers split), which no single 24 GB GPU holds. 40K context, thinking mode. Apache 2.0.",
+      "server_type": [
+        "unsloth"
+      ],
+      "task": "text-generation",
+      "reasoning_format": "qwen3",
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "Qwen/Qwen3-14B"
+    },
+    {
       "id": "nvidia/Qwen3.8-27B-NVFP4",
       "name": "Qwen 3.8 27B NVFP4 (Blackwell)",
       "params_b": 27.0,
@@ -481,8 +505,12 @@
       "license": "apache-2.0",
       "gated": false,
       "serving_name": "nvidia/Qwen3.8-27B-NVFP4",
-      "aliases": ["thinkube-deep"],
-      "capabilities": ["agent"],
+      "aliases": [
+        "thinkube-deep"
+      ],
+      "capabilities": [
+        "agent"
+      ],
       "max_output": 8192,
       "tool_call_parser": "qwen3_coder"
     },
@@ -516,7 +544,10 @@
           "kv_bytes_per_token": 0,
           "overhead_bytes": 9663676416,
           "node_delta_bytes": 91268055040,
-          "measured_with": {"share": 0.70, "kv_tokens": 0}
+          "measured_with": {
+            "share": 0.7,
+            "kv_tokens": 0
+          }
         }
       },
       "tool_use": true,
@@ -524,9 +555,14 @@
       "license": "lil-license-1.0",
       "gated": false,
       "serving_name": "local-inference-lab/Qwen3.8-Flash-Next-FLARE",
-      "aliases": ["thinkube-flash-next"],
+      "aliases": [
+        "thinkube-flash-next"
+      ],
       "reasoning_format": "qwen3",
-      "capabilities": ["agent", "vision"],
+      "capabilities": [
+        "agent",
+        "vision"
+      ],
       "max_output": 32768
     }
   ]
