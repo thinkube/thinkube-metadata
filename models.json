@@ -412,6 +412,33 @@
       "serving_name": "meta-llama/Llama-3.1-8B-Instruct"
     },
     {
+      "id": "nvidia/Llama-3.1-8B-Instruct-NVFP4",
+      "name": "Llama 3.1 8B Instruct NVFP4 (Blackwell)",
+      "params_b": 8.0,
+      "active_params_b": null,
+      "quantization": "NVFP4",
+      "context_length": 131072,
+      "description": "Llama 3.1 8B Instruct, NVIDIA ModelOpt NVFP4 for Blackwell GPUs. The NVFP4 base for checking LoRA adapters on an NVFP4 base in TensorRT-LLM and vLLM, and llebre training on NVFP4 weights. About 6 GB. Llama 3.1 Community License (NVIDIA's terms in LICENSE.pdf).",
+      "server_type": [
+        "tensorrt-llm",
+        "vllm"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*.json",
+        "*.safetensors",
+        "*.md",
+        "*.jinja",
+        "LICENSE.pdf"
+      ],
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "llama3.1",
+      "gated": false,
+      "serving_name": "nvidia/Llama-3.1-8B-Instruct-NVFP4"
+    },
+    {
       "id": "Qwen/Qwen3.5-9B",
       "name": "Qwen 3.5 9B (BF16, fine-tuning)",
       "params_b": 9.7,
