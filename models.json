@@ -231,6 +231,31 @@
       "serving_name": "Qwen/Qwen3-Embedding-0.6B"
     },
     {
+      "id": "FacebookAI/xlm-roberta-large",
+      "name": "XLM-RoBERTa large",
+      "params_b": 0.56,
+      "active_params_b": null,
+      "quantization": "FP32",
+      "context_length": 512,
+      "description": "Meta's multilingual RoBERTa encoder, large (560M), trained on 100 languages. A base for fine-tuning token taggers: part of speech, morphology and lemmas on Universal Dependencies. MIT.",
+      "server_type": [
+        "transformers"
+      ],
+      "task": "fill-mask",
+      "allow_patterns": [
+        "config.json",
+        "tokenizer.json",
+        "sentencepiece.bpe.model",
+        "model.safetensors"
+      ],
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "mit",
+      "gated": false,
+      "serving_name": "FacebookAI/xlm-roberta-large"
+    },
+    {
       "id": "openai/whisper-large-v3-turbo",
       "name": "Whisper large v3 turbo",
       "params_b": 0.8,
