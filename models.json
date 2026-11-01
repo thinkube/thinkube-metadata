@@ -519,6 +519,10 @@
         "chat_template.jinja",
         "*.safetensors"
       ],
+      "server_args": [
+        "--quantization",
+        "fp8"
+      ],
       "reasoning_format": null,
       "tool_use": true,
       "stop_tokens": [],
