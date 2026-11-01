@@ -523,6 +523,20 @@
         "--quantization",
         "fp8"
       ],
+      "calibration": {
+        "discrete": {
+          "vllm": "0.32.0",
+          "context": 8192,
+          "tensor_parallel": 2,
+          "weight_bytes": 31374736097,
+          "kv_bytes_per_token": 170394,
+          "overhead_bytes": 1954210120,
+          "measured_with": {
+            "share": 0.67,
+            "kv_tokens": 7058
+          }
+        }
+      },
       "reasoning_format": null,
       "tool_use": true,
       "stop_tokens": [],
