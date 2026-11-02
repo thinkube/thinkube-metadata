@@ -258,6 +258,18 @@
       "ssh_url": "git@github.com:thinkube/tkt-docling.git"
     },
     {
+      "name": "tkt-typesetting",
+      "org": "thinkube",
+      "full_name": "thinkube/tkt-typesetting",
+      "description": "Book typesetting — a Markdown manuscript as a print-ready PDF with Typst, and as EPUB and Word with pandoc, in EB Garamond, Crimson Pro or Libertinus Serif, as Argo workflow steps",
+      "type": "application_template",
+      "category": "templates",
+      "deployment_type": "app",
+      "clone_for_development": true,
+      "github_url": "https://github.com/thinkube/tkt-typesetting",
+      "ssh_url": "git@github.com:thinkube/tkt-typesetting.git"
+    },
+    {
       "name": "thinkube-style",
       "org": "thinkube",
       "full_name": "thinkube/thinkube-style",
