@@ -659,6 +659,56 @@
         "vision"
       ],
       "max_output": 32768
+    },
+    {
+      "id": "google/t5gemma-9b-2b-prefixlm-it",
+      "name": "T5Gemma 9B-2B PrefixLM Instruct (BF16)",
+      "params_b": 12.3,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 8192,
+      "description": "Google's encoder-decoder adapted from Gemma 2: a 9B encoder and a 2B decoder, PrefixLM, instruction-tuned. 24.6 GB in BF16, 8K context. Runs in a notebook kernel with transformers (T5GemmaForConditionalGeneration); vLLM does not serve it.",
+      "server_type": [
+        "transformers"
+      ],
+      "task": "text2text-generation",
+      "allow_patterns": [
+        "*.json",
+        "chat_template.jinja",
+        "tokenizer.model",
+        "*.safetensors"
+      ],
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "gemma",
+      "gated": true,
+      "serving_name": "google/t5gemma-9b-2b-prefixlm-it"
+    },
+    {
+      "id": "google/t5gemma-9b-9b-prefixlm-it",
+      "name": "T5Gemma 9B-9B PrefixLM Instruct (BF16)",
+      "params_b": 20.3,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 8192,
+      "description": "Google's encoder-decoder adapted from Gemma 2: a 9B encoder and a 9B decoder, PrefixLM, instruction-tuned. 40.7 GB in BF16, 8K context. Runs in a notebook kernel with transformers (T5GemmaForConditionalGeneration); vLLM does not serve it.",
+      "server_type": [
+        "transformers"
+      ],
+      "task": "text2text-generation",
+      "allow_patterns": [
+        "*.json",
+        "chat_template.jinja",
+        "tokenizer.model",
+        "*.safetensors"
+      ],
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "gemma",
+      "gated": true,
+      "serving_name": "google/t5gemma-9b-9b-prefixlm-it"
     }
   ]
 }
