@@ -671,7 +671,7 @@
       "server_type": [
         "transformers"
       ],
-      "task": "text2text-generation",
+      "task": "text-generation",
       "allow_patterns": [
         "*.json",
         "chat_template.jinja",
@@ -696,7 +696,7 @@
       "server_type": [
         "transformers"
       ],
-      "task": "text2text-generation",
+      "task": "text-generation",
       "allow_patterns": [
         "*.json",
         "chat_template.jinja",
