@@ -55,7 +55,8 @@ def required_env(name):
 
 class Control:
     def __init__(self, url, token):
-        self.url = url.rstrip("/") + "/api/v1/llm"
+        # The LLM Gateway, the extension control-llm, through Control's proxy for extensions
+        self.url = url.rstrip("/") + "/api/v1/x/control-llm/api/llm"
         self.token = token
 
     def call(self, method, path, body=None):
