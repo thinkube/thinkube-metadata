@@ -545,6 +545,34 @@
       "serving_name": "google/gemma-4-26B-A4B-it"
     },
     {
+      "id": "google/gemma-4-31B-it",
+      "name": "Gemma 4 31B Instruct (BF16)",
+      "params_b": 31.3,
+      "active_params_b": null,
+      "quantization": "BF16",
+      "context_length": 262144,
+      "description": "Gemma 4 31B dense Instruct in BF16, 62.5 GB: the largest Gemma 4. vLLM serves it with online FP8 quantization. Vision + text. 256K context. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*.json",
+        "chat_template.jinja",
+        "*.safetensors"
+      ],
+      "server_args": [
+        "--quantization",
+        "fp8"
+      ],
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "google/gemma-4-31B-it"
+    },
+    {
       "id": "Qwen/Qwen3.8-27B",
       "name": "Qwen 3.8 27B (BF16, fine-tuning)",
       "params_b": 27.8,
