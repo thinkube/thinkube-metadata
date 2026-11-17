@@ -737,6 +737,35 @@
       "license": "gemma",
       "gated": true,
       "serving_name": "google/t5gemma-9b-9b-prefixlm-it"
+    },
+    {
+      "id": "pfnet/plamo-3-translate-8b-GGUF",
+      "name": "PLaMo 3 Translate 8B (GGUF)",
+      "params_b": 9.0,
+      "active_params_b": null,
+      "quantization": "Q4_K_M",
+      "context_length": 16384,
+      "description": "Preferred Networks' translation model among 53 languages, Japanese and English first; it takes earlier sentences and their translations, and a glossary, as context. 5.3 GB. PLaMo Community License: free for non-commercial use and, after registration, for companies with revenue up to 1 billion yen.",
+      "server_type": [
+        "llama-cpp"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*Q4_K_M.gguf",
+        "README.md"
+      ],
+      "server_args": [
+        "--jinja"
+      ],
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [
+        "<|plamo:tag|>",
+        "<|plamo:bos|>"
+      ],
+      "license": "plamo-community-license",
+      "gated": false,
+      "serving_name": "plamo-3-translate-8b"
     }
   ]
 }
