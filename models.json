@@ -231,6 +231,25 @@
       "serving_name": "Qwen/Qwen3-Embedding-0.6B"
     },
     {
+      "id": "BAAI/bge-reranker-v2-m3",
+      "name": "BGE Reranker v2 M3",
+      "params_b": 0.568,
+      "active_params_b": null,
+      "quantization": "F32",
+      "context_length": 8192,
+      "description": "BAAI reranker (0.57B, XLM-RoBERTa). Reads a query and a passage together and scores how well the passage answers the query; reorders the candidates of a search. 100+ languages, 8192 token context. Served by TEI at /v1/rerank. Apache 2.0 license.",
+      "server_type": [
+        "text-embeddings"
+      ],
+      "task": "text-ranking",
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "BAAI/bge-reranker-v2-m3"
+    },
+    {
       "id": "FacebookAI/xlm-roberta-large",
       "name": "XLM-RoBERTa large",
       "params_b": 0.56,
