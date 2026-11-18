@@ -237,11 +237,11 @@
       "active_params_b": null,
       "quantization": "F32",
       "context_length": 8192,
-      "description": "BAAI reranker (0.57B, XLM-RoBERTa). Reads a query and a passage together and scores how well the passage answers the query; reorders the candidates of a search. 100+ languages, 8192 token context. Served by TEI at /v1/rerank. Apache 2.0 license.",
+      "description": "BAAI reranker (0.57B, XLM-RoBERTa). A reranker: a classifier that reads a query and a passage together and scores how well the passage answers the query, to reorder the candidates of a search. 100+ languages, 8192 token context. Served by TEI at /v1/rerank. Apache 2.0 license.",
       "server_type": [
         "text-embeddings"
       ],
-      "task": "text-ranking",
+      "task": "text-classification",
       "reasoning_format": null,
       "tool_use": false,
       "stop_tokens": [],
