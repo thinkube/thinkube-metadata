@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "description": "Thinkube optional components \u2014 installable services",
+  "description": "Thinkube optional components — installable services",
   "components": {
     "prometheus": {
       "display_name": "Prometheus",
@@ -349,6 +349,18 @@
       "template": {
         "url": "https://github.com/thinkube/tkt-transformers",
         "fixed_name": "transformers"
+      }
+    },
+    "heads": {
+      "display_name": "Trained heads",
+      "description": "Trained parts on a base model (taggers, choice heads), many on one copy of their base, driven by the LLM Gateway (MIT)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "heads",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-heads",
+        "fixed_name": "heads"
       }
     },
     "unsloth": {
