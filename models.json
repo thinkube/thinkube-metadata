@@ -616,6 +616,30 @@
       "serving_name": "google/gemma-4-31B-it"
     },
     {
+      "id": "google/gemma-4-31B-it-qat-w4a16-ct",
+      "name": "Gemma 4 31B Instruct (QAT, 4-bit weights)",
+      "params_b": 31.3,
+      "active_params_b": null,
+      "quantization": "W4A16",
+      "context_length": 262144,
+      "description": "Gemma 4 31B dense Instruct trained by Google for 4-bit weights (QAT): int4 weights and 16-bit activations in compressed-tensors format, 23.3 GB. vLLM reads the quantization from the checkpoint. Vision + text. 256K context. Apache 2.0.",
+      "server_type": [
+        "vllm"
+      ],
+      "task": "text-generation",
+      "allow_patterns": [
+        "*.json",
+        "chat_template.jinja",
+        "*.safetensors"
+      ],
+      "reasoning_format": null,
+      "tool_use": true,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "google/gemma-4-31B-it-qat-w4a16-ct"
+    },
+    {
       "id": "Qwen/Qwen3.8-27B",
       "name": "Qwen 3.8 27B (BF16, fine-tuning)",
       "params_b": 27.8,
