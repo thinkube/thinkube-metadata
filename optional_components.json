@@ -363,6 +363,18 @@
         "fixed_name": "heads"
       }
     },
+    "translation-quality": {
+      "display_name": "Translation quality",
+      "description": "Scores translations with COMET models (a score per segment and for the system), driven by the LLM Gateway; the scoring service's model metrics (MIT)",
+      "category": "ai",
+      "icon": "/icons/tk_ai.svg",
+      "requirements": [],
+      "namespace": "translation-quality",
+      "template": {
+        "url": "https://github.com/thinkube/tkt-translation-quality",
+        "fixed_name": "translation-quality"
+      }
+    },
     "unsloth": {
       "display_name": "Unsloth",
       "description": "Unsloth fine-tuning in notebooks: the unsloth venv and the thinkube-unsloth notebooks (AGPL-3.0)",

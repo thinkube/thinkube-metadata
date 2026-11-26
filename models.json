@@ -275,6 +275,33 @@
       "serving_name": "FacebookAI/xlm-roberta-large"
     },
     {
+      "id": "Unbabel/wmt22-comet-da",
+      "name": "COMET 22 (wmt22-comet-da)",
+      "params_b": 0.58,
+      "active_params_b": null,
+      "quantization": "FP32",
+      "context_length": 512,
+      "description": "Unbabel's COMET-22 translation quality metric: reads the source, the translation and a reference, and scores the translation (about 0 to 1, higher is better). XLM-RoBERTa large encoder, whose tokenizer comes from the mirror of FacebookAI/xlm-roberta-large. Served by the translation-quality backend at /v1/translation-quality, and by the scoring service as the metric comet. 2.3 GB. Apache 2.0.",
+      "server_type": [
+        "translation-quality"
+      ],
+      "task": "translation-quality",
+      "allow_patterns": [
+        "hparams.yaml",
+        "checkpoints/model.ckpt",
+        "LICENSE"
+      ],
+      "reasoning_format": null,
+      "tool_use": false,
+      "stop_tokens": [],
+      "license": "apache-2.0",
+      "gated": false,
+      "serving_name": "Unbabel/wmt22-comet-da",
+      "aliases": [
+        "comet"
+      ]
+    },
+    {
       "id": "openai/whisper-large-v3-turbo",
       "name": "Whisper large v3 turbo",
       "params_b": 0.8,
