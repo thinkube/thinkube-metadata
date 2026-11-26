@@ -286,6 +286,7 @@
         "translation-quality"
       ],
       "task": "translation-quality",
+      "format": "comet",
       "allow_patterns": [
         "hparams.yaml",
         "checkpoints/model.ckpt",
