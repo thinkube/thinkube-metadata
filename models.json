@@ -264,6 +264,7 @@
       "allow_patterns": [
         "config.json",
         "tokenizer.json",
+        "tokenizer_config.json",
         "sentencepiece.bpe.model",
         "model.safetensors"
       ],
